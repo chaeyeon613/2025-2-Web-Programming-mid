@@ -19,73 +19,75 @@
         <input type="text" name="text" value="수강하고 싶은 코스 검색">
         <input type="image" src="/images/search.png" alt="검색 로고">
     </div>
-    <aside>
-        <div class="language-checkbox">
-            <h3>프로그래밍 언어</h3>
-            <hr>
-            <span><input type="checkbox" name="language" value="HTML" id="check1">
-            <label for="check1">HTML</label></span>
-            <span><input type="checkbox" name="language" value="JavaScript" id="check2">
-            <label for="check2">JavaScript</label></span>
-            <span><input type="checkbox" name="language" value="CSS" id="check3">
-            <label for="check3">CSS</label></span>
-            <span><input type="checkbox" name="language" value="Java" id="check4">
-            <label for="check4">Java</label></span>
-            <span><input type="checkbox" name="language" value="TypeScript" id="check5">
-            <label for="check5">TypeScript</label></span>
-            <span><input type="checkbox" name="language" value="Kotlin" id="check6">
-            <label for="check6">Kotlin</label></span>
-            <span><input type="checkbox" name="language" value="Python" id="check7">
-            <label for="check7">Python</label></span>
-            <span><input type="checkbox" name="language" value="C" id="check8">
-            <label for="check8">C</label></span>
-            <span><input type="checkbox" name="language" value="C++" id="check9">
-            <label for="check9">C++</label></span>
-            <span><input type="checkbox" name="language" value="MySQL" id="check10">
-            <label for="check10">Kotlin</label></span>
-        </div>
-        <div class="level-checkbox">
-            <h3>수업 난이도</h3>
-            <hr>
-            <span><input type="checkbox" name="level" value="level1" id="check11">
-            <label for="check11">입문</label></span>
-            <span><input type="checkbox" name="level" value="level2" id="check12">
-            <label for="check12">초급</label></span>
-            <span><input type="checkbox" name="level" value="level3" id="check13">
-            <label for="check13">중급</label></span>
-            <span><input type="checkbox" name="level" value="level4" id="check14">
-            <label for="check14">고급</label></span>
-        </div>
-        <div class="price-checkbox">
-            <h3>가격</h3>
-            <hr>
-            <span><input type="checkbox" name="price" value="free" id="check15">
-            <label for="check15">무료</label>
-            <input type="checkbox" name="language" value="sale" id="check16">
-            <label for="check16">할인 중</label></span>
-            <span>0<input type="range" min="1" max="100000" value="5"/>100000</span>
-        </div>
-    </aside>
-    <article>
-        <section class="lecture">
-            <h1>첫 번째 강의</h1>
-        </section>
-        <section class="lecture">
-            <h1>두 번째 강의</h1>
-        </section>
-        <section class="lecture">
-            <h1>세 번째 강의</h1>
-        </section>
-        <section class="lecture">
-            <h1>네 번째 강의</h1>
-        </section>
-        <section class="lecture">
-            <h1>다섯 번째 강의</h1>
-        </section>
-        <section class="lecture">
-            <h1>여섯 번째 강의</h1>
-        </section>
-    </article>
+    <main class="content">
+        <aside class="filter">
+            <div class="language-checkbox">
+                <h3>프로그래밍 언어</h3>
+                <hr>
+                <span><input type="checkbox" name="language" value="HTML" id="check1">
+                <label for="check1">HTML</label></span>
+                <span><input type="checkbox" name="language" value="JavaScript" id="check2">
+                <label for="check2">JavaScript</label></span>
+                <span><input type="checkbox" name="language" value="CSS" id="check3">
+                <label for="check3">CSS</label></span>
+                <span><input type="checkbox" name="language" value="Java" id="check4">
+                <label for="check4">Java</label></span>
+                <span><input type="checkbox" name="language" value="TypeScript" id="check5">
+                <label for="check5">TypeScript</label></span>
+                <span><input type="checkbox" name="language" value="Kotlin" id="check6">
+                <label for="check6">Kotlin</label></span>
+                <span><input type="checkbox" name="language" value="Python" id="check7">
+                <label for="check7">Python</label></span>
+                <span><input type="checkbox" name="language" value="C" id="check8">
+                <label for="check8">C</label></span>
+                <span><input type="checkbox" name="language" value="C++" id="check9">
+                <label for="check9">C++</label></span>
+                <span><input type="checkbox" name="language" value="MySQL" id="check10">
+                <label for="check10">Kotlin</label></span>
+            </div>
+            <div class="level-checkbox">
+                <h3>수업 난이도</h3>
+                <hr>
+                <span><input type="checkbox" name="level" value="level1" id="check11">
+                <label for="check11">입문</label></span>
+                <span><input type="checkbox" name="level" value="level2" id="check12">
+                <label for="check12">초급</label></span>
+                <span><input type="checkbox" name="level" value="level3" id="check13">
+                <label for="check13">중급</label></span>
+                <span><input type="checkbox" name="level" value="level4" id="check14">
+                <label for="check14">고급</label></span>
+            </div>
+            <div class="price-checkbox">
+                <h3>가격</h3>
+                <hr>
+                <span><input type="checkbox" name="price" value="free" id="check15">
+                <label for="check15">무료</label>
+                <input type="checkbox" name="language" value="sale" id="check16">
+                <label for="check16">할인 중</label></span>
+                <span>0<input type="range" min="1" max="100000" value="5"/>100000</span>
+            </div>
+        </aside>
+        <article class="lecture-list">
+            <section class="lecture">
+                <h1>첫 번째 강의</h1>
+            </section>
+            <section class="lecture">
+                <h1>두 번째 강의</h1>
+            </section>
+            <section class="lecture">
+                <h1>세 번째 강의</h1>
+            </section>
+            <section class="lecture">
+                <h1>네 번째 강의</h1>
+            </section>
+            <section class="lecture">
+                <h1>다섯 번째 강의</h1>
+            </section>
+            <section class="lecture">
+                <h1>여섯 번째 강의</h1>
+            </section>
+        </article>
+    </main>
     <footer>
         <div class="pagination">
             <a href="#">&laquo;</a>

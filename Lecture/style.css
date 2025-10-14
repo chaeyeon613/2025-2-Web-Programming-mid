@@ -7,6 +7,7 @@
     background-color: white;
     width: 100%;
     list-style: none;
+
     display: flex;
     position: fixed;
     justify-content: center;
@@ -51,28 +52,40 @@
     font-size: 15px;
 }
 
-aside{
+.content {
     margin-left: 200px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
 }
 
-.language-checkbox1, .language-checkbox2, .language-checkbox3{
+.filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:flex-start;
+}
+
+.language-checkbox, .level-checkbox, .price-checkbox{
     padding: 20px;
     width: 200px;
-    margin: 30px;
+    margin: 10px;
     border: 1px solid #ccc;
     border-radius: 20px;
 
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items:flex-start;
     gap: 8px;
 }
 
-.language-checkbox3 label {
+.price-checkbox label {
     margin-right: 15px;
 }
 
-.language-checkbox1 hr, .language-checkbox2 hr, .language-checkbox3 hr {
+.language-checkbox hr, .level-checkbox hr, .price-checkbox hr {
     width: 100%;             
     border: none;            
     border-top: 1px solid #ccc; 
@@ -109,9 +122,19 @@ aside{
     border-color: #007bff;
 }
 
-.lecture {
+.lecture{
     border: 1px solid black;
     margin: 20px;
     border-radius: 10px;
+    width: 300px;
+    height: 400px;
+}
+
+.lecture-list {
+    margin-left: 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
