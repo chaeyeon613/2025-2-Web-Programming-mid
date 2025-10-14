@@ -14,9 +14,11 @@
 }
 
 .nav-item {
-    padding: 15px;
+    padding: 20px;
+    margin-right: 20px;
     cursor: pointer;
     border-radius: 30px;
+    font-size: 20px;
 }
         
 .nav-item:hover{
@@ -26,4 +28,25 @@
     text-align: center;
     text-decoration: none;
     color: black;
-        }
+}
+
+.search {
+    margin: 80px auto;
+    border-radius: 30px;
+    border: 1px solid black;
+    width: 50vh;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input[type="text"] {
+    border: none;
+    outline: none;
+    width: 40vh;
+    height: 35px;
+    color: gray;
+    font-size: 15px;
+}
