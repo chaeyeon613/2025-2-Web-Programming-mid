@@ -1,0 +1,185 @@
+/** 공통 **/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Pretendard', sans-serif;
+    color: #222;
+    background: #fff;
+    padding-top: 80px;
+    padding-bottom: 180px;
+}
+html, body {  /* 화면 높이 지정 */
+    height: 100%;
+    overscroll-behavior: none;
+}
+  
+  
+/** 상단 nav **/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+}
+.logo {
+    height: 35px;
+}
+.nav-center {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+.nav-center a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.nav-center a:hover {
+    color: #ec8201;
+}
+.nav-right {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+}
+
+
+/** 전체 레이아웃 **/
+.profile-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    column-gap: 90px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px 120px;
+    background: #fff;
+}
+  
+
+/** aside 영역 **/
+/* 프로필 영역 */
+.profile-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+}
+.profile-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    padding: 30px 0;
+    border-radius: 12px;
+}
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    background: #fafafa;
+    margin-bottom: 18px;
+}
+.profile-id {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 4px;
+}
+.profile-email {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 18px;
+}
+.edit-btn {
+    background: #fff;
+    border: 1px solid #ec8201;
+    color: #ec8201;
+    font-size: 13px;
+    border-radius: 6px;
+    padding: 7px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.edit-btn:hover {
+    background: #ec8201;
+    color: #fff;
+}
+  
+/* 메뉴 영역 */
+  .profile-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 30px;
+    z-index: 2;
+}
+.menu-item {
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s;
+}
+.menu-item:hover {
+    background: #f5f5f5;
+}
+.menu-item.active {
+    background: #fff3e6;
+    color: #ec8201;
+    font-weight: 600;
+}
+.profile-menu a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+/** main 영역 **/
+.profile-main {
+    padding-top: 10px;
+    padding-bottom: 0px; 
+    min-height: 380px;
+}
+.main-title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    transform: translateY(-5px);
+}
+
+
+/** footer **/
+.footer {
+    width: 100%;
+    background: #2f3640;;
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    padding: 100px 0 180px;
+    margin-top: 100px;
+    position: relative;
+    z-index: 0;
+}
