@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-container {
+    background-color: white;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    top: 0;
+}
+
+.nav-item {
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+        
+.nav-item:hover{
+    background-color: #F5F5F5;
+}
+.nav-item a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+        }
