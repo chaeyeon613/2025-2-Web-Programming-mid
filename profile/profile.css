@@ -400,7 +400,58 @@ html, body {  /* 화면 높이 지정 */
     background: #e9f8ef;
     color: #33a36c;
 }
-  
+
+/* com: 목록 */
+.community-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 35px;
+}
+.community-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 14px;
+    transition: all 0.2s ease;
+}
+.community-item:hover {
+    background: #fafafa;
+    border-radius: 8px;
+}
+.community-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.community-date {
+    font-size: 12px;
+    color: #999;
+}
+.community-title {
+    font-size: 15px;
+    font-weight: 450;
+    color: #111;
+    margin-bottom: 3px;
+    line-height: 1.4;
+}
+.community-detail {
+    font-size: 13px;
+    font-weight: 400;
+    color:#555;
+    margin-bottom: 6px;
+}
+.community-footer {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: #777;
+}
+.community-category {
+    color: #ec8201;
+    font-weight: 500;
+    word-spacing: 5px;
+}
+
 
 /** footer **/
 .footer {
