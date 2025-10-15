@@ -10,10 +10,10 @@
     <!-- 공통 메뉴바 -->
     <nav>
         <ul class="nav-container">
-            <li class="nav-item"><a href="#">강의</a></li>
-            <li class="nav-item"><a href="#">멘토링</a></li>
-            <li class="nav-item"><a href="#">커뮤니티</a></li>
-            <li class="nav-item"><a href="#">클립</a></li>
+            <li class="nav-detail__item"><a href="#">강의</a></li>
+            <li class="nav-detail__item"><a href="#">멘토링</a></li>
+            <li class="nav-detail__item"><a href="#">커뮤니티</a></li>
+            <li class="nav-detail__item"><a href="#">클립</a></li>
         </ul>
     </nav>
 
@@ -48,24 +48,34 @@
         </div>
     </header>
 
-    <!-- 강의 소개, 커리큘럼 수강평 메뉴바 -->
-    <nav>
-        강의 소개, 커리큘럼, 수강평 메뉴바
-    </nav>
-    <article>
-        <section>
-            강의 소개
-        </section>
-        <section>
-            커리큘럼
-        </section>
-        <section>
-            수강평
-        </section>
-    </article>
-    
-    <!-- 가격, 수강신청 버튼, 장바구니 버튼 -->
-    <aside>
-    </aside>
+    <main class="detail-main">
+        <!-- 강의 소개, 커리큘럼 수강평 인덱스 메뉴 -->
+        <aside>
+            <div class="detail-main__sidebar">
+                <ul>
+                    <li><a href="#intro">강의 소개</a></li>
+                    <li><a href="#curriculum">커리큘럼</a></li>
+                    <li><a href="#review">수강평</a></li>
+                </ul>
+            </div>
+        </aside>
+        <!-- 강의 상세 내용 본문 -->
+        <article class="detail-main__content">
+            <div id="intro">
+                강의 소개
+            </div>
+            <div id="curriculum">
+                커리큘럼
+            </div>
+            <div id="review">
+                수강평
+            </div>
+        </article>
+
+        <!-- 가격, 수강신청 버튼, 장바구니 버튼 -->
+        <aside class="detail-main__buy">
+            가격
+        </aside>
+    </main>
 </body>
 </html>

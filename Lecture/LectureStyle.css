@@ -277,7 +277,7 @@ footer {
 }
 
 .detail-header__tags .tags {
-    color: #ffb347; /* 주황 포인트 */
+    color: #ffb347;
     font-weight: 500;
 }
 
@@ -299,4 +299,58 @@ footer {
     height: 315px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.detail-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+/* 왼쪽 인덱스 사이드바 */
+.nav-detail__sidebar {
+    position: sticky; /* 스크롤 시 고정 */
+    width: 200px;
+    align-self: flex-start;
+}
+
+.nav-detail__sidebar ul {
+    list-style: none;
+    padding: 0;
+    border-left: 3px solid #ff8c00;
+}
+
+.nav-detail__sidebar li {
+    margin: 15px 0;
+}
+
+.nav-detail__sidebar a {
+    text-decoration: none;
+    color: #333;
+    padding-left: 10px;
+    font-size: 16px;
+    display: inline-block;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.nav-detail__sidebar a:hover {
+    color: #ff8c00;
+    transform: translateX(3px);
+}
+
+.detail-main__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    border: 1px #111 solid;
+}
+
+.detail-main__buy {
+    width: 100px;
+    height: 100px;
+
+    border: 1px black solid;
 }
