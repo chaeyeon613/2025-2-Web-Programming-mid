@@ -211,7 +211,7 @@ html, body {  /* 화면 높이 지정 */
     transform: translateY(-5px);
 }
 
-/* 상단 바 */
+/* lec, com: 상단 바 */
 .study-tabs {
     display: flex;
     align-items: center;
@@ -250,7 +250,7 @@ html, body {  /* 화면 높이 지정 */
     border-radius: 2px;
 }
 
-/* lec: 상태 */
+/* lec: 상태 그래프 */
 .study-status {
     display: flex;
     gap: 10px;
@@ -340,27 +340,32 @@ html, body {  /* 화면 높이 지정 */
 /* mentor: 목록 */
 .mentoring-list {
     display: flex;
-    flex-direction: column;
-    gap: 25px;
+    flex-wrap: wrap;
+    gap: 32px;
     margin-top: 40px;
-  }
+    justify-content: flex-start;
+}
 .mentoring-card {
+    flex: 0 0 calc(33.333% - 22px);
     display: flex;
+    flex-direction: column;
     align-items: center;
     background: #fff;
     border: 1px solid #eee;
     border-radius: 16px;
-    padding: 18px 22px;
+    padding: 24px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     transition: all 0.25s ease;
+    height: 280px; 
+    text-align: center;
 }
 .mentoring-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 10px rgba(0,0,0,0.06);
 }
 .mentor-img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 20px;
@@ -369,15 +374,24 @@ html, body {  /* 화면 높이 지정 */
     flex: 1;
 }
 .mentor-name {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
     margin-bottom: 4px;
     color: #111;
+    margin-top: 12px; 
+    margin-bottom: 6px; 
 }
-.mentor-field {
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 6px;
+.mentor-category {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.mentor-detail {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    max-width: 250px;
 }
 .mentoring-date {
     font-size: 14px;
