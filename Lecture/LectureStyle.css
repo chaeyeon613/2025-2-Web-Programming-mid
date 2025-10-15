@@ -309,23 +309,25 @@ footer {
 }
 
 /* 왼쪽 인덱스 사이드바 */
-.nav-detail__sidebar {
+.detail-main__sidebar {
     position: sticky; /* 스크롤 시 고정 */
     width: 200px;
     align-self: flex-start;
+
+    margin: ;
 }
 
-.nav-detail__sidebar ul {
+.detail-main__sidebar ul {
     list-style: none;
     padding: 0;
     border-left: 3px solid #ff8c00;
 }
 
-.nav-detail__sidebar li {
+.detail-main__sidebar li {
     margin: 15px 0;
 }
 
-.nav-detail__sidebar a {
+.detail-main__sidebar a {
     text-decoration: none;
     color: #333;
     padding-left: 10px;
@@ -334,7 +336,7 @@ footer {
     transition: color 0.2s, transform 0.2s;
 }
 
-.nav-detail__sidebar a:hover {
+.detail-main__sidebar a:hover {
     color: #ff8c00;
     transform: translateX(3px);
 }
