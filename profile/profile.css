@@ -106,6 +106,7 @@ html, body {  /* 화면 높이 지정 */
     margin: 0 auto;
     padding: 60px 40px 120px;
     background: #fff;
+    gap: 80px; 
 }
   
 
@@ -164,8 +165,8 @@ html, body {  /* 화면 높이 지정 */
     color: #fff;
 }
   
-/** 메뉴 영역 **/
-  .profile-menu {
+/* 메뉴 영역 */
+.profile-menu {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -350,13 +351,13 @@ html, body {  /* 화면 높이 지정 */
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #fff;
+    justify-content: flex-start; 
     border: 1px solid #eee;
     border-radius: 16px;
     padding: 24px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     transition: all 0.25s ease;
-    height: 280px; 
+    height: 310px; 
     text-align: center;
 }
 .mentoring-card:hover {
@@ -364,34 +365,29 @@ html, body {  /* 화면 높이 지정 */
     box-shadow: 0 5px 10px rgba(0,0,0,0.06);
 }
 .mentor-img {
+    display: flex; 
     width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 20px;
-}
-.mentoring-info {
-    flex: 1;
+    margin-bottom: 4px;
 }
 .mentor-name {
     font-size: 17px;
     font-weight: 600;
-    margin-bottom: 4px;
     color: #111;
-    margin-top: 12px; 
-    margin-bottom: 6px; 
+    margin: 6px 0 4px;
 }
 .mentor-category {
     font-size: 14px;
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 .mentor-detail {
     font-size: 15px;
+    font-weight: 500;
     color: #333;
-    line-height: 1.6;
-    margin-bottom: 16px;
-    max-width: 250px;
+    margin-bottom: 24px;
 }
 .mentoring-date {
     font-size: 14px;
@@ -464,6 +460,209 @@ html, body {  /* 화면 높이 지정 */
     color: #ec8201;
     font-weight: 500;
     word-spacing: 5px;
+}
+
+/* dash */
+/* 공통 */
+.dashboard-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: stretch;
+}
+.dashboard-gap {
+    margin-top: 35px;
+}
+.dash-card {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 26px 20px;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+.card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111;
+}
+
+/* 수강 중 강의 */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 6px;
+    margin-top: 0;  
+}
+.course-list {
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+.course-list:hover {
+    color: #888;
+}
+.course-item {
+    display: flex;
+    align-items: center; 
+    gap: 16px;  
+    padding-top: 14px;
+}
+.play-btn {
+    background-color: #ec8201;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-family: 'Roboto', sans-serif;
+}
+.play-btn:hover {
+    background-color: #ff9f3c;
+}
+.course-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.course-title {
+    font-size: 15px;
+    color: #222;
+    font-weight: 600;
+}
+.course-progress {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+/* 멘토링 현황 */
+.mentoring-status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.mentor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.mentor-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+}
+.mentor-field {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+}
+.mentor-date {
+    font-size: 14px;
+    color: #777;
+}
+
+/* 연간 학습 */
+.yearly-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+.year-chart {
+    width: 100%;
+    height: auto; 
+    display: block; 
+    margin-top: 18px;
+    margin-left: 0;
+}
+.yearly-stats {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+    align-items: flex-start;
+    margin-top: -20px;
+}
+.stat-title {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 4px;
+}
+.stat-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+}
+
+/* 스킬 태그 */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+  .tag {
+    background: #f5f5f5;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* 나의 레벨 */
+.level-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 24px;
+}
+.level-img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+.level-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.level-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8A8A8A;
+    margin-bottom: 0;
+}
+
+/* 수료증 */
+.cert-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+
+}
+.cert-card p {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
 }
 
 
