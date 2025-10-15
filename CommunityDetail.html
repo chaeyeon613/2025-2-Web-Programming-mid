@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 상세페이지</title>
+    <link rel="stylesheet" href="community.css">
+</head>
+<body>
+    <!--헤더-->
+    <header>
+        <nav class="nav-container">
+            <ul class="menu">
+                <li><a href="#">강의</a></li>
+                <li><a href="#">멘토링</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">클립</a></li>
+            </ul>
+            <div>
+            <a href="#" class="icon">장바구니 아이콘</a>
+            <a href="#" class="icon">마이페이지 아이콘</a>
+            </div>
+        </nav>
+    </header>
+
+    <!--메인-->
+    <main class="question-main">
+        <!--왼쪽(질문)-->
+        <article class="question-content">
+            
+            <!--강의 정보-->
+            <section class="lecture-info">
+                <img>강의 이미지
+                <div>강의 제목, 강의 설명</div>
+            </section>
+
+            <!--질문-->
+            <section class="question-body">
+                <p>질문</p>
+            </section>
+
+            <!--반응 버튼-->
+            <section class="reaction-buttons">
+                <button class="like">좋아요 버튼</button>
+                <button class="dislike">싫어요 버튼</button>
+            </section>
+
+            <!--답변 목록-->
+            <section class="answers">
+                <div>답변1</div>
+                <div>답변2</div>
+            </section>
+
+            <!--답변 작성란-->
+            <section class="answer-form">
+                <textarea placeholder="답변 입력란"></textarea>
+                <button type="submit">등록</button>
+            </section>
+        </article>
+
+        <!--오른쪽(질문자 프로필)-->
+        <aside class="profile-sidebar">
+            <div class="profile-card">
+                <img>프로필 이미지
+                <h3>사용자 이름</h3>
+                <p>사용자 소개</p>
+                <p>기타 정보</p>
+            </div>
+        </aside>
+    </main>
+
+    <!--푸터-->
+    <footer class="footer">
+        <p>footer</p>
+    </footer>
+</body>
+</html>
