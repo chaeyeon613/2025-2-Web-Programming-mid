@@ -11,7 +11,7 @@
     display: flex;
     position: fixed;
     justify-content: center;
-    top: 0;
+    top:0px;
 }
 
 .nav-item {
@@ -221,7 +221,7 @@ footer {
 }
 
 .detail-header {
-    margin: 80px auto;
+    margin: 70px auto;
     width: 100%;
     min-height: 45vh;
     background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
@@ -304,17 +304,15 @@ footer {
 .detail-main {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin-top: 100px;
+    justify-content: flex-start;
 }
 
 /* 왼쪽 인덱스 사이드바 */
 .detail-main__sidebar {
     position: sticky; /* 스크롤 시 고정 */
     width: 200px;
-    align-self: flex-start;
-
-    margin: ;
+    align-self: center;
+    margin-left: 100px;
 }
 
 .detail-main__sidebar ul {
@@ -353,6 +351,5 @@ footer {
 .detail-main__buy {
     width: 100px;
     height: 100px;
-
     border: 1px black solid;
 }
