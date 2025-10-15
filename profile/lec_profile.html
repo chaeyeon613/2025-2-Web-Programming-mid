@@ -57,8 +57,47 @@
     <!-- 오른쪽 메인 -->
     <main class="profile-main">
       <h1 class="main-title">내 학습</h1>
-    </main>
 
+      <!-- 바 -->
+      <div class="study-tabs">
+        <button class="tab-btn active">강의</button>
+        <button class="tab-btn">폴더</button>
+        <button class="tab-btn">수강확인증</button>
+      </div>
+    
+      <div class="study-status">
+        <button class="status-btn active">학습중</button>
+        <button class="status-btn">완강</button>
+      </div>
+
+      <!-- 수강 강의 목록 -->
+      <section class="lecture-list">
+        <div class="lecture-card">
+          <img src="#" alt="강의 썸네일" class="lecture-thumb">
+          <div class="lecture-info">
+            <h3 class="lecture-title">웹프로그래밍</h3>
+            <p class="lecture-author"> 김수빈 | 무제한 수강</p>
+            <div class="lecture-progress">
+              <div class="progress-bar" style="width: 35%;"></div>
+            </div>
+            <p class="lecture-status">28 / 82강 (35%)</p>
+          </div>
+        </div>
+      
+        <div class="lecture-card">
+          <img src="#" alt="강의 썸네일" class="lecture-thumb">
+          <div class="lecture-info">
+            <h3 class="lecture-title">데이터베이스</h3>
+            <p class="lecture-author">김수빈 | 남은 기간: 54일</p>
+            <div class="lecture-progress">
+              <div class="progress-bar" style="width: 70%;"></div>
+            </div>
+            <p class="lecture-status">21 / 30강 (70%)</p>
+          </div>
+        </div>
+      </section>
+      
+    </main>
   </div>
 
   <!-- 푸터 -->
