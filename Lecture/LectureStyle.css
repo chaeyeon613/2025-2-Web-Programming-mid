@@ -167,7 +167,6 @@ footer {
     width: 300px;
     height: 400px;
     margin: 20px;
-    overflow: hidden;
 }
 
 .lecture:hover {
@@ -205,8 +204,10 @@ footer {
 /* 가격, 평점 */
 .lecture-info {
     display: flex;
+    align-items: row;
     justify-content: space-between;
-    align-items: center;
+    
+    margin: 0;
     font-size: 14px;
 }
 
