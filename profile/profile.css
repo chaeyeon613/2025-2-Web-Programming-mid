@@ -211,7 +211,7 @@ html, body {  /* 화면 높이 지정 */
     transform: translateY(-5px);
 }
 
-/* 바 */
+/* 상단 바 */
 .study-tabs {
     display: flex;
     align-items: center;
@@ -249,6 +249,8 @@ html, body {  /* 화면 높이 지정 */
     background: #ec8201;
     border-radius: 2px;
 }
+
+/* lec: 상태 */
 .study-status {
     display: flex;
     gap: 10px;
@@ -274,7 +276,7 @@ html, body {  /* 화면 높이 지정 */
     font-weight: 600;
 }
 
-/* 수강 강의 목록 */
+/* lec: 수강 강의 목록 */
 .lecture-list {
     display: flex;
     flex-direction: column;
@@ -335,6 +337,70 @@ html, body {  /* 화면 높이 지정 */
     color: #666;
 }
 
+/* mentor: 목록 */
+.mentoring-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 40px;
+  }
+.mentoring-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 18px 22px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    transition: all 0.25s ease;
+}
+.mentoring-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.06);
+}
+.mentor-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.mentoring-info {
+    flex: 1;
+}
+.mentor-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #111;
+}
+.mentor-field {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 6px;
+}
+.mentoring-date {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+.mentoring-status {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: #f5f5f5;
+}
+.mentoring-status.confirmed {
+    background: #fff3e6;
+    color: #ec8201;
+}
+.mentoring-status.done {
+    background: #e9f8ef;
+    color: #33a36c;
+}
+  
 
 /** footer **/
 .footer {
