@@ -108,7 +108,7 @@ html, body {  /* 화면 높이 지정 */
   gap: 20px;
 }
 .thumb {
-  width: 90px;
+  width: 140px;
   height: 90px;
   background: #ddd;
   border-radius: 10px;
