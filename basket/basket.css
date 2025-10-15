@@ -29,30 +29,83 @@ html, body {  /* 화면 높이 지정 */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 95px;
   z-index: 1000;
 }
-.logo {
-  height: 35px;
+
+/* 왼쪽 영역 */
+.nav-left img.logo {
+  height: 45px;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
+.nav-left img.logo:hover {
+  opacity: 0.8s;
+}
+
+/* 가운데 영역 */
 .nav-center {
   display: flex;
+  justify-content: center;
+  align-items: center;
   list-style: none;
-  gap: 30px;
+  gap: 60px;
+  flex: 1;
+}
+.nav-center a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 2.5px;
+  background-color: #ec8201;
+  border-radius: 2px;
 }
 .nav-center a {
+  position: relative;
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: color 0.2s;
+  font-size: 17px;
+  padding: 8px 16px;
+  transition: all 0.25s ease;
+  border-radius: 12px;
 }
 .nav-center a:hover {
-  color: #ec8201;
+  background-color: #f5f5f5;
+  border-radius: 14px;
+  color: #333;
 }
+
+/* 오른쪽 영역 */
 .nav-right {
   display: flex;
-  gap: 15px;
-  font-size: 20px;
+  align-items: center;
+  gap: 22px;
+}
+.icon-img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.icon-img:hover {
+  opacity: 0.8;
+}
+
+
+/** 전체 레이아웃 **/
+.profile-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  column-gap: 90px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px 120px;
+  background: #fff;
 }
 
 
