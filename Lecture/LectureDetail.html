@@ -224,18 +224,43 @@
 
         <!-- 가격, 수강신청 버튼, 장바구니 버튼 -->
         <aside class="detail-main__buy">
-            가격
+            <div class="buy-price">
+                <h1>&#8361;44,000</h1>
+                <button class="favorite-button" type="submit">
+                    <img src="/images/favorite.png" alt="찜하기 버튼">
+                </button>
+            </div>
+            <div class="buy-button">
+                <form action="get" action="#">
+                    <input class="lecture-button" type="button" value="수강 신청" onclick="alert('수강신청이 완료되었습니다!')">
+                    <a href="#"><input class="shopping-button" type="button" value="장바구니"></a>
+                </form>
+            </div>
+            <div class="buy-informain">
+                <table border="0">
+                    <tr>
+                        <td>지식 공유자</td>
+                        <td>얄팍한 코딩사전</td>
+                    </tr>
+                    <tr>
+                        <td>강의 시간</td>
+                        <td>18시간 23분</td>
+                    </tr>
+                    <tr>
+                        <td>수강기한</td>
+                        <td>무제한</td>
+                    </tr>
+                    <tr>
+                        <td>수료증</td>
+                        <td>제공</td>
+                    </tr>
+                    <tr>
+                        <td>난이도</td>
+                        <td>초급</td>
+                    </tr>
+                </table>
+            </div>
         </aside>
     </main>
-    <footer>
-        <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#" class="move-page">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">&raquo;</a>
-        </div>
-    </footer>
 </body>
 </html>
