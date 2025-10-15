@@ -219,3 +219,84 @@ footer {
     vertical-align: middle;
     margin-left: 3px;
 }
+
+.detail-header {
+    margin: 80px auto;
+    width: 100%;
+    min-height: 45vh;
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.detail-header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1200px;
+    width: 90%;
+    gap: 60px;
+}
+
+/* 왼쪽 텍스트 영역 */
+.detail-header__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 제목 */
+.detail-header__title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #fff;
+}
+
+/* 설명문 */
+.detail-header__desc {
+    color: #ddd;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* 태그 및 평점 */
+.detail-header__tags {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #f5f5f5;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-header__tags .tags {
+    color: #ffb347; /* 주황 포인트 */
+    font-weight: 500;
+}
+
+.detail-header__tags .person {
+    color: #f0f0f0;
+    font-weight: 500;
+}
+
+/* 오른쪽 영상 */
+.detail-header__video {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.detail-header__video iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}

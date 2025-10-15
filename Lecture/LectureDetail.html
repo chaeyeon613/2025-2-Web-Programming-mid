@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>강의 상세</title>
+    <link rel="stylesheet" href="LectureStyle.css">
 </head>
 <body>
+    <!-- 공통 메뉴바 -->
     <nav>
         <ul class="nav-container">
             <li class="nav-item"><a href="#">강의</a></li>
@@ -14,9 +16,39 @@
             <li class="nav-item"><a href="#">클립</a></li>
         </ul>
     </nav>
-    <header>
-        강의 소분류 태그, 강의 제목, 강의 간략한 소개, 별점과 수강평, 수강생
+
+    <!-- 상세 헤더 -->
+    <header class="detail-header">
+        <div class="detail-header__content">
+            <!-- 왼쪽 텍스트 -->
+            <div class="detail-header__info">
+                <h1 class="detail-header__title">한 입 크기로 잘라 먹는 리액트(React.js): 기초부터 실전까지</h1>
+                <p class="detail-header__desc">
+                        개념부터 독특한 프로젝트까지 함께 다뤄보며 자바스크립트와 리액트를 이 강의로 한 번에 끝내요.<br>
+                        학습은 짧게, 응용은 길게 All-in-one 강의!
+                </p>
+                <div class="detail-header__tags">
+                    <p class="tags">#개발 프로그래밍  #프론트엔드</p>
+                    <p class="person">⭐⭐⭐⭐⭐ 4.9 수강생 13,100명</p>
+                </div>
+            </div>
+            <!-- 오른쪽 강의 관련 유튜브 -->
+            <div class="detail-header__video">
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/3Jn9ELD9jqg?si=0Rp3O30E26zuxMxX"
+                title="React 강의 소개 영상"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+            </div>
+        </div>
     </header>
+
+    <!-- 강의 소개, 커리큘럼 수강평 메뉴바 -->
     <nav>
         강의 소개, 커리큘럼, 수강평 메뉴바
     </nav>
@@ -31,9 +63,9 @@
             수강평
         </section>
     </article>
+    
+    <!-- 가격, 수강신청 버튼, 장바구니 버튼 -->
     <aside>
-        가격과 수강신청 버튼, 장바구니 버튼, 찜 구현
-        강사 이름, 총 강의 시간, 수강 기한, 수료증 제공 여부, 난이도 
     </aside>
 </body>
 </html>
