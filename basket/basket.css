@@ -5,107 +5,92 @@
   padding: 0;
 }
 body {
-  font-family: 'Pretendard', sans-serif;
-  color: #222;
-  background: #fff;
   padding-top: 90px;
-  padding-bottom: 180px;
+  padding-bottom: 50px;
 }
-html, body {  /* 화면 높이 지정 */
-  height: 100%;
+html, body { 
   overscroll-behavior: none;
 }
 
 
-/** 상단 nav **/
-.navbar {
+/** nav **/
+.nav-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  background: #fff;
-  border-bottom: 1px solid #eee;
   display: flex;
+  top: 0;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 0 95px;
+  padding: 5px 20px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
   z-index: 1000;
 }
-
-/* 왼쪽 영역 */
-.nav-left img.logo {
-  height: 45px;
+.menu label {
   display: block;
+  margin: 10px;
+  padding: 10px;
   cursor: pointer;
-  transition: opacity 0.2s;
 }
-.nav-left img.logo:hover {
-  opacity: 0.8s;
+.menu input {
+  display: none;
 }
-
-/* 가운데 영역 */
-.nav-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  gap: 60px;
-  flex: 1;
+.nav-container .menu input:checked + label {
+  font-weight: bold;
+  color: #ec8201;
 }
-.nav-center a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 28px;
-  height: 2.5px;
-  background-color: #ec8201;
-  border-radius: 2px;
-}
-.nav-center a {
-  position: relative;
+.nav-container .menu a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 17px;
-  padding: 8px 16px;
-  transition: all 0.25s ease;
-  border-radius: 12px;
+  color: #333333;
+  font-weight: bold;
 }
-.nav-center a:hover {
-  background-color: #f5f5f5;
-  border-radius: 14px;
-  color: #333;
-}
-
-/* 오른쪽 영역 */
-.nav-right {
+.nav-container .menu {
+  list-style: none;
   display: flex;
-  align-items: center;
-  gap: 22px;
+  margin: 0;
+  padding: 0;
 }
-.icon-img {
-  width: 35px;
-  height: 35px;
+.nav-container .menu a:hover {
+  color: #777777;
+}
+.logo {
+  height: 40px;
+}
+.icon {
+  margin: 0px 10px;
   cursor: pointer;
-  transition: transform 0.25s, opacity 0.25s;
+  width: 30px;
+  height: 30px;
 }
-.icon-img:hover {
+.icon:hover {
   opacity: 0.8;
 }
 
 
-/** 전체 레이아웃 **/
-.profile-container {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  column-gap: 90px;
+/** footer **/
+.footer {
+  background: #2f3640;;
+  text-align: center;
+  font-size: 13px;
+  padding: 70px 0 90px;
+  margin-top: 120px;
+}
+.footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 40px 120px;
-  background: #fff;
+}
+.footer-top {
+  margin-bottom: 15px;
+}
+.footer-logo {
+  display: block;
+  height: 28px;
+  margin: 0 auto;
+}
+.footer-info p {
+  margin: 4px 0;
+  color: #bbb;
+  line-height: 1.6;
 }
 
 
@@ -140,7 +125,7 @@ html, body {  /* 화면 높이 지정 */
 }
 .delete-selected {
   border: 1px solid #ccc;
-  background: #fff;
+  background-color: #fff;
   border-radius: 8px;
   padding: 6px 12px;
   cursor: pointer;
@@ -157,17 +142,14 @@ html, body {  /* 화면 높이 지정 */
   align-items: center;
   border: 1px solid #eee;
   border-radius: 10px;  
-  background: #fff;
   padding: 20px;
   gap: 20px;
   margin-bottom: 15px;         
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 .thumb {
   width: 140px;
   height: 90px;
-  background: #ddd;
   border-radius: 10px;
   object-fit: cover;
 }
@@ -189,10 +171,9 @@ html, body {  /* 화면 높이 지정 */
   font-size: 20px;
   color: #888;
   cursor: pointer;
-  transition: color 0.2s;
 }
 .remove:hover {
-  color: #ff4d4d;
+  color: #333;
 }
 .price {
   font-size: 17px;
@@ -200,7 +181,6 @@ html, body {  /* 화면 높이 지정 */
 }
 
 .cart-divider {
-  width: 940px;
   width: 940px;
   margin: 40px auto;
   border: none;
@@ -222,7 +202,6 @@ html, body {  /* 화면 높이 지정 */
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 30px;
-  color: #222;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -235,7 +214,6 @@ html, body {  /* 화면 높이 지정 */
 }
 .summary-item strong {
   font-weight: 700;
-  color: #000;
 }
 .summary-item.coupon select {
   padding: 6px 10px;
@@ -250,7 +228,7 @@ html, body {  /* 화면 높이 지정 */
 }
 .summary-item.total {
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 700;
   color: #ec8201;
 }
 
@@ -293,56 +271,8 @@ html, body {  /* 화면 높이 지정 */
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
 }
 .pay-btn:hover {
-  background: #c86d00;
+  background: #ff9f3c;
   box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-}
-
-
-/** footer **/
-.footer {
-  width: 100%;
-  background: #2f3640;;
-  color: #fff;
-  text-align: center;
-  font-size: 13px;
-  padding: 70px 0 140px;
-  margin-top: 120px;
-  position: relative;
-  z-index: 0;
-}
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-}
-.footer-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px; 
-  margin-bottom: 15px;
-}
-.footer-logo {
-  display: block;
-  height: 28px;
-  margin: 0 auto;
-}
-.footer-top a {
-  color: #ccc;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s;
-}
-.footer-info p {
-  margin: 4px 0;
-  color: #bbb;
-  line-height: 1.6;
-}
-.footer-copy {
-  color: #999;
-  margin-top: 10px;
 }

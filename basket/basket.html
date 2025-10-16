@@ -6,34 +6,29 @@
   <title>수강바구니</title>
   <link rel="stylesheet" href="basket.css">
 </head>
+
+
+
 <body>
-
-
-  <!-- 헤더 -->
-  <header class="navbar">
-    <div class="nav-left">
-      <a href="#">
-        <img src="/main_logoicon.png" alt="로고" class="logo">    <!-- 경로 수정 -->
-      </a>
-    </div>
-
-    <nav>
-      <ul class="nav-center">
-        <li><a href="#">강의</a></li>
-        <li><a href="#">클립</a></li>
-        <li><a href="#">멘토링</a></li>
-        <li><a href="#">커뮤니티</a></li>
-      </ul>
+  <!-- nav -->
+  <header>
+    <nav class="nav-container">
+      <img src="main_logoicon.png" alt="로고" class="logo">
+      <div class="menu">
+        <a href="LectureMain.html"><input type="radio" id="lecture" name="nav" value="lecture">
+          <label for="lecture">강의</label></a>
+        <a href="#"><input type="radio" id="mentoring" name="nav" value="mentoring">
+          <label for="mentoring">멘토링</label></a>
+        <a href="CommunityMain.html"><input type="radio" id="community" name="nav" value="community">
+          <label for="community">커뮤니티</label></a>
+        <a href="ClipMain.html"><input type="radio" id="clip" name="nav" value="clip">
+          <label for="clip">클립</label></a>
+      </div>
+      <div>
+        <a href="basket.html"><img src="cart.svg" alt="장바구니" class="icon"></a>
+        <a href="dash_profile.html"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
+      </div>
     </nav>
-
-    <div class="nav-right">
-      <a href="#">
-        <img src="/basketpage_icon.svg" alt="수강바구니 페이지 이동" class="icon-img">    <!-- 경로 수정 -->
-      </a>
-      <a href="lec_profile.html">
-        <img src="/profilepage_icon.svg" alt="프로필 페이지 이동" class="icon-img">    <!-- 경로 수정 -->
-      </a>
-    </div>
   </header>
 
   <!-- 메인 -->
@@ -52,7 +47,7 @@
     <!-- 강의 항목 -->
     <article class="cart-box">
       <input type="checkbox">
-      <img src="/lec_thumb3.png" alt="강의 썸네일" class="thumb">
+      <img src="spring.png" alt="강의 썸네일" class="thumb">
       <div class="info">
         <p class="name">스프링 핵심 원리 - 기본편</p>
         <p class="detail">김영한 | <span class="highlight">무제한 수강</span></p>
@@ -63,7 +58,7 @@
 
     <article class="cart-box">
       <input type="checkbox">
-      <img src="/lec_thumb4.png" alt="강의 썸네일" class="thumb">
+      <img src="c.png" alt="강의 썸네일" class="thumb">
       <div class="info">
         <p class="name">독하게 시작하는 C 프로그래밍</p>
         <p class="detail">널널한 개발자 | <span class="highlight">무제한 수강</span></p>
@@ -74,7 +69,7 @@
 
     <article class="cart-box">
       <input type="checkbox">
-      <img src="/lec_thumb5.png" alt="강의 썸네일" class="thumb">
+      <img src="react.png" alt="강의 썸네일" class="thumb">
       <div class="info">
         <p class="name">한 입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지</p>
         <p class="detail">이정한 Winterlood | <span class="highlight">무제한 수강</span></p>
@@ -111,8 +106,6 @@
         <strong>₩230,400</strong>
       </div>
     </section>
-
-
   </main>
 
   <!-- 결제바 -->
@@ -130,13 +123,13 @@
   <!-- 푸터 -->
   <footer class="footer">
     <div class="footer-container">
-      <div class="fooer-top">
-        <img src="/main_logoicon.png" alt="Inflearn 로고" class="footer-logo">
+      <div class="footer-top">
+        <img src="footer_logo.png" alt="Inflearn 로고" class="footer-logo">
       </div>
       <div class="footer-info">
         <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
         <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
-        <p class="footer-copy">© NEULIT. ALL RIGHTS RESERVED</p>
+        <p>© NEULIT. ALL RIGHTS RESERVED</p>
       </div>
     </div>
   </footer>
