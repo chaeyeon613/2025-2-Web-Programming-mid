@@ -10,16 +10,20 @@
     <!--헤더-->
     <header>
         <nav class="nav-container">
-            <img src="logo.png" alt="로고" class="logo">
-            <ul class="menu">
-                <li><a href="#">강의</a></li>
-                <li><a href="#">멘토링</a></li>
-                <li><a href="#">커뮤니티</a></li>
-                <li><a href="#">클립</a></li>
-            </ul>
+            <img src="main_logoicon.png" alt="로고" class="logo">
+            <div class="menu">
+                <a href="#"><input type="radio" id="lecture" name="nav" value="lecture">
+                <label for="lecture">강의</label></a>
+                <a href="#"><input type="radio" id="mentoring" name="nav" value="mentoring">
+                <label for="mentoring">멘토링</label></a>
+                <a href="#"><input type="radio" id="community" name="nav" value="community" checked>
+                <label for="community">커뮤니티</label></a>
+                <a href="#"><input type="radio" id="clip" name="nav" value="clip">
+                <label for="clip">클립</label></a>
+            </div>
             <div>
-                <a href="#"><img src="cart.png" alt="장바구니" class="icon"></a>
-                <a href="#"><img src="profile.png" alt="마이페이지" class="icon"></a>            
+                <a href="#"><img src="cart.svg" alt="장바구니" class="icon"></a>
+                <a href="#"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
             </div>
         </nav>
     </header>
@@ -96,9 +100,18 @@
         </article>
     </main>
 
-    <!--푸터-->
+    <!-- 푸터 -->
     <footer class="footer">
-        <p>footer</p>
+        <div class="footer-container">
+            <div class="fooer-top">
+                <img src="/footer_logo.PNG" alt="Inflearn 로고" class="footer-logo">
+            </div>
+            <div class="footer-info">
+                <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
+                <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
+                <p class="footer-copy">© NEULIT. ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
