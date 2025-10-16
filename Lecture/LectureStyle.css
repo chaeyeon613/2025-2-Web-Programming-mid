@@ -165,8 +165,9 @@ footer {
     border: 1px solid #ccc;
     border-radius: 10px;
     width: 300px;
-    height: 400px;
+    height: 350px;
     margin: 20px;
+    overflow: hidden;
 }
 
 .lecture:hover {
@@ -187,7 +188,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15px;
+    padding: 10px;
 }
 
 /* 제목, 강사 */
@@ -306,7 +307,7 @@ footer {
 .detail-main {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content:center;
 }
 
 /* 왼쪽 인덱스 사이드바 */
@@ -341,55 +342,22 @@ footer {
     transform: translateX(3px);
 }
 
-/* ---------------------- */
-/* 1. 전체 레이아웃 */
-/* ---------------------- */
 .detail-main__content {
-    flex: 1;
-    padding: 40px 60px;
     display: flex;
     flex-direction: column;
+
+    width: 800px;
+    padding: 40px 40px;
     gap: 80px;
-    font-family: 'Pretendard', sans-serif;
     line-height: 1.6;
     color: #222;
 }
 
-/* ---------------------- */
-/* 2. 강의 소개 영역 */
-/* ---------------------- */
-
-/* 전체 */
-.detail-intro__goal h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-.detail-intro__goal ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.detail-intro__goal li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 18px;
-}
-
-.detail-intro__goal li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    color: #ff8c00;
-    font-size: 13px;
-}
-
 /* 설명 섹션 */
 .detail-intro__descript {
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 
 .detail-intro__descript1 h1 {
@@ -418,16 +386,13 @@ footer {
 }
 
 .detail-intro__descript2 img {
-    width: 100%;
+    width: 80%;
     border-radius: 12px;
     margin: 20px 0;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .detail-intro__descript3 {
-    background-color: #f9f9f9;
-    border-left: 4px solid #ff8c00;
-    padding: 20px;
     border-radius: 8px;
 }
 
@@ -444,10 +409,7 @@ footer {
     line-height: 1.8;
 }
 
-/* ---------------------- */
 /* 3. 커리큘럼 영역 */
-/* ---------------------- */
-
 .curriculum {
     display: flex;
     flex-direction: column;
@@ -481,6 +443,9 @@ footer {
     list-style: none;
     margin: 0;
     padding: 0;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .lecture-item {
@@ -537,10 +502,7 @@ footer {
     color: #555;
 }
 
-/* ---------------------- */
 /* 4. 수강평 영역 */
-/* ---------------------- */
-
 .review-section {
     display: flex;
     flex-direction: column;
@@ -746,4 +708,8 @@ footer {
     font-weight: 600;
     color: #666;
     width: 40%;
+}
+
+body {
+    padding-top: 30px;
 }
