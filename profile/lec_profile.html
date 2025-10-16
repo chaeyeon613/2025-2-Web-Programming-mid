@@ -3,46 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>프로필 | 내 학습</title>
+  <title>프로필</title>
   <link rel="stylesheet" href="profile.css">
 </head>
 
 <body>
-
-  <!-- 헤더 -->
-  <header class="navbar">
-    <div class="nav-left">
-      <a href="#">
-        <img src="/main_logoicon.png" alt="로고" class="logo">    <!-- 경로 수정 -->
-      </a>
-    </div>
-
-    <nav>
-      <ul class="nav-center">
-        <li><a href="#">강의</a></li>
-        <li><a href="#">클립</a></li>
-        <li><a href="#">멘토링</a></li>
-        <li><a href="#">커뮤니티</a></li>
-      </ul>
+  <!-- nav -->
+  <header>
+    <nav class="nav-container">
+      <img src="/main_logoicon.png" alt="로고" class="logo">
+      <div class="menu">
+        <a href="#"><input type="radio" id="lecture" name="nav" value="lecture">
+          <label for="lecture">강의</label></a>
+        <a href="#"><input type="radio" id="mentoring" name="nav" value="mentoring">
+          <label for="mentoring">멘토링</label></a>
+        <a href="#"><input type="radio" id="community" name="nav" value="community">
+          <label for="community">커뮤니티</label></a>
+        <a href="#"><input type="radio" id="clip" name="nav" value="clip">
+          <label for="clip">클립</label></a>
+      </div>
+      <div>
+        <a href="#"><img src="/cart.svg" alt="장바구니" class="icon"></a>
+        <a href="#"><img src="/profile.svg" alt="마이페이지" class="icon"></a>            
+      </div>
     </nav>
-
-    <div class="nav-right">
-      <a href="#">
-        <img src="/basketpage_icon.svg" alt="수강바구니 페이지 이동" class="icon-img">    <!-- 경로 수정 -->
-      </a>
-      <a href="dash_profile.html">
-        <img src="/profilepage_icon.svg" alt="프로필 페이지 이동" class="icon-img">    <!-- 경로 수정 -->
-      </a>
-    </div>
   </header>
 
-  <!-- 메인 컨테이너 -->
+  <!-- 메인-->
   <div class="profile-container">
-    
-    <!-- 왼쪽 메뉴 -->
+    <!-- 메뉴 -->
     <aside class="profile-aside">
       <div class="profile-info">
-        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="프로필 이미지" class="profile-img">        <h2 class="profile-id">neulit</h2>
+        <img src="/profile.png" alt="프로필 이미지" class="profile-img">        <h2 class="profile-id">neulit</h2>
         <p class="profile-email">neulit@gmail.com</p>
         <button class="edit-btn">프로필 수정</button>
       </div>
@@ -55,12 +47,12 @@
       </div>
     </aside>
 
-    <!-- 오른쪽 메인 -->
+    <!-- 강의 영역 -->
     <main class="profile-main">
       <h1 class="main-title">내 학습</h1>
 
-      <!-- 바 -->
-      <div class="study-tabs">
+      <!-- 상단 탭 -->
+      <div class="profile-tabs">
         <button class="tab-btn active">강의</button>
         <button class="tab-btn">폴더</button>
         <button class="tab-btn">수강확인증</button>
@@ -68,13 +60,15 @@
         <button class="tab-btn">클립</button>
       </div>
     
-      <div class="study-status">
+      <!-- 상태 버튼 -->
+      <div class="profile-status">
         <button class="status-btn active">학습중</button>
         <button class="status-btn">완강</button>
       </div>
 
       <!-- 수강 강의 목록 -->
       <section class="lecture-list">
+
         <div class="lecture-card">
           <img src="/lec_thunm1.png" alt="강의 썸네일" class="lecture-thumb">
           <div class="lecture-info">
@@ -98,16 +92,16 @@
             <p class="lecture-status">2 / 10강 (20%)</p>
           </div>
         </div>
+
       </section>
-      
     </main>
   </div>
 
   <!-- 푸터 -->
   <footer class="footer">
     <div class="footer-container">
-      <div class="fooer-top">
-        <img src="/main_logoicon.png" alt="Inflearn 로고" class="footer-logo">
+      <div class="footer-top">
+        <img src="/footer_logo.PNG" alt="Inflearn 로고" class="footer-logo">
       </div>
       <div class="footer-info">
         <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
