@@ -4,10 +4,6 @@
     padding: 0;
 }
 
-body {
-    padding-top: 90px;
-}
-
 /* 네비게이션 바 */
 .nav-container {
     position: fixed;

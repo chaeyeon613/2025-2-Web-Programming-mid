@@ -6,7 +6,7 @@
 
 /* 검색창 */
 .lecture-search {
-    margin: 30px auto 10px auto;
+    margin: 120px auto 10px auto;
     border-radius: 8px;
     border: 1px solid #ccc;
     width: 55vh;
@@ -207,7 +207,7 @@
     border-color: #ff8c00;
 }
 
-/* ✅ 클릭된 (checked) 상태 유지 */
+/* 클릭된 (checked) 상태 유지 */
 .pagination input[type="radio"]:checked + label {
     background-color: #ff8c00;
     color: white;
@@ -223,10 +223,12 @@
     font-size: 14px;
 }
 
+
+/* ⭐ 강의 상세 페이지 */
 .detail-header {
-    margin: 70px auto;
+    margin-top: ;
     width: 100%;
-    min-height: 45vh;
+    height: 40vh;
     background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
     color: white;
 
@@ -342,12 +344,7 @@
     transform: translateX(3px);
 }
 
-
-
-
 .detail-main__content {
-
-
     display: flex;
     flex-direction: column;
 
@@ -359,38 +356,8 @@
     color: #222;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* 설명 섹션 */
 .detail-intro__descript {
-
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -429,9 +396,6 @@
 }
 
 .detail-intro__descript3 {
-
-
-
     border-radius: 8px;
 }
 
@@ -450,8 +414,6 @@
 
 
 /* 3. 커리큘럼 영역 */
-
-
 .curriculum {
     display: flex;
     flex-direction: column;
@@ -481,7 +443,7 @@
 }
 
 /* 강의 리스트 */
-.lecture-list {
+.video-list {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -490,33 +452,32 @@
     flex-direction: column;
 }
 
-.lecture-item {
+.video-item {
     border-bottom: 1px solid #eee;
     padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background 0.2s;
 }
 
-.lecture-item:hover {
+.video-item:hover {
     background-color: #f8f9fa;
 }
 
 /* 왼쪽 제목 */
-.lecture-left {
+.video-left {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.lecture-title {
+.video-title {
     font-size: 15px;
     color: #222;
 }
 
 /* 오른쪽 (미리보기 버튼 + 시간) */
-.lecture-right {
+.video-right {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -530,7 +491,6 @@
     padding: 4px 10px;
     cursor: pointer;
     color: #333;
-    transition: background 0.2s;
 }
 
 .preview-btn:hover {
@@ -546,8 +506,6 @@
 
 
 /* 4. 수강평 영역 */
-
-
 .review-section {
     display: flex;
     flex-direction: column;
@@ -753,8 +711,4 @@
     font-weight: 600;
     color: #666;
     width: 40%;
-}
-
-body {
-    padding-top: 30px;
 }
