@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>강의 상세</title>
     <link rel="stylesheet" href="LectureStyle.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- 공통 메뉴바 -->
-    <nav>
-        <ul class="nav-container">
-            <li class="nav-item"><a href="#">강의</a></li>
-            <li class="nav-item"><a href="#">멘토링</a></li>
-            <li class="nav-item"><a href="#">커뮤니티</a></li>
-            <li class="nav-item"><a href="#">클립</a></li>
-        </ul>
+    <nav class="nav-container">
+        <img src="main_logoicon.png" alt="로고" class="logo">
+        <div class="menu">
+            <a href="#"><input type="radio" id="lecture" name="nav" value="lecture" checked>
+            <label for="lecture">강의</label></a>
+            <a href="#"><input type="radio" id="mentoring" name="nav" value="mentoring">
+            <label for="mentoring">멘토링</label></a>
+            <a href="#"><input type="radio" id="community" name="nav" value="community">
+            <label for="community">커뮤니티</label></a>
+            <a href="#"><input type="radio" id="clip" name="nav" value="clip">
+            <label for="clip">클립</label></a>
+        </div>
+        <div>
+            <a href="#"><img src="cart.svg" alt="장바구니" class="icon"></a>
+            <a href="#"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
+        </div>
     </nav>
 
     <!-- 상세 헤더 -->
@@ -33,7 +43,7 @@
                 </div>
             </div>
             <!-- 오른쪽 강의 관련 유튜브 -->
-            <div class="detail-header__lecture">
+            <div class="detail-header__video">
             <iframe
                 width="560"
                 height="315"
@@ -61,7 +71,7 @@
             </div>
         </aside>
         <!-- 강의 상세 내용 본문 -->
-        <article class="detail-main__content">
+        <article class="detail-main__content" id="intro">
             <div>
                 <div class="detail-intro__descript">
                     <div class="detail-intro__descript1">
@@ -90,29 +100,29 @@
                 </div>
             </div>
             <hr>
-            <section class="curriculum">
+            <section class="curriculum" id="curriculum">
                 <!-- 섹션 1 -->
                 <div class="curriculum-section">
                     <div class="section-header">
                         <h3>섹션 1. 들어가며</h3>
                         <span class="section-info">3개 · (8분)</span>
                     </div>
-                    <ul class="lecture-list">
-                        <li class="lecture-item">
-                            <div class="lecture-right">
-                            <div class="lecture-right">
+                    <ul class="video-list">
+                        <li class="video-item">
+                            <div class="video-right">
+                            <div class="video-right">
                                 <button class="preview-btn">미리보기</button>
-                                <span class="lecture-time">08:09</span>
+                                <span class="video-time">08:09</span>
                             </div>
                         </li>
-                        <li class="lecture-item">
-                            <div class="lecture-left">
-                                <span class="lecture-title">2. 수강생 커뮤니티 참가 안내</span>
+                        <li class="video-item">
+                            <div class="video-left">
+                                <span class="video-title">2. 수강생 커뮤니티 참가 안내</span>
                             </div>
                         </li>
-                        <li class="lecture-item">
-                            <div class="lecture-left">
-                                <span class="lecture-title">3. 예제 코드 및 강의 자료 안내</span>
+                        <li class="video-item">
+                            <div class="video-left">
+                                <span class="video-title">3. 예제 코드 및 강의 자료 안내</span>
                             </div>
                         </li>
                     </ul>
@@ -123,34 +133,34 @@
                         <h3>섹션 2. JavaScript 기본</h3>
                         <span class="section-info">17개 · (2시간 35분)</span>
                     </div>
-                    <ul class="lecture-list">
-                        <li class="lecture-item">
-                            <div class="lecture-left">
-                                <span class="lecture-title">4. 1.1) 안녕 자바스크립트</span>
+                    <ul class="video-list">
+                        <li class="video-item">
+                            <div class="video-left">
+                                <span class="video-title">4. 1.1) 안녕 자바스크립트</span>
                             </div>
-                            <div class="lecture-right">
+                            <div class="video-right">
                                 <button class="preview-btn">미리보기</button>
-                                <span class="lecture-time">07:23</span>
+                                <span class="video-time">07:23</span>
                             </div>
                         </li>
 
-                        <li class="lecture-item">
-                            <div class="lecture-left">
-                                <span class="lecture-title">5. 1.2) VsCode 설치하기</span>
+                        <li class="video-item">
+                            <div class="video-left">
+                                <span class="video-title">5. 1.2) VsCode 설치하기</span>
                             </div>
-                            <div class="lecture-right">
+                            <div class="video-right">
                                 <button class="preview-btn">미리보기</button>
-                                <span class="lecture-time">10:26</span>
+                                <span class="video-time">10:26</span>
                             </div>
                         </li>
 
-                        <li class="lecture-item">
-                            <div class="lecture-left">
-                                <span class="lecture-title">6. 1.3) 자바스크립트 실습 환경 설정하기</span>
+                        <li class="video-item">
+                            <div class="video-left">
+                                <span class="video-title">6. 1.3) 자바스크립트 실습 환경 설정하기</span>
                             </div>
-                            <div class="lecture-right">
+                            <div class="video-right">
                                 <button class="preview-btn">미리보기</button>
-                                <span class="lecture-time">07:16</span>
+                                <span class="video-time">07:16</span>
                             </div>
                         </li>
                     </ul>
@@ -225,7 +235,7 @@
                 </button>
             </div>
             <div class="buy-button">
-                <button class="lecture-button" type="button" onclick="alert('수강신청이 완료되었습니다!')">
+                <button class="video-button" type="button" onclick="alert('수강신청이 완료되었습니다!')">
                     수강 신청
                 </button>
                 <button class="shopping-button" onclick="location.href='#'">
@@ -258,5 +268,18 @@
             </div>
         </aside>
     </main>
+    <!-- 푸터 -->
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="fooer-top">
+        <img src="/footer_logo.PNG" alt="Inflearn 로고" class="footer-logo">
+        </div>
+        <div class="footer-info">
+        <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
+        <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
+        <p class="footer-copy">© NEULIT. ALL RIGHTS RESERVED</p>
+        </div>
+    </div>
+    </footer>
 </body>
 </html>

@@ -4,38 +4,10 @@
     box-sizing: border-box;
 }
 
-.nav-container {
-    background-color: white;
-    width: 100%;
-    list-style: none;
-
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    top:0px;
-}
-
-.nav-item {
-    padding: 20px;
-    margin-right: 20px;
-    cursor: pointer;
-    border-radius: 30px;
-    font-size: 17px;
-}
-        
-.nav-item:hover {
-    background-color: #F5F5F5;
-}
-
-.nav-item a {
-    text-align: center;
-    text-decoration: none;
-    color: black;
-}
 
 /* 강의 검색창 */
 .lecture-search {
-    margin: 80px auto;
+    margin: 30px auto;
     border-radius: 30px;
     border: 1px solid gray;
     width: 50vh;
@@ -150,10 +122,11 @@ footer {
 /* 강의 목록 전체 */
 .lecture-list {
     margin-left: 50px;
-
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: flex-start;
 }
 
 /* 개별 강의 카드 */
@@ -224,7 +197,7 @@ footer {
 }
 
 .detail-header {
-    margin: 70px auto;
+    margin: 60px auto;
     width: 100%;
     min-height: 45vh;
     background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
@@ -439,7 +412,7 @@ footer {
 }
 
 /* 강의 리스트 */
-.lecture-list {
+.video-list {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -448,7 +421,7 @@ footer {
     flex-direction: column;
 }
 
-.lecture-item {
+.video-item {
     border-bottom: 1px solid #eee;
     padding: 12px 20px;
     display: flex;
@@ -457,24 +430,24 @@ footer {
     transition: background 0.2s;
 }
 
-.lecture-item:hover {
+.video-item:hover {
     background-color: #f8f9fa;
 }
 
 /* 왼쪽 제목 */
-.lecture-left {
+.video-left {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.lecture-title {
+.video-title {
     font-size: 15px;
     color: #222;
 }
 
 /* 오른쪽 (미리보기 버튼 + 시간) */
-.lecture-right {
+.video-right {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -497,7 +470,7 @@ footer {
     border-color: #ff8c00;
 }
 
-.lecture-time {
+.video-time {
     font-size: 13px;
     color: #555;
 }
