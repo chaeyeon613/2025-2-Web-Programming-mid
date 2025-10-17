@@ -9,7 +9,7 @@
     margin: 30px auto 10px auto;
     border-radius: 8px;
     border: 1px solid #ccc;
-    width: 60vh;
+    width: 55vh;
     height: 45px;
     background-color: #fff;
 
@@ -59,7 +59,7 @@
     border-color: #ff8c00;
     }
 
-/* ✅ 선택된 radio의 label 스타일 유지 */
+/* 선택된 radio의 label 스타일 유지 */
 .category-bar input[type="radio"]:checked + label {
     background-color: #ff8c00;
     color: white;
