@@ -717,3 +717,9 @@
     color: #666;
     width: 40%;
 }
+
+#intro,
+#curriculum,
+#review {
+    scroll-margin-top: 100px; /* nav 높이(약 90px)에 맞게 조정 */
+}
