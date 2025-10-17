@@ -18,10 +18,11 @@ html, body {
   position: fixed;
   display: flex;
   top: 0;
+  left: 0;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
+  padding: 20px;
   border-bottom: 1px solid #ccc;
   background: #fff;
   z-index: 1000;
@@ -29,7 +30,7 @@ html, body {
 .menu label {
   display: block;
   margin: 10px;
-  padding: 10px;
+  padding: 10px 15px;
   cursor: pointer;
 }
 .menu input {
@@ -45,10 +46,12 @@ html, body {
   font-weight: bold;
 }
 .nav-container .menu {
-  list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .nav-container .menu a:hover {
   color: #777777;
@@ -59,8 +62,6 @@ html, body {
 .icon {
   margin: 0px 10px;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
 }
 .icon:hover {
   opacity: 0.8;
