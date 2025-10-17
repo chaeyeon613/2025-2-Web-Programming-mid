@@ -667,7 +667,7 @@
     flex-direction: column;
 }
 
-.lecture-button,
+.video-button,
 .shopping-button {
     width: 100%;
     height: 45px;
@@ -681,12 +681,12 @@
 }
 
 /* 수강신청 버튼 (메인 강조색) */
-.lecture-button {
+.video-button {
     background-color: #ff8c00;
     color: white;
 }
 
-.lecture-button:hover {
+.video-button:hover {
     background-color: #ff8c00d2;
 }
 
