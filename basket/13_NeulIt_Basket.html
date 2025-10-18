@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>수강바구니</title>
-  <link rel="stylesheet" href="basket.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="13_NeulIt_Basket.css">
+  <link rel="stylesheet" href="../13_NeulIt_style.css">
 </head>
 
 
@@ -13,27 +13,29 @@
 <body>
   <!-- nav -->
   <header>
-    <nav class="nav-container">
-      <img src="main_logoicon.png" alt="로고" class="logo">
-      <div class="menu">
-        <input type="radio" id="lecture" name="nav" value="lecture">
-        <label for="lecture"><a href="LectureMain.html">강의</a></label>
-
-        <input type="radio" id="mentoring" name="nav" value="mentoring">
-        <label for="mentoring"><a href="MentoringMain.html">멘토링</a></label>
-
-        <input type="radio" id="community" name="nav" value="community">
-        <label for="community"><a href="CommunityMain.html">커뮤니티</a></label>
-
-        <input type="radio" id="clip" name="nav" value="clip">
-        <label for="clip"><a href="ClipMain.html">클립</a></label>
-      </div>
-      <div>
-        <a href="basket.html"><img src="cart.svg" alt="장바구니" class="icon"></a>
-        <a href="dash_profile.html"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
-      </div>
-    </nav>
-  </header>
+    <header>
+      <nav class="nav-container">
+        <img src="../Images/main_logoicon.png" alt="로고" class="logo">
+        <div class="menu">
+          <input type="radio" id="lecture" name="nav" value="lecture">
+          <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
+  
+          <input type="radio" id="mentoring" name="nav" value="mentoring">
+          <label for="mentoring"><a href="../Mentoring/13_NeulIt_MentoringMain.html">멘토링</a></label>
+  
+          <input type="radio" id="community" name="nav" value="community">
+          <label for="community"><a href="../Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+  
+          <input type="radio" id="clip" name="nav" value="clip">
+          <label for="clip"><a href="../Clip/13_NeulIt_ClipMain.html">클립</a></label>
+        </div>
+        <div>
+          <a href="../Images/cart.svg"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
+          <a href="13_NeulIt_ProfileDash.html"><img src="../Images/profile.svg" alt="마이페이지" class="icon"></a>            
+        </div>
+      </nav>
+    </header>
+  
 
   <!-- 메인 -->
   <main class="container">
@@ -49,10 +51,10 @@
     </section>
 
     <!-- 강의 항목 -->
-    <a href="LectureDetail.html" class="card-link">
+    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="card-link">
       <article class="cart-box">
         <input type="checkbox">
-        <img src="spring.png" alt="강의 썸네일" class="thumb">
+        <img src="../Images/spring.png" alt="강의 썸네일" class="thumb">
         <div class="info">
           <p class="name">스프링 핵심 원리 - 기본편</p>
           <p class="detail">김영한 | <span class="highlight">무제한 수강</span></p>
@@ -62,10 +64,10 @@
       </article>
     </a>
 
-    <a href="LectureDetail.html" class="card-link">
+    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="card-link">
       <div class="cart-box">
         <input type="checkbox">
-        <img src="c.png" alt="강의 썸네일" class="thumb">
+        <img src="../Images/c.png" alt="강의 썸네일" class="thumb">
         <div class="info">
           <p class="name">독하게 시작하는 C 프로그래밍</p>
           <p class="detail">널널한 개발자 | <span class="highlight">무제한 수강</span></p>
@@ -75,10 +77,10 @@
       </div>
     </a>
 
-    <a href="LectureDetail.html" class="card-link">
+    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="card-link">
       <div class="cart-box">
         <input type="checkbox">
-        <img src="react.png" alt="강의 썸네일" class="thumb">
+        <img src="../Images/react.png" alt="강의 썸네일" class="thumb">
         <div class="info">
           <p class="name">한 입 크기로 잘라 먹는 리액트(React.js) : 기초부터 실전까지</p>
           <p class="detail">이정한 Winterlood | <span class="highlight">무제한 수강</span></p>
@@ -134,7 +136,7 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-top">
-        <img src="footer_logo.png" alt="Inflearn 로고" class="footer-logo">
+        <img src="../Images/footer_logo.png" alt="Inflearn 로고" class="footer-logo">
       </div>
       <div class="footer-info">
         <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
