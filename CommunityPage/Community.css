@@ -131,7 +131,7 @@ body {
 .sidebar {
     margin-right: 20px;
     padding: 20px;
-    width: 200px;
+    width: 230px;
     border: 1px solid #ededed;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
     border-radius: 5px;    
@@ -151,23 +151,17 @@ body {
     cursor: pointer;
 }
 
-.sidebar input {
-    display: none;
-}
+.sidebar input {display: none;}
 
 .sidebar input:checked + label {
     font-weight: bold;
     color: #ec8201;
 }
 
-.sidebar label:hover {
-    color: #626262;
-}
+.sidebar label:hover {color: #626262;}
 
 /* 중앙 질문 영역 */
-.content {
-    flex: 1;
-}
+.content {flex: 1;}
 
 /* 검색 영역 */
 .search-inputs {
@@ -196,6 +190,10 @@ body {
     font-weight: 500;
 }
 
+.search-button:hover {
+    background-color: #ff9f3c;
+}
+
 .tag-search {
     display: flex;
     gap: 10px;
@@ -210,6 +208,11 @@ body {
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
+}
+
+.reset-button:hover {
+    background-color: #f3f3f3;
+    border-radius: 5px;
 }
 
 /* 필터, 글쓰기 버튼 */
@@ -265,13 +268,11 @@ body {
 }
 
 /* 게시글 목록 */
-.post-link {
-    text-decoration: none;
-}
+.post-link {text-decoration: none;}
 
 .post { 
     border-bottom: 1px solid #eee;
-    padding: 20px 0;
+    padding: 20px 10px;
 }
 
 /* 게시글 상태 (미해결/해결됨) */
@@ -282,15 +283,11 @@ body {
     border-radius: 10px;
     margin-right: 10px;
     font-weight: 500;
+    display: inline-block;
 }
 
-.status.unresolved {
-    background-color: #999999; 
-}
-
-.status.resolved {
-    background-color: #ec8201;
-}
+.unresolved {background-color: #999999; }
+.resolved {background-color: #ec8201;}
 
 .post-meta {
     display: flex;
@@ -334,10 +331,11 @@ body {
     background-color: #f3f3f3;
 }
 
+.post-link:hover .resolved {background-color: #ec8201; }
+.post-link:hover .unresolved {background-color: #b3b3b3; }
+
 /* 오른쪽 사이드바 (Right Sidebar) */
-.right-sidebar {
-    width: 250px;
-}
+.right-sidebar {width: 250px;}
 
 .popular-tags, .popular-posts {
     border-radius: 5px;
@@ -404,6 +402,7 @@ body {
     font-size: 13px;
     color: #999;
 }
+
 
 /*Community Detail Page*/
 .question-main {
