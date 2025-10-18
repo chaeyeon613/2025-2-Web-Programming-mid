@@ -4,31 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>프로필</title>
-  <link rel="stylesheet" href="profile.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="13_NeulIt_profile.css">
+  <link rel="stylesheet" href="../13_NeulIt_style.css">
 </head>
 
 <body>
   <!-- nav -->
   <header>
     <nav class="nav-container">
-      <img src="main_logoicon.png" alt="로고" class="logo">
+      <img src="../Images/main_logoicon.png" alt="로고" class="logo">
       <div class="menu">
         <input type="radio" id="lecture" name="nav" value="lecture">
-        <label for="lecture"><a href="LectureMain.html">강의</a></label>
+        <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
 
         <input type="radio" id="mentoring" name="nav" value="mentoring">
-        <label for="mentoring"><a href="MentoringMain.html">멘토링</a></label>
+        <label for="mentoring"><a href="../Mentoring/13_NeulIT_MentoringMain.html">멘토링</a></label>
 
         <input type="radio" id="community" name="nav" value="community">
-        <label for="community"><a href="CommunityMain.html">커뮤니티</a></label>
+        <label for="community"><a href="../Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
 
         <input type="radio" id="clip" name="nav" value="clip">
-        <label for="clip"><a href="ClipMain.html">클립</a></label>
+        <label for="clip"><a href="../Clip/13_NeulItClipMain.html">클립</a></label>
       </div>
       <div>
-        <a href="basket.html"><img src="cart.svg" alt="장바구니" class="icon"></a>
-        <a href="dash_profile.html"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
+        <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
+        <a href="13_NeulItProfileDash.html"><img src="../Images/profile.svg" alt="마이페이지" class="icon"></a>            
       </div>
     </nav>
   </header>
@@ -38,16 +38,17 @@
     <!-- 메뉴 -->
     <aside class="profile-aside">
       <div class="profile-info">
-        <img src="me.png" alt="프로필 이미지" class="profile-img">        <h2 class="profile-id">neulit</h2>
+        <img src="../Images/me.png" alt="프로필 이미지" class="profile-img">        
+        <h2 class="profile-id">neulit</h2>
         <p class="profile-email">neulit@gmail.com</p>
         <button class="edit-btn">프로필 수정</button>
       </div>
 
       <div class="profile-menu">
-        <a href="dash_profile.html" class="menu-item ">대시보드</a>
-        <a href="lec_profile.html" class="menu-item active">내 학습</a>
-        <a href="mentor_profile.html" class="menu-item">멘토링</a>
-        <a href="com_profile.html" class="menu-item">커뮤니티 게시글</a>
+        <a href="13_NeulIt_ProfileDash.html" class="menu-item">대시보드</a>
+        <a href="13_NeulIt_ProfileLecture.html" class="menu-item active">내 학습</a>
+        <a href="13_NeulIt_ProfileMentoring.html" class="menu-item">멘토링</a>
+        <a href="13_NeulIt_ProfileCommunity.html" class="menu-item">커뮤니티 게시글</a>
       </div>
     </aside>
 
@@ -73,9 +74,9 @@
       <!-- 수강 강의 목록 -->
       <section class="lecture-list">
 
-        <a href="LectureDetail.html" class="card-link">    <!-- 강의 듣는 페이지(영상재생)로 이동 -->
+        <a href="../Lecture/13_NeulIt_LectureDetail.html" class="card-link">
           <div class="lecture-card">
-            <img src="html+css.png" alt="강의 썸네일" class="lecture-thumb">
+            <img src="../Images/html+css.png" alt="강의 썸네일" class="lecture-thumb">
             <div class="lecture-info">
               <h3 class="lecture-title">제대로 파는 HTML CSS - by 얄코(Yalco)</h3>
               <p class="lecture-author"> 얄팍한 코딩사전 | 무제한 수강</p>
@@ -87,9 +88,9 @@
           </div>
         </a>
       
-        <a href="LectureDetail.html" class="card-link">    <!-- 강의 듣는 페이지(영상재생)로 이동 -->
+        <a href="../Lecture/13_NeulIt_LectureDetail.html" class="card-link">   
           <div class="lecture-card">
-            <img src="python.png" alt="강의 썸네일" class="lecture-thumb">
+            <img src="../Images/python.png" alt="강의 썸네일" class="lecture-thumb">
             <div class="lecture-info">
               <h3 class="lecture-title">프로그래밍 시작하기 : 파이썬 입문 (Inflearn Original)</h3>
               <p class="lecture-author">인프런 | 무제한 수강</p>
@@ -109,7 +110,7 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-top">
-        <img src="footer_logo.PNG" alt="Inflearn 로고" class="footer-logo">
+        <img src="../Images/footer_logo.PNG" alt="Inflearn 로고" class="footer-logo">
       </div>
       <div class="footer-info">
         <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
