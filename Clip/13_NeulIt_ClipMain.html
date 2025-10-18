@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클립 목록페이지</title>
+  <link rel="stylesheet" href="13_NeulIt_ClipStyle.css">
+  <link rel="stylesheet" href="../13_NeulIt_style.css">
+</head>
+<body class="clip-list-page">
+
+  <!-- 헤더 -->
+  <header>
+    <nav class="nav-container">
+      <img src="../Images/main_logoicon.png" alt="로고" class="logo">
+      <div class="menu">
+        <input type="radio" id="lecture" name="nav" value="lecture">
+        <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
+
+        <input type="radio" id="mentoring" name="nav" value="mentoring">
+        <label for="mentoring"><a href="../Mentoring/13_NeulIT_MentoringMain.html">멘토링</a></label>
+
+        <input type="radio" id="community" name="nav" value="community">
+        <label for="community"><a href="../Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+
+        <input type="radio" id="clip" name="nav" value="clip"checked>
+        <label for="clip"><a href="../Clip/13_NeulItClipMain.html">클립</a></label>
+      </div>
+      <div>
+        <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
+        <a href="13_NeulIt_ProfileDash.html"><img src="../Images/profile.svg" alt="마이페이지" class="icon"></a>            
+      </div>
+    </nav>
+  </header>
+
+  <!-- 메인 -->
+  <main class="clip-container">
+
+    <!-- 검색창 -->
+    <div class="lecture-search">
+      <input type="text" name="text" placeholder="수강하고 싶은 강의 검색">
+      <input type="image" src="../Images/search.png" alt="검색 로고">
+    </div>
+
+    <!-- 정렬 -->
+    <div class="search-sort-bar">
+      <div class="sort-box">
+        <label for="sort">정렬:</label>
+        <select id="sort">
+          <option value="recent">최신순</option>
+          <option value="popular">인기순</option>
+          <option value="recommend">추천순</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 클립 목록 -->
+    <section class="clip-list">
+
+      <article class="clip-item" onclick="location.href='13_NeulIt_ClipDetail.html'">
+        <div class="clip-info">
+          <h3>비즈니스 데이터 분석 실무:엑셀 파워쿼리와 파워피벗을 활용한 업무 디지털 전환(DT) 성공 가이드</h3>
+          <p>데이터 작업 능력이 기본이 되는 시대!</p>
+          <p>누구라도 배울 수 있으나 누구나 알지는 못하는 데이터 분석 고급 실무의 길잡이 도서!</p>
+          <p>수많은 실무자에게 데이터 처리량의 한계를 넘어서는 데이터 분석 기법 전수!</p>
+          <p>👁️조회수 1.2만회 · 👍좋아요 320</p>
+        </div>
+        <div class="clip-thumb">
+          <img src="../Images/python.png" alt="파이썬">
+        </div>
+      </article>
+
+      <article class="clip-item" onclick="location.href='13_NeulIt_ClipDetail.html'">
+        <div class="clip-info">
+          <h3>그늘진 기업의 현실, 플렉스(Flex) 스톡옵션 사태</h3>
+          <p>무료 뉴스레터와 관련된 보다 다양하고 깊이 있는 내용을 전달해요.</p>
+          <p>오늘 함께할 주제는 꽤 많은 구독자분들께서 사내 휴가 관리 시스템으로 사용하고 
+            계실 플렉스(Flex)에 대한 이야기로 시작합니다.</p>
+          <p>👁️조회수 9800 · 👍좋아요 290</p>
+        </div>
+        <div class="clip-thumb">
+          <img src="../Images/html+css.png" alt="HTML+CSS">
+        </div>
+      </article>
+
+      <article class="clip-item" onclick="location.href='13_NeulIt_ClipDetail.html'">
+        <div class="clip-info">
+          <h3>디지털 마케팅 개론 - 4차 산업혁명 시대의 마케팅 가이드</h3>
+          <p>디지털마케팅 개론은 시시각각 변하는 디지털 환경에서 흔들리지 않는 핵심적인 디지털마케팅 프레임워크가 무엇이며, </p>
+          <p>기업과 개인이 구체적으로 어떤 전략을 세워 실행해야 하는지 알려준다.</p>
+          <p>👁️조회수 7200 · 👍좋아요 260</p>
+        </div>
+        <div class="clip-thumb">
+          <img src="../Images/c.png" alt="C언어">
+        </div>
+      </article>
+
+      <article class="clip-item" onclick="location.href='13_NeulIt_ClipDetail.html'">
+        <div class="clip-info">
+          <h3>쉽게 이해하는 객체 지향과 4대 특성</h3>
+          <p>인간은 세상의 모든 것을 사물 단위로 바라본다.</p>
+          <p>인간이 세상을 인식하는 단위는 위와 같이 사물 단위다.</p>
+          <p>👁️조회수 1.5만회 · 👍좋아요 410</p>
+        </div>
+        <div class="clip-thumb">
+          <img src="../Images/react.png" alt="React">
+        </div>
+      </article>
+
+      <article class="clip-item" onclick="location.href='13_NeulIt_ClipDetail.html'">
+        <div class="clip-info">
+          <h3>한 권으로 끝내는 SVA(System Verilog Assertion) 실무 핸드북</h3>
+          <p>왜 Assertion인가? RTL 검증의 현실</p>
+          <p>누구나 한 번쯤은 "완벽한 검증 환경을 만들어보고 싶다" 는 목표를 가집니다.</p>
+          <p>👁️조회수 1.1만회 · 👍좋아요 300</p>
+        </div>
+        <div class="clip-thumb">
+          <img src="../Images/kotlin.png" alt="Kotlin">
+        </div>
+      </article>
+
+      <article class="clip-item" onclick="location.href='13_NeulIt_ClipDetail.html'">
+        <div class="clip-info">
+          <h3>매출을 높이는 실전 구글 광고 마케팅</h3>
+          <p>사용자의 관심사와 행동을 추적하는 구글 애즈의 인공지능과 머신러닝 기술</p>
+          <p>CPM, CPC, CPA를 기본으로 광고주가 캠페인의 목적에 맞게 가장 효과적인 입찰 전략과 비용 산정 </p>
+          <p>👁️조회수 8600 · 👍좋아요 275</p>
+        </div>
+        <div class="clip-thumb">
+          <img src="../Images/spring.png" alt="Spring">
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <img src="../Images/footer_logo.PNG" alt="Inflearn 로고" class="footer-logo">
+      </div>
+      <div class="footer-info">
+        <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
+        <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
+        <p>© NEULIT. ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
 
