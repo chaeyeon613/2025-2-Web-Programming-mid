@@ -436,8 +436,9 @@ html, body {
     transition: all 0.2s ease;
 }
 .lecture-card:hover {
-    box-shadow: 0 5px 12px rgba(0,0,0,0.07);
-  }
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
 .lecture-thumb {
     width: 160px;
     height: 95px;
@@ -497,7 +498,8 @@ html, body {
     text-align: center;
 }
 .mentoring-card:hover {
-    box-shadow: 0 5px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 .mentor-img {
     width: 100px;
