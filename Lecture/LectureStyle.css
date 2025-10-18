@@ -6,7 +6,7 @@
 
 /* 검색창 */
 .lecture-search {
-    margin: 30px auto 10px auto;
+    margin: 20px auto 10px auto;
     border-radius: 8px;
     border: 1px solid #ccc;
     width: 50vh;
@@ -53,9 +53,9 @@
 
 /* hover 상태 */
 .category-bar label:hover {
-    background-color: #ec8201;
+    background-color: #ff9f3c;
     color: white;
-    border-color: #ec8201;
+    border-color: #ff9f3c;
 }
 
 /* 선택된 radio의 label 스타일 유지 */
@@ -108,10 +108,12 @@
 /* 개별 강의 카드 */
 .lecture {
     display: flex;
+    flex: 1 1 300px;
     flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 10px;
     width: 22%;
+    max-width: 300px;
     height: 350px;
     margin: 20px;
     overflow: hidden;

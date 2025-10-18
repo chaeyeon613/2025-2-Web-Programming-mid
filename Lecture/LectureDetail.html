@@ -8,24 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 공통 메뉴바 -->
-    <nav class="nav-container">
-        <img src="main_logoicon.png" alt="로고" class="logo">
-        <div class="menu">
-            <a href="#"><input type="radio" id="lecture" name="nav" value="lecture" checked>
-            <label for="lecture">강의</label></a>
-            <a href="#"><input type="radio" id="mentoring" name="nav" value="mentoring">
-            <label for="mentoring">멘토링</label></a>
-            <a href="#"><input type="radio" id="community" name="nav" value="community">
-            <label for="community">커뮤니티</label></a>
-            <a href="#"><input type="radio" id="clip" name="nav" value="clip">
-            <label for="clip">클립</label></a>
-        </div>
-        <div>
-            <a href="#"><img src="cart.svg" alt="장바구니" class="icon"></a>
-            <a href="#"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
-        </div>
-    </nav>
+        <!--메뉴바-->
+        <nav class="nav-container">
+            <img src="main_logoicon.png" alt="로고" class="logo">
+            <div class="menu">
+                <input type="radio" id="lecture" name="nav" value="lecture" checked>
+                <label for="lecture"><a href="LectureMain.html">강의</a></label>
+
+                <input type="radio" id="mentoring" name="nav" value="mentoring">
+                <label for="mentoring"><a href="MentoringMain.html">멘토링</a></label>
+
+                <input type="radio" id="community" name="nav" value="community">
+                <label for="community"><a href="CommunityMain.html">커뮤니티</a></label>
+
+                <input type="radio" id="clip" name="nav" value="clip">
+                <label for="clip"><a href="ClipMain.html">클립</a></label>
+            </div>
+            <div>
+                <a href="basket.html"><img src="cart.svg" alt="장바구니" class="icon"></a>
+                <a href="dash_profile.html"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
+            </div>
+        </nav>
 
     <!-- 상세 헤더 -->
     <header class="detail-header">
