@@ -5,7 +5,7 @@
     padding: 0;
 }
 body {
-    padding-top: 90px;
+    padding-top: 80px;
 }
 html, body { 
     overscroll-behavior: none;
@@ -103,7 +103,15 @@ html, body {
     padding: 60px 40px 120px;
     gap: 80px; 
 }
-  
+
+
+/** 카드 링크 **/
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
 
 /** aside 영역 **/
 /* 프로필 영역 */
