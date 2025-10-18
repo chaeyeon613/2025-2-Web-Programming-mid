@@ -53,16 +53,16 @@
 
 /* hover 상태 */
 .category-bar label:hover {
-    background-color: #ff8c00;
+    background-color: #ec8201;
     color: white;
-    border-color: #ff8c00;
+    border-color: #ec8201;
 }
 
 /* 선택된 radio의 label 스타일 유지 */
 .category-bar input[type="radio"]:checked + label {
-    background-color: #ff8c00;
+    background-color: #ec8201;
     color: white;
-    border-color: #ff8c00;
+    border-color: #ec8201;
 }
 
 /* 메인 콘텐츠 */
@@ -205,16 +205,16 @@
 
 /* hover 시 색상 변경 */
 .pagination label:hover {
-    background-color: #ff8c00;
+    background-color: #ff9f3c;
     color: white;
-    border-color: #ff8c00;
+    border-color: #ff9f3c;
 }
 
 /* 클릭된 (checked) 상태 유지 */
 .pagination input[type="radio"]:checked + label {
-    background-color: #ff8c00;
+    background-color: #ec8201;
     color: white;
-    border-color: #ff8c00;
+    border-color: #ec8201;
 }
 
 /* 푸터 */
@@ -325,7 +325,7 @@
 .detail-main__sidebar ul {
     list-style: none;
     padding: 0;
-    border-left: 3px solid #ff8c00;
+    border-left: 3px solid #ec8201;
 }
 
 .detail-main__sidebar li {
@@ -342,7 +342,7 @@
 }
 
 .detail-main__sidebar a:hover {
-    color: #ff8c00;
+    color: #ff9f3c;
     transform: translateX(3px);
 }
 
@@ -489,9 +489,9 @@
 }
 
 .preview-btn:hover {
-    background-color: #ff8c00;
+    background-color: #ff9f3c;
     color: white;
-    border-color: #ff8c00;
+    border-color: #ff9f3c;
 }
 
 .lecture-time {
@@ -591,9 +591,9 @@
 }
 
 .review-actions button:hover {
-    background-color: #ff8c00;
+    background-color: #ff9f3c;
     color: white;
-    border-color: #ff8c00;
+    border-color: #ff9f3c;
 }
 
 /* 구매 영역 */
@@ -660,12 +660,12 @@
 }
 
 .video-button {
-    background-color: #ff8c00;
+    background-color: #ec8201;
     color: white;
 }
 
 .video-button:hover {
-    background-color: #ff8c00d2;
+    background-color: #ff9f3c;
 }
 
 .shopping-button {
