@@ -12,14 +12,14 @@
     <nav class="nav-container">
         <img src="main_logoicon.png" alt="로고" class="logo">
         <div class="menu">
-            <a href="#"><input type="radio" id="lecture" name="nav" value="lecture" checked><label for="lecture">강의</label></a>
-            <a href="#"><input type="radio" id="mentoring" name="nav" value="mentoring"><label for="mentoring">멘토링</label></a>
-            <a href="#"><input type="radio" id="community" name="nav" value="community"><label for="community">커뮤니티</label></a>
-            <a href="#"><input type="radio" id="clip" name="nav" value="clip"><label for="clip">클립</label></a>
+            <a href="LectureMain.html"><input type="radio" id="lecture" name="nav" value="lecture" checked><label for="lecture">강의</label></a>
+            <a href=""><input type="radio" id="mentoring" name="nav" value="mentoring"><label for="mentoring">멘토링</label></a>
+            <a href="CommunityMain.html"><input type="radio" id="community" name="nav" value="community"><label for="community">커뮤니티</label></a>
+            <a href="ClipMain.html"><input type="radio" id="clip" name="nav" value="clip"><label for="clip">클립</label></a>
         </div>
         <div>
-            <a href="#"><img src="cart.svg" alt="장바구니" class="icon"></a>
-            <a href="#"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
+            <a href="basket.html"><img src="cart.svg" alt="장바구니" class="icon"></a>
+            <a href="dash_profile"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
         </div>
     </nav>
 
@@ -65,148 +65,167 @@
             </div>
 
             <div class="lecture-list">
+
                 <section class="lecture">
-                    <figure class="lecture-thumbnail">
-                        <img src="python.png" alt="파이썬 강의 썸네일">
-                    </figure>
-                    <div class="lecture-body">
-                        <header>
-                            <h3 class="lecture-title">프로그래밍 시작하기: 파이썬 입문</h3>
-                            <p class="instructor">NeulIT</p>
-                        </header>
-                        <footer class="lecture-info">
-                            <span class="price">무료</span>
-                            <span class="person">⭐4.8 <img src="person.svg" alt="사람 로고">32,800+</span>
-                        </footer>
-                    </div>
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="python.png" alt="파이썬 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">프로그래밍 시작하기: 파이썬 입문</h3>
+                                <p class="instructor">NeulIT</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">무료</span>
+                                <span class="person">⭐4.8 <img src="person.svg" alt="사람 로고">32,800+</span>
+                            </div>
+                        </div>
+                    </a>
                 </section>
 
                 <section class="lecture">
-                    <figure class="lecture-thumbnail">
-                        <img src="react.png" alt="react 강의 썸네일">
-                    </figure>
-                    <div class="lecture-body">
-                        <header>
-                            <h3 class="lecture-title">한 입 크기로 잘라 먹는 리액트(React.js)</h3>
-                            <p class="instructor">이정환</p>
-                        </header>
-                        <footer class="lecture-info">
-                            <span class="price">₩44,000</span>
-                            <span class="person">⭐5.0 <img src="person.svg" alt="사람 로고">5,500+</span>
-                        </footer>
-                    </div>
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="react.png" alt="react 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">한 입 크기로 잘라 먹는 리액트(React.js)</h3>
+                                <p class="instructor">이정환</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩44,000</span>
+                                <span class="person">⭐5.0 <img src="person.svg" alt="사람 로고">5,500+</span>
+                            </div>
+                        </div>
+                    </a>
                 </section>
 
                 <section class="lecture">
-                    <figure class="lecture-thumbnail">
-                        <img src="spring.png" alt="spring 강의 썸네일">
-                    </figure>
-                    <div class="lecture-body">
-                        <header>
-                            <h3 class="lecture-title">스프링 핵심 원리 - 기본편</h3>
-                            <p class="instructor">김영한</p>
-                        </header>
-                        <footer class="lecture-info">
-                            <span class="price">₩88,000</span>
-                            <span class="person">⭐5.0 <img src="person.svg" alt="사람 로고">48,400+</span>
-                        </footer>
-                    </div>
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="spring.png" alt="spring 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">스프링 핵심 원리 - 기본편</h3>
+                                <p class="instructor">김영한</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩88,000</span>
+                                <span class="person">⭐5.0 <img src="person.svg" alt="사람 로고">48,400+</span>
+                            </div>
+                        </div>
+                    </a>
                 </section>
 
                 <section class="lecture">
-                    <figure class="lecture-thumbnail">
-                        <img src="c.png" alt="c 강의 썸네일">
-                    </figure>
-                    <div class="lecture-body">
-                        <header>
-                            <h3 class="lecture-title">독하게 시작하는 C 프로그래밍</h3>
-                            <p class="instructor">널널한 개발자T</p>
-                        </header>
-                        <footer class="lecture-info">
-                            <span class="price">₩99,000</span>
-                            <span class="person">⭐4.9 <img src="person.svg" alt="사람 로고">2,600+</span>
-                        </footer>
-                    </div>
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="c.png" alt="c 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">독하게 시작하는 C 프로그래밍</h3>
+                                <p class="instructor">널널한 개발자T</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩99,000</span>
+                                <span class="person">⭐4.9 <img src="person.svg" alt="사람 로고">2,600+</span>
+                            </div>
+                        </div>
+                    </a>
                 </section>
 
                 <section class="lecture">
-                    <figure class="lecture-thumbnail">
-                        <img src="html+css.png" alt="html 강의 썸네일">
-                    </figure>
-                    <div class="lecture-body">
-                        <header>
-                            <h3 class="lecture-title">제대로 파는 HTML CSS</h3>
-                            <p class="instructor">얄팍한 코딩사전</p>
-                        </header>
-                        <footer class="lecture-info">
-                            <span class="price">₩44,000</span>
-                            <span class="person">⭐5.0 <img src="person.svg" alt="사람 로고">2,900+</span>
-                        </footer>
-                    </div>
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="html+css.png" alt="html 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">제대로 파는 HTML CSS</h3>
+                                <p class="instructor">얄팍한 코딩사전</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩44,000</span>
+                                <span class="person">⭐5.0 <img src="person.svg" alt="사람 로고">2,900+</span>
+                            </div>
+                        </div>
+                    </a>
                 </section>
 
                 <section class="lecture">
-                    <figure class="lecture-thumbnail">
-                        <img src="kotlin.png" alt="kotlin 강의 썸네일">
-                    </figure>
-                    <div class="lecture-body">
-                        <header>
-                            <h3 class="lecture-title">자바 개발자를 위한 코틀린 입문</h3>
-                            <p class="instructor">최태현</p>
-                        </header>
-                        <footer class="lecture-info">
-                            <span class="price">₩55,000</span>
-                            <span class="person">⭐5.0 <img src="person.svg" alt="사람 로고">3,500+</span>
-                        </footer>
-                    </div>
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="kotlin.png" alt="kotlin 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">자바 개발자를 위한 코틀린 입문</h3>
+                                <p class="instructor">최태현</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩55,000</span>
+                                <span class="person">⭐5.0 <img src="person.svg" alt="사람 로고">3,500+</span>
+                            </div>
+                        </div>
+                    </a>
                 </section>
 
                 <section class="lecture">
-                    <figure class="lecture-thumbnail">
-                        <img src="C++.png" alt="c++.png 강의 썸네일">
-                    </figure>
-                    <div class="lecture-body">
-                        <header>
-                            <h3 class="lecture-title">초보자를 위한 C++ 프로그래밍 기초 다지기</h3>
-                            <p class="instructor">유용한 IT 학습</p>
-                        </header>
-                        <footer class="lecture-info">
-                            <span class="price">₩99,000</span>
-                            <span class="person">⭐4.7 <img src="person.svg" alt="사람 로고">22,100+</span>
-                        </footer>
-                    </div>
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="C++.png" alt="c++ 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">초보자를 위한 C++ 프로그래밍 기초 다지기</h3>
+                                <p class="instructor">유용한 IT 학습</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩99,000</span>
+                                <span class="person">⭐4.7 <img src="person.svg" alt="사람 로고">22,100+</span>
+                            </div>
+                        </div>
+                    </a>
                 </section>
 
                 <section class="lecture">
-                    <figure class="lecture-thumbnail">
-                        <img src="docker.png" alt="docker 강의 썸네일">
-                    </figure>
-                    <div class="lecture-body">
-                        <header>
-                            <h3 class="lecture-title">비전공자도 이해할 수 있는 Docker 실전</h3>
-                            <p class="instructor">JSCODE 박재성</p>
-                        </header>
-                        <footer class="lecture-info">
-                            <span class="price">₩77,000</span>
-                            <span class="person">⭐5.0 <img src="person.svg" alt="사람 로고">13,900+</span>
-                        </footer>
-                    </div>
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="docker.png" alt="docker 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">비전공자도 이해할 수 있는 Docker 실전</h3>
+                                <p class="instructor">JSCODE 박재성</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩77,000</span>
+                                <span class="person">⭐5.0 <img src="person.svg" alt="사람 로고">13,900+</span>
+                            </div>
+                        </div>
+                    </a>
                 </section>
 
                 <section class="lecture">
-                    <figure class="lecture-thumbnail">
-                        <img src="database.png" alt="database 강의 썸네일">
-                    </figure>
-                    <div class="lecture-body">
-                        <header>
-                            <h3 class="lecture-title">실전! 데이터베이스 완전 정복 [설계편]</h3>
-                            <p class="instructor">신동현</p>
-                        </header>
-                        <footer class="lecture-info">
-                            <span class="price">₩77,000</span>
-                            <span class="person">⭐4.9 <img src="person.svg" alt="사람 로고">200+</span>
-                        </footer>
-                    </div>
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="database.png" alt="database 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">실전! 데이터베이스 완전 정복 [설계편]</h3>
+                                <p class="instructor">신동현</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩77,000</span>
+                                <span class="person">⭐4.9 <img src="person.svg" alt="사람 로고">200+</span>
+                            </div>
+                        </div>
+                    </a>
                 </section>
             </div>
         </article>
@@ -214,27 +233,40 @@
 
     <!-- 페이지 이동 -->
     <div class="pagination">
-    <input type="radio" id="page1" name="page" checked>
-    <label for="page1">1</label>
+        <input type="radio" id="page1" name="page" checked>
+        <label for="page1">&lt;</label>
 
-    <input type="radio" id="page2" name="page">
-    <label for="page2">2</label>
+        <input type="radio" id="page1" name="page" checked>
+        <label for="page1">1</label>
 
-    <input type="radio" id="page3" name="page">
-    <label for="page3">3</label>
+        <input type="radio" id="page2" name="page">
+        <label for="page2">2</label>
 
-    <input type="radio" id="page4" name="page">
-    <label for="page4">4</label>
+        <input type="radio" id="page3" name="page">
+        <label for="page3">3</label>
 
-    <input type="radio" id="page5" name="page">
-    <label for="page5">5</label>
+        <input type="radio" id="page4" name="page">
+        <label for="page4">4</label>
+
+        <input type="radio" id="page5" name="page">
+        <label for="page5">5</label>
+
+        <input type="radio" id="page1" name="page" checked>
+        <label for="page1">&gt;</label>
     </div>
 
     <!-- 푸터 -->
     <footer class="footer">
+    <div class="footer-container">
+        <div class="fooer-top">
+        <img src="footer_logo.png" alt="Inflearn 로고" class="footer-logo">
+        </div>
+        <div class="footer-info">
         <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
         <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
         <p class="footer-copy">© NEULIT. ALL RIGHTS RESERVED</p>
+        </div>
+    </div>
     </footer>
 </body>
 </html>
