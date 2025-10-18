@@ -9,8 +9,8 @@
     margin: 30px auto 10px auto;
     border-radius: 8px;
     border: 1px solid #ccc;
-    width: 55vh;
-    height: 45px;
+    width: 50vh;
+    height: 53px;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -83,13 +83,9 @@
 
 /* 상단 정렬 영역 */
 .list-top {
-    width: 75%;
-    max-width: 1200px;
+    width: 95%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 10px auto 5px auto;
-    padding: 0 20px;
 }
 
 .lecture-dropdown select {
@@ -98,6 +94,8 @@
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
+    width: 100px;
+    height: 30px;
 }
 
 /* 강의 리스트 */
@@ -700,9 +698,9 @@
 }
 
 .lecture-link {
-    display: flex;              /* a 요소도 flex 컨테이너로 */
-    flex-direction: column;     /* 위(썸네일) - 아래(본문) 구조 */
-    height: 100%;               /* 부모 카드 높이를 꽉 채움 */
+    display: flex;             
+    flex-direction: column;    
+    height: 100%;               
     text-decoration: none;
     color: inherit;
 }
