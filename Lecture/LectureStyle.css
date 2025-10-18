@@ -6,7 +6,7 @@
 
 /* 검색창 */
 .lecture-search {
-    margin: 50px auto 10px auto;
+    margin: 30px auto 10px auto;
     border-radius: 8px;
     border: 1px solid #ccc;
     width: 55vh;
@@ -113,7 +113,7 @@
     flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 10px;
-    width: 23%;
+    width: 22%;
     height: 350px;
     margin: 20px;
     overflow: hidden;

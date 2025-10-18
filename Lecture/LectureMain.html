@@ -9,19 +9,29 @@
 </head>
 <body>
     <!-- 네비게이션 -->
-    <nav class="nav-container">
-        <img src="main_logoicon.png" alt="로고" class="logo">
-        <div class="menu">
-            <a href="LectureMain.html"><input type="radio" id="lecture" name="nav" value="lecture" checked><label for="lecture">강의</label></a>
-            <a href=""><input type="radio" id="mentoring" name="nav" value="mentoring"><label for="mentoring">멘토링</label></a>
-            <a href="CommunityMain.html"><input type="radio" id="community" name="nav" value="community"><label for="community">커뮤니티</label></a>
-            <a href="ClipMain.html"><input type="radio" id="clip" name="nav" value="clip"><label for="clip">클립</label></a>
-        </div>
-        <div>
-            <a href="basket.html"><img src="cart.svg" alt="장바구니" class="icon"></a>
-            <a href="dash_profile"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
-        </div>
-    </nav>
+<!--헤더-->
+    <header>
+        <nav class="nav-container">
+            <img src="main_logoicon.png" alt="로고" class="logo">
+            <div class="menu">
+                <input type="radio" id="lecture" name="nav" value="lecture" checked>
+                <label for="lecture"><a href="LectureMain.html">강의</a></label>
+
+                <input type="radio" id="mentoring" name="nav" value="mentoring">
+                <label for="mentoring"><a href="MentoringMain.html">멘토링</a></label>
+
+                <input type="radio" id="community" name="nav" value="community" checked>
+                <label for="community"><a href="CommunityMain.html">커뮤니티</a></label>
+
+                <input type="radio" id="clip" name="nav" value="clip">
+                <label for="clip"><a href="ClipMain.html">클립</a></label>
+            </div>
+            <div>
+                <a href="basket.html"><img src="cart.svg" alt="장바구니" class="icon"></a>
+                <a href="dash_profile.html"><img src="profile.svg" alt="마이페이지" class="icon"></a>            
+            </div>
+        </nav>
+    </header>
 
     <!-- 검색창 -->
     <div class="lecture-search">
@@ -54,7 +64,7 @@
     <main class="content">
         <article class="lecture-main">
             <div class="list-top">
-                <div class="lecture-count"><h4>613 강의</h4></div>
+                <div class="lecture-count"><h4>1022 강의</h4></div>
                 <div class="lecture-dropdown">
                     <select>
                         <option>추천순</option>
@@ -223,6 +233,59 @@
                             <div class="lecture-info">
                                 <span class="price">₩77,000</span>
                                 <span class="person">⭐4.9 <img src="person.svg" alt="사람 로고">200+</span>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+                <section class="lecture">
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="commerce.png" alt="커머스 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">제미니의 개발실무 - 커머스 백엔드 기본편</h3>
+                                <p class="instructor">신동현</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩77,000</span>
+                                <span class="person">⭐4.9 <img src="person.svg" alt="사람 로고">200+</span>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+                <section class="lecture">
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="ai.png" alt="ai 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">코딩 없이 AI 자동화 전문가가 되는 법</h3>
+                                <p class="instructor">남박사</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩51,150</span>
+                                <span class="person">⭐4.9 <img src="person.svg" alt="사람 로고">1,700+</span>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+                <section class="lecture">
+                    <a href="LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="web.png" alt="부트스트랩 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">부트스트랩을 활용한 반응형 웹제작</h3>
+                                <p class="instructor">영코디 킴쌤</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩29,700</span>
+                                <span class="person">⭐4.9 <img src="person.svg" alt="사람 로고">5</span>
                             </div>
                         </div>
                     </a>
