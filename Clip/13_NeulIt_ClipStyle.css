@@ -323,11 +323,16 @@ body.clip-detail-page .back-btn {
     display: inline-block;
     margin-bottom: 20px;
     padding: 10px 20px;
-    background: #ec8201;
+    background: #ec8201; 
     color: #fff;
     border-radius: 5px;
     font-weight: bold;
     text-decoration: none;
+    transition: background-color 0.3s; 
+}
+
+body.clip-detail-page .back-btn:hover {
+    background-color: #ff9f3c; 
 }
 
 body.clip-detail-page .back-btn:hover {
