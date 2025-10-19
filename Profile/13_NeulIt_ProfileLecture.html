@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프로필</title>
+  <link rel="stylesheet" href="13_NeulIt_profile.css">
+  <link rel="stylesheet" href="../13_NeulIt_style.css">
+</head>
+
+<body>
+  <!-- nav -->
+  <header>
+    <nav class="nav-container">
+      <img src="../Images/main_logoicon.png" alt="로고" class="logo">
+      <div class="menu">
+        <input type="radio" id="lecture" name="nav" value="lecture">
+        <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
+
+        <input type="radio" id="mentoring" name="nav" value="mentoring">
+        <label for="mentoring"><a href="../Mentoring/13_NeulIT_MentoringMain.html">멘토링</a></label>
+
+        <input type="radio" id="community" name="nav" value="community">
+        <label for="community"><a href="../Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+
+        <input type="radio" id="clip" name="nav" value="clip">
+        <label for="clip"><a href="../Clip/13_NeulItClipMain.html">클립</a></label>
+      </div>
+      <div>
+        <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
+        <a href="13_NeulIt_ProfileDash.html"><img src="../Images/profile.svg" alt="마이페이지" class="icon"></a>            
+      </div>
+    </nav>
+  </header>
+
+  <!-- 메인-->
+  <div class="profile-container">
+    <!-- 메뉴 -->
+    <aside class="profile-aside">
+      <div class="profile-info">
+        <img src="../Images/me.png" alt="프로필 이미지" class="profile-img">        
+        <h2 class="profile-id">neulit</h2>
+        <p class="profile-email">neulit@gmail.com</p>
+        <button class="edit-btn">프로필 수정</button>
+      </div>
+
+      <div class="profile-menu">
+        <a href="13_NeulIt_ProfileDash.html" class="menu-item">대시보드</a>
+        <a href="13_NeulIt_ProfileLecture.html" class="menu-item active">내 학습</a>
+        <a href="13_NeulIt_ProfileMentoring.html" class="menu-item">멘토링</a>
+        <a href="13_NeulIt_ProfileCommunity.html" class="menu-item">커뮤니티 게시글</a>
+      </div>
+    </aside>
+
+    <!-- 강의 영역 -->
+    <main class="profile-main">
+      <h1 class="main-title">내 학습</h1>
+
+      <!-- 상단 탭 -->
+      <div class="profile-tabs">
+        <button class="tab-btn active">강의</button>
+        <button class="tab-btn">폴더</button>
+        <button class="tab-btn">수강확인증</button>
+        <button class="tab-btn">수료증</button>
+        <button class="tab-btn">클립</button>
+      </div>
+    
+      <!-- 상태 버튼 -->
+      <div class="profile-status">
+        <button class="status-btn active">학습중</button>
+        <button class="status-btn">완강</button>
+      </div>
+
+      <!-- 수강 강의 목록 -->
+      <section class="lecture-list">
+
+        <a href="../Lecture/13_NeulIt_LectureDetail.html" class="card-link">
+          <div class="lecture-card">
+            <img src="../Images/html+css.png" alt="강의 썸네일" class="lecture-thumb">
+            <div class="lecture-info">
+              <h3 class="lecture-title">제대로 파는 HTML CSS - by 얄코(Yalco)</h3>
+              <p class="lecture-author"> 얄팍한 코딩사전 | 무제한 수강</p>
+              <div class="lecture-progress">
+                <div class="progress-bar" style="width: 70%;"></div>
+              </div>
+              <p class="lecture-status">70 / 100강 (70%)</p>
+            </div>
+          </div>
+        </a>
+      
+        <a href="../Lecture/13_NeulIt_LectureDetail.html" class="card-link">   
+          <div class="lecture-card">
+            <img src="../Images/python.png" alt="강의 썸네일" class="lecture-thumb">
+            <div class="lecture-info">
+              <h3 class="lecture-title">프로그래밍 시작하기 : 파이썬 입문 (Inflearn Original)</h3>
+              <p class="lecture-author">인프런 | 무제한 수강</p>
+              <div class="lecture-progress">
+                <div class="progress-bar" style="width: 20%;"></div>
+              </div>
+              <p class="lecture-status">2 / 10강 (20%)</p>
+            </div>
+          </div>
+        </a>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <img src="../Images/footer_logo.PNG" alt="Inflearn 로고" class="footer-logo">
+      </div>
+      <div class="footer-info">
+        <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
+        <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
+        <p class="footer-copy">© NEULIT. ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
