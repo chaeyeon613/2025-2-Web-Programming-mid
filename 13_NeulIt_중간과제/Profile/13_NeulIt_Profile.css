@@ -1,0 +1,544 @@
+/** 공통 **/
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body { 
+    overscroll-behavior: none;
+}
+
+
+/** 전체 레이아웃 **/
+.profile-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px 120px;
+    gap: 80px; 
+}
+
+
+/** 카드 링크 **/
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+/** aside 영역 **/
+/* 프로필 영역 */
+.profile-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 0;
+    border-radius: 12px;
+}
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    margin-bottom: 18px;
+}
+.profile-id {
+    font-size: 17px;
+    font-weight: 700;
+}
+.profile-email {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+.edit-btn {
+    background: #fff;
+    border: 1px solid #ec8201;
+    color: #ec8201;
+    font-size: 13px;
+    border-radius: 6px;
+    padding: 7px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.edit-btn:hover {
+    background: #ec8201;
+    color: #fff;
+}
+  
+/* 메뉴 영역 */
+.profile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 30px;
+}
+.menu-item {
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s;
+}
+.menu-item:hover {
+    background: #f5f5f5;
+}
+.menu-item.active {
+    background: #fff3e6;
+    color: #ec8201;
+    font-weight: 600;
+}
+.profile-menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+
+/** main 영역 **/
+/* com: 목록 */
+.community-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 35px;
+}
+.community-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 14px;
+    transition: all 0.2s ease;
+}
+.community-item:hover {
+    background: #fafafa;
+    border-radius: 8px;
+}
+.community-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.community-date {
+    font-size: 12px;
+    color: #999;
+}
+.community-title {
+    font-size: 15px;
+    font-weight: 450;
+    margin-bottom: 3px;
+    line-height: 1.4;
+}
+.community-detail {
+    font-size: 13px;
+    font-weight: 400;
+    color:#555;
+    margin-bottom: 6px;
+}
+.community-footer {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: #777;
+}
+.community-category {
+    color: #ec8201;
+    font-weight: 500;
+}
+
+
+/** dash **/
+/* 공통 */
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: stretch;
+}
+.dashboard-gap {
+    margin-top: 35px;
+}
+.dash-card {
+    flex: 1;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 26px 20px;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-title {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* 수강 중 강의 */
+.course-list {      /* 학습 목록 */
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+.course-list:hover {
+    color: #888;
+}
+.course-item {      /* 영역 */
+    display: flex;
+    align-items: center; 
+    gap: 16px;  
+    padding-top: 14px;
+}
+.play-btn {     /* 재생 버튼 */
+    background-color: #ec8201;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.play-btn:hover {
+    background-color: #ff9f3c;
+}
+.course-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.course-title {
+    font-size: 15px;
+    font-weight: 600;
+}
+.course-progress {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+/* 멘토링 현황 */
+.mentoring-status {     /* 상태 */
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.mentor-info {      /* 영역 */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.mentor-name {
+    font-size: 15px;
+    font-weight: 600;
+}
+.mentor-field {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+}
+.mentor-date {
+    font-size: 14px;
+    color: #777;
+}
+
+/* 연간 학습 */
+.yearly-container {     /* 전체 영역 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+.yearly-chart {     /* 그래프 영역 */
+    width: 100%;
+    display: block; 
+    margin-top: 18px;
+}
+.yearly-stats {
+    display: flex;
+    gap: 45px;
+    align-items: flex-start;
+    margin-top: -20px;
+}
+.stat-title {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 4px;
+}
+.stat-value {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 스킬 태그 */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+.tag {
+    background: #f5f5f5;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* 나의 레벨 */
+.level-img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+.level-card {       /* 글씨 영역 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 24px;
+}
+.level-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.level-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8A8A8A;
+}
+
+/* 수료증 */
+.cert-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+}
+.cert-card p {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+}
+
+
+/** lec, mentor, com 공통 **/
+.profile-main {
+    padding-top: 10px;
+    min-height: 380px;
+}
+.main-title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* lec, com: 상단 바 */
+.profile-tabs {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    padding: 8px 4px;
+    transition: all 0.25s ease;
+}
+.tab-btn:hover {
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+.tab-btn.active {
+    color: #ec8201;
+}
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2.5px;
+    background: #ec8201;
+    border-radius: 2px;
+}
+
+/* lec, mentor, com: 상태버튼 */
+.profile-status {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.status-btn {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.status-btn:hover {
+    background: #f5f5f5;
+}
+.status-btn.active {
+    border: 1px solid #ec8201;
+    background: #fff3e6;
+    color: #ec8201;
+    font-weight: 600;
+}
+
+
+/* lec: 수강 강의 목록 */
+.lecture-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 30px;
+  }
+.lecture-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+    transition: all 0.2s ease;
+}
+.lecture-card:hover {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.lecture-thumb {
+    width: 160px;
+    height: 95px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.lecture-info {
+    flex: 1;
+}
+.lecture-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.lecture-author {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 12px;
+}
+.lecture-progress {
+    background: #f5f5f5;
+    border-radius: 8px;
+    height: 7px;
+    width: 100%;
+    margin-bottom: 8px;
+}
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ec8201 0%, #ff9f3c 100%);
+    border-radius: 8px;
+}
+.lecture-status {
+    font-size: 13px;
+    color: #666;
+}
+
+/* mentor: 목록 */
+.mentoring-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 40px;
+    justify-content: flex-start;
+}
+.mentoring-card {
+    flex: 0 0 calc(33.333% - 22px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+    transition: all 0.25s ease;
+    height: 310px; 
+    text-align: center;
+}
+.mentoring-card:hover {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.mentor-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 4px;
+}
+.mentor-name {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 6px 0 4px;
+}
+.mentor-category {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+.mentor-detail {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+.mentoring-date {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.mentoring-status {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+.mentoring-status.confirmed {
+    background: #fff3e6;
+    color: #ec8201;
+}
+.mentoring-status.done {
+    background: #e9f8ef;
+    color: #33a36c;
+}
