@@ -398,3 +398,31 @@ body.clip-detail-page .news p {
         aspect-ratio: 16 / 9;
     }
 }
+
+
+/* 상세페이지 전용 푸터 오버라이드 */
+body.clip-detail-page .footer {
+    padding: 50px 0 60px !important;
+    margin-top: 60px !important;
+}
+
+body.clip-detail-page .footer-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+body.clip-detail-page .footer-top {
+    margin-bottom: 15px !important;
+}
+
+body.clip-detail-page .footer-logo {
+    display: block !important;
+    height: 28px !important;
+    margin: 0 auto !important;
+}
+
+body.clip-detail-page .footer-info p {
+    margin: 4px 0 !important;
+    color: #bbb !important;
+    line-height: 1.6 !important;
+}
