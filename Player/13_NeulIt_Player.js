@@ -1,7 +1,6 @@
-// URL에서 courseId 가져오기
+// 강의 데이터 로딩
 const urlParams = new URLSearchParams(location.search);
 const selectedCourseId = urlParams.get("courseId");
-
 const courseData = allCourseData[selectedCourseId];
 
 if (!courseData) {
@@ -9,31 +8,39 @@ if (!courseData) {
 }
 
 const curriculumContainer = document.getElementById("curriculum-container");
-
 const video = document.getElementById("video-player");
 const videoSource = document.getElementById("video-source");
-
 const titleCourse = document.getElementById("course-title");
 const titleLecture = document.getElementById("current-title");
 const btnComplete = document.getElementById("complete-btn");
 
 
+// completed 구조 로딩
+let completedStore = JSON.parse(localStorage.getItem("completedLectures") || "{}");
 
-// 현재 강의 상태 저장 변수
+if (!completedStore[selectedCourseId]) {
+    completedStore[selectedCourseId] = {};
+}
+
+let completed = completedStore[selectedCourseId];
 let currentLecture = null;
-let completed = JSON.parse(localStorage.getItem("completedLectures") || "{}");
 
 
 // 커리큘럼 렌더링
 function renderCurriculum() {
     curriculumContainer.innerHTML = "";
 
-    // 상단 큰 제목
+    // 학습률
+    const progressEl = document.createElement("div");
+    progressEl.id = "progress-text";
+    progressEl.classList.add("progress-text");
+    progressEl.innerText = "학습률: 0%";
+    curriculumContainer.appendChild(progressEl);
+
     titleCourse.innerText = courseData.title;
 
+    // 섹션별 렌더링
     courseData.sections.forEach(section => {
-
-        // 섹션 헤더
         const header = document.createElement("div");
         header.classList.add("section-header");
         header.onclick = () => toggleSection(header);
@@ -47,16 +54,14 @@ function renderCurriculum() {
         `;
         curriculumContainer.appendChild(header);
 
-
-        // 섹션 콘텐츠
         const content = document.createElement("div");
         content.classList.add("section-content");
         content.id = `section-${section.sectionId}`;
+        content.style.display = "none";
         curriculumContainer.appendChild(content);
 
-
-        // 강의 목록
-        section.lectures.forEach(lec => {
+        // 강의 렌더링
+        section.lectures.forEach((lec, idx) => {
             const item = document.createElement("div");
             item.classList.add("curri-item");
 
@@ -64,22 +69,19 @@ function renderCurriculum() {
 
             item.innerHTML = `
                 <div class="curri-left">
-                    <span class="icon-status">
-                        ${completed[lec.lectureId] ? "✔" : "▶"}
-                    </span>
+                    <span class="icon-status">${completed[lec.lectureId] ? "✔" : "▶"}</span>
                     <span class="item-title">${lec.title}</span>
                 </div>
                 <span class="item-time">${lec.time}</span>
             `;
 
             item.onclick = () => selectLecture(lec);
-
             content.appendChild(item);
         });
     });
+
+    updateProgressRate(); 
 }
-
-
 
 
 // 강의 선택
@@ -87,7 +89,6 @@ function selectLecture(lecture) {
     currentLecture = lecture;
 
     titleLecture.innerText = lecture.title;
-
     videoSource.src = lecture.video;
     video.load();
     video.play();
@@ -96,15 +97,20 @@ function selectLecture(lecture) {
 }
 
 
-// 버튼
+// 완료 버튼 토글
 function toggleComplete() {
     if (!currentLecture) return;
 
     const id = currentLecture.lectureId;
 
+    // 완료 상태 저장
     completed[id] = !completed[id];
-    localStorage.setItem("completedLectures", JSON.stringify(completed));
 
+    // 저장
+    completedStore[selectedCourseId] = completed;
+    localStorage.setItem("completedLectures", JSON.stringify(completedStore));
+
+    // 현재 펼쳐진 섹션 기억
     const openSections = [];
     document.querySelectorAll(".section-content").forEach(sec => {
         if (sec.style.display === "block") openSections.push(sec.id);
@@ -112,8 +118,8 @@ function toggleComplete() {
 
     renderCurriculum();
 
-    openSections.forEach(id => {
-        const sec = document.getElementById(id);
+    openSections.forEach(secId => {
+        const sec = document.getElementById(secId);
         if (sec) {
             sec.style.display = "block";
             sec.previousElementSibling.querySelector(".arrow").style.transform = "rotate(180deg)";
@@ -121,9 +127,11 @@ function toggleComplete() {
     });
 
     updateCompleteButton();
-    
+    updateProgressRate();
 }
 
+
+//   완료 버튼 UI
 function updateCompleteButton() {
     if (!currentLecture) {
         btnComplete.innerText = "이해했어요";
@@ -132,7 +140,7 @@ function updateCompleteButton() {
     }
 
     if (completed[currentLecture.lectureId]) {
-        btnComplete.innerText = "완료됨 ✓";
+        btnComplete.innerText = "완료됨";
         btnComplete.classList.add("done");
     } else {
         btnComplete.innerText = "이해했어요";
@@ -141,8 +149,7 @@ function updateCompleteButton() {
 }
 
 
-
-// 토글
+// 섹션 토글
 function toggleSection(header) {
     const content = header.nextElementSibling;
     const arrow = header.querySelector(".arrow");
@@ -157,42 +164,47 @@ function toggleSection(header) {
 }
 
 
-// < 뒤로 가기
-document.getElementById("back-btn").onclick = () => {
-    if (document.referrer) {
-        history.back();
-    } 
-    else {
-        location.href = "../Profile/13_NeulIt_ProfileLecture.html";
-    }
-};
+// 학습률 계산
+function updateProgressRate() {
+    const all = [];
+    courseData.sections.forEach(sec => sec.lectures.forEach(lec => all.push(lec)));
 
+    const completedCount = all.filter(lec => completed[lec.lectureId]).length;
+    const totalCount = all.length;
 
+    const rate = Math.round((completedCount / totalCount * 100) * 10) / 10;
 
-// 강의 자동 재생
-function autoPlayFirstLecture() {
-    // 모든 강의 배열로 모으기
-    const allLectures = [];
-    courseData.sections.forEach(section => {
-        section.lectures.forEach(lec => allLectures.push(lec));
-    });
-
-    // 완료된 강의 ID 목록
-    const completedIds = Object.keys(completed);
-
-    // 아직 완료 안 된 강의 찾기
-    const nextLecture = allLectures.find(lec => !completedIds.includes(lec.lectureId));
-
-    // 완료 안 된 강의가 있으면 그거 재생
-    if (nextLecture) {
-        selectLecture(nextLecture);
-        return;
-    }
-
-    // 다 들었으면 첫 강의 재생
-    selectLecture(allLectures[0]);
+    const progressEl = document.getElementById("progress-text");
+    if (progressEl) progressEl.innerText = `학습률: ${rate}%`;
 }
 
+
+// 자동 재생
+function autoPlayFirstLecture() {
+    const all = [];
+    courseData.sections.forEach(sec => sec.lectures.forEach(lec => all.push(lec)));
+
+    const next = all.find(lec => !completed[lec.lectureId]);
+
+    selectLecture(next || all[0]);
+}
+
+
+// 뒤로 가기 버튼
+document.addEventListener("DOMContentLoaded", () => {
+    const backBtn = document.getElementById("back-btn");
+
+    if (!backBtn) return;
+
+    backBtn.onclick = () => {
+        if (document.referrer && document.referrer !== "") {
+            history.back();
+            return;
+        }
+
+        location.href = "../Profile/13_NeulIt_ProfileLecture.html";
+    };
+});
 
 
 renderCurriculum();
