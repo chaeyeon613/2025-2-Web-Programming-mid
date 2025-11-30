@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeulIt Main</title>
+
+  <!-- 메인 스타일 연동 -->
+  <link rel="stylesheet" href="13_NeulIt_MainStyle.css">
+</head>
+
+<body class="main-page">
+
+  <!--  공통 네비바  -->
+  <header>
+        <nav class="nav-container">
+            <a href="../Lecture/13_NeulIt_LectureMain.html"><img src="../Images/main_logoicon.png" alt="로고" class="logo"></a>
+            <div class="menu">
+                <input type="radio" id="lecture" name="nav" value="lecture">
+                <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
+
+                <input type="radio" id="mentoring" name="nav" value="mentoring">
+                <label for="mentoring"><a href="../Mentoring/13_NeulIt_MentoringMain.html">멘토링</a></label>
+
+                <input type="radio" id="community" name="nav" value="community" >
+                <label for="community"><a href="13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+
+                <input type="radio" id="clip" name="nav" value="clip" >
+                <label for="clip"><a href="../Clip/13_NeulIt_ClipMain.html">클립</a></label>
+            </div>
+            <div>
+                <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
+                <a href="../Profile/13_NeulIt_ProfileDash.html"><img src="../Images/profile.svg" alt="마이페이지" class="icon"></a>            
+            </div>
+        </nav>
+    </header>
+
+
+  <!--  메인 콘텐츠 -->
+  <main class="welcome-container">
+
+    <!-- 환영 문구 -->
+    <section class="welcome-title">
+      <h1>NEULIT에 오신 것을<br>환영합니다.</h1>
+
+      <div class="slogan">
+        <p>“여성 개발자가 서로를 비추는 커뮤니티”</p>
+        <p>“여성의 코드가 세상을 바꿉니다”</p>
+      </div>
+    </section>
+
+    <!-- 어떤 분야를 배우고 싶나요? -->
+    <h2 class="study-title">어떤 분야를 배우고 싶나요?</h2>
+
+    <!--  캐러셀 와이어프레임  -->
+    <section class="carousel-section">
+
+    <!-- 메인 캐러셀 -->
+    <div class="carousel-view">
+        <div class="carousel-track" id="carousel-track">
+            <div class="carousel-slide" data-label="Python"></div>
+            <div class="carousel-slide" data-label="JavaScript"></div>
+            <div class="carousel-slide" data-label="C++"></div>
+        </div>
+    </div>
+    
+    <div class="carousel-label" id="carousel-label">
+        Python
+    </div>
+
+</section>
+
+ <!-- 푸터 -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <img src="../Images/footer_logo.PNG" alt="NEULIT 로고" class="footer-logo">
+        </div>
+        <div class="footer-info">
+            <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
+            <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
+            <p>© NEULIT. ALL RIGHTS RESERVED</p>
+        </div>
+    </div>
+</footer>
