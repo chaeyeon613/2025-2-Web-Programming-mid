@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeulIt Main</title>
+
+    <!-- CSS 연결 -->
+    <link rel="stylesheet" href="13_NeulIt_MainStyle.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body class="main-page">
+
+    <!-- 네비게이션 -->
+    <header>
+        <nav class="nav-container">
+        <a href="../Lecture/13_NeulIt_LectureMain.html">
+            <img src="../Images/main_logoicon.png" alt="로고" class="logo">
+        </a>
+
+        <div class="menu">
+            <input type="radio" id="lecture" name="nav">
+            <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
+
+            <input type="radio" id="mentoring" name="nav">
+            <label for="mentoring"><a href="../Mentoring/13_NeulIt_MentoringMain.html">멘토링</a></label>
+
+            <input type="radio" id="community" name="nav">
+            <label for="community"><a href="13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+
+            <input type="radio" id="clip" name="nav">
+            <label for="clip"><a href="../Clip/13_NeulIt_ClipMain.html">클립</a></label>
+        </div>
+
+        <div>
+            <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" class="icon"></a>
+            <a href="../Profile/13_NeulIt_ProfileDash.html"><img src="../Images/profile.svg" class="icon"></a>
+        </div>
+        </nav>
+    </header>
+
+
+    <!-- 메인 콘텐츠 -->
+    <section class="main">
+        <div>
+            <span class="one_text">NeulIT은</span><br>
+            <span class="two_text">여성 개발자를 위한 커뮤니티예요</span>
+        </div>
+    </section>
+
+    <script>
+        const two_text = document.querySelector(".two_text");
+        const textmain = () => {
+            setTimeout(() => {
+                two_text.textContent = "여성 개발자를 위한 커뮤니티예요";
+            }, 0);
+            setTimeout(() => {
+                two_text.textContent = "함께 성장하는 IT 플랫폼이에요";
+            }, 3000);
+            setTimeout(() => {
+                two_text.textContent = "지식이 이어지는 공간이에요";
+            }, 6000);
+        }
+        textmain();
+        setInterval(textmain,9000);
+    </script>
+
+    <!-- 무한 오토 캐러셀 -->
+    <div class="wrapper">
+        <div class="item item1">
+            <div class="img-box">
+                <img src="../Images/python.png" alt="파이썬 강의 썸네일">
+            </div>
+            <p>python</p>
+        </div>
+        <div class="item item2">
+            <p>JavaScript</p>
+        </div>
+        <div class="item item3">
+            <p>C++</p>
+        </div>
+        <div class="item item4">
+            <p>AI</p>
+        </div>
+        <div class="item item5">
+            <p>Java</p>
+        </div>
+        <div class="item item6">
+            <p>Java</p>
+        </div>
+        <div class="item item7">
+            <p>Java</p>
+        </div>
+        <div class="item item8">
+            <p>Java</p>
+        </div>
+    </div>
+
+</body>
+
+<!-- 푸터 -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <img src="../Images/footer_logo.PNG" alt="NEULIT 로고" class="footer-logo">
+        </div>
+        <div class="footer-info">
+            <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 기말과제</p>
+            <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
+            <p>© NEULIT. ALL RIGHTS RESERVED</p>
+        </div>
+    </div>
+</footer>
+</html>
