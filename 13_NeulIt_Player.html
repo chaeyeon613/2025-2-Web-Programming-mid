@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강의 플레이어</title>
+
+  <link rel="stylesheet" href="13_NeulIt_Player.css">
+
+  <script src="courseData.js" defer></script>
+  <script src="13_NeulIt_Player.js" defer></script>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <a class="back-btn" href="../Lecture/13_NeulIt_LectureDetail.html">&lt;</a>
+        <h1 id="course-title">강의 제목</h1>
+    </div>
+    
+    <div class="player-layout">
+
+        <section class="player-left">
+
+            <div class="video-wrapper">
+                <video controls id="video-player">
+                    <source id="video-source" src="" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="title-row">
+                <h2 id="current-title" class="video-title">(강의 선택하세요)</h2>
+                <button id="complete-btn" onclick="toggleComplete()">이해했어요</button>
+            </div>
+
+        </section>
+
+        <div class="divider"></div>
+
+        <aside class="player-right">
+            <h3 class="curri-title">커리큘럼</h3>
+            <div id="curriculum-container"></div>
+        </aside>
+
+    </div>
+
+</body>
+</html>
