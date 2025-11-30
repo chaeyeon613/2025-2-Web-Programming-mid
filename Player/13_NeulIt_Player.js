@@ -1,13 +1,9 @@
-/*************************************************
- *  0. URL에서 courseId 가져오기 (앞으로 확장용)
- *************************************************/
+// URL에서 courseId 가져오기
 const urlParams = new URLSearchParams(location.search);
 const selectedCourseId = urlParams.get("courseId") || courseData.courseId;
 
 
-/*************************************************
- *  1. DOM 요소
- *************************************************/
+
 const curriculumContainer = document.getElementById("curriculum-container");
 
 const video = document.getElementById("video-player");
@@ -18,25 +14,22 @@ const titleLecture = document.getElementById("current-title");
 const btnComplete = document.getElementById("complete-btn");
 
 
-/*************************************************
- *  2. 현재 강의 상태 저장 변수
- *************************************************/
+
+// 현재 강의 상태 저장 변수
 let currentLecture = null;
 let completed = JSON.parse(localStorage.getItem("completedLectures") || "{}");
 
 
-/*************************************************
- *  3. 커리큘럼 렌더링
- *************************************************/
+// 커리큘럼 렌더링
 function renderCurriculum() {
-    curriculumContainer.innerHTML = ""; // 초기화
+    curriculumContainer.innerHTML = "";
 
     // 상단 큰 제목
     titleCourse.innerText = courseData.title;
 
     courseData.sections.forEach(section => {
 
-        /******** 섹션 헤더 ********/
+        // 섹션 헤더
         const header = document.createElement("div");
         header.classList.add("section-header");
         header.onclick = () => toggleSection(header);
@@ -51,14 +44,14 @@ function renderCurriculum() {
         curriculumContainer.appendChild(header);
 
 
-        /******** 섹션 콘텐츠 ********/
+        // 섹션 콘텐츠
         const content = document.createElement("div");
         content.classList.add("section-content");
         content.id = `section-${section.sectionId}`;
         curriculumContainer.appendChild(content);
 
 
-        /******** 강의 목록 ********/
+        // 강의 목록
         section.lectures.forEach(lec => {
             const item = document.createElement("div");
             item.classList.add("curri-item");
@@ -83,9 +76,7 @@ function renderCurriculum() {
 }
 
 
-/*************************************************
- *  4. 강의 선택 (비디오 + 제목 변경)
- *************************************************/
+// 강의 선택
 function selectLecture(lecture) {
     currentLecture = lecture;
 
@@ -99,9 +90,7 @@ function selectLecture(lecture) {
 }
 
 
-/*************************************************
- *  5. "이해했어요" 기능
- *************************************************/
+// 버튼
 function toggleComplete() {
     if (!currentLecture) return;
 
@@ -131,9 +120,8 @@ function updateCompleteButton() {
 }
 
 
-/*************************************************
- *  6. 섹션 토글
- *************************************************/
+
+// 토글
 function toggleSection(header) {
     const content = header.nextElementSibling;
     const arrow = header.querySelector(".arrow");
@@ -148,7 +136,4 @@ function toggleSection(header) {
 }
 
 
-/*************************************************
- *  7. 초기 렌더링
- *************************************************/
 renderCurriculum();
