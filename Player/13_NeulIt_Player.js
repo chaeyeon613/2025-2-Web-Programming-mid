@@ -1,8 +1,12 @@
 // URL에서 courseId 가져오기
 const urlParams = new URLSearchParams(location.search);
-const selectedCourseId = urlParams.get("courseId") || courseData.courseId;
+const selectedCourseId = urlParams.get("courseId");
 
+const courseData = allCourseData[selectedCourseId];
 
+if (!courseData) {
+    alert("강의 정보를 불러올 수 없습니다.");
+}
 
 const curriculumContainer = document.getElementById("curriculum-container");
 
@@ -76,6 +80,8 @@ function renderCurriculum() {
 }
 
 
+
+
 // 강의 선택
 function selectLecture(lecture) {
     currentLecture = lecture;
@@ -95,12 +101,27 @@ function toggleComplete() {
     if (!currentLecture) return;
 
     const id = currentLecture.lectureId;
-    completed[id] = !completed[id];
 
+    completed[id] = !completed[id];
     localStorage.setItem("completedLectures", JSON.stringify(completed));
 
-    updateCompleteButton();
+    const openSections = [];
+    document.querySelectorAll(".section-content").forEach(sec => {
+        if (sec.style.display === "block") openSections.push(sec.id);
+    });
+
     renderCurriculum();
+
+    openSections.forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec) {
+            sec.style.display = "block";
+            sec.previousElementSibling.querySelector(".arrow").style.transform = "rotate(180deg)";
+        }
+    });
+
+    updateCompleteButton();
+    
 }
 
 function updateCompleteButton() {
@@ -136,4 +157,43 @@ function toggleSection(header) {
 }
 
 
+// < 뒤로 가기
+document.getElementById("back-btn").onclick = () => {
+    if (document.referrer) {
+        history.back();
+    } 
+    else {
+        location.href = "../Profile/13_NeulIt_ProfileLecture.html";
+    }
+};
+
+
+
+// 강의 자동 재생
+function autoPlayFirstLecture() {
+    // 모든 강의 배열로 모으기
+    const allLectures = [];
+    courseData.sections.forEach(section => {
+        section.lectures.forEach(lec => allLectures.push(lec));
+    });
+
+    // 완료된 강의 ID 목록
+    const completedIds = Object.keys(completed);
+
+    // 아직 완료 안 된 강의 찾기
+    const nextLecture = allLectures.find(lec => !completedIds.includes(lec.lectureId));
+
+    // 완료 안 된 강의가 있으면 그거 재생
+    if (nextLecture) {
+        selectLecture(nextLecture);
+        return;
+    }
+
+    // 다 들었으면 첫 강의 재생
+    selectLecture(allLectures[0]);
+}
+
+
+
 renderCurriculum();
+autoPlayFirstLecture();
