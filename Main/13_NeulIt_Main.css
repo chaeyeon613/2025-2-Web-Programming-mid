@@ -6,105 +6,104 @@
     margin: 0;
 }
 
-html {
+html, body {
+    height: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
+/* 모든 section을 한 화면(100vh)씩 보여주기 */
+section {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-intro {
+    font-size: 35px;
+}
+
+.header {
+    margin: 50px;
+}
+
+/* 무한 캐러셀 */
 .wrapper {
-    width: 90%;
-    max-width: 1536px;
+    width: 100%;
+    max-width: 1800px;
     margin-inline: auto;
     position: relative;
-    height: 200px;
+    height: 250px;
     margin-top: 5rem;
     overflow: hidden;
 }
 
 @keyframes scrollLeft {
     to {
-        left: -200px;
+        left: -500px;
     }
 }
 
 .item {
-    width: 300px;
-    height: 200px;
+    width: 450px;
+    height: 250px;
+    background-color: red;
     border-radius: 10px;
     position: absolute;
-    left: max(calc(300px * 8), 100%);
+    left: max(calc(450px * 8), 100%);
     animation-name: scrollLeft;
-    animation-duration: 30s;
+    animation-duration: 40s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 10px;
-}
-
-.img-box{
-    width: 100%;
-    height: 150px;
-    border: 1px solid #e5e5e5;
-    border-radius: 10px;        
-    overflow: hidden;        
-}
-
-.img-box img{
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    display: block;
 }
 
 .item1 {
-    animation-delay: calc(30s / 8 * (8 - 1) * -1);
+    animation-delay: calc(40s / 8 * (8 - 1) * -1);
 }
-
 .item2 {
-    animation-delay: calc(30s / 8 * (8 - 2) * -1);
+    animation-delay: calc(40s / 8 * (8 - 2) * -1);
 }
-
 .item3 {
-    animation-delay: calc(30s / 8 * (8 - 3) * -1);
+    animation-delay: calc(40s / 8 * (8 - 3) * -1);
 }
-
 .item4 {
-    animation-delay: calc(30s / 8 * (8 - 4) * -1);
+    animation-delay: calc(40s / 8 * (8 - 4) * -1);
 }
-
 .item5 {
-    animation-delay: calc(30s / 8 * (8 - 5) * -1);
+    animation-delay: calc(40s / 8 * (8 - 5) * -1);
 }
-
 .item6 {
-    animation-delay: calc(30s / 8 * (8 - 6) * -1);
+    animation-delay: calc(40s / 8 * (8 - 6) * -1);
 }
-
 .item7 {
-    animation-delay: calc(30s / 8 * (8 - 7) * -1);
+    animation-delay: calc(40s / 8 * (8 - 7) * -1);
 }
-
 .item8 {
-    animation-delay: calc(30s / 8 * (8 - 8) * -1);
+    animation-delay: calc(40s / 8 * (8 - 8) * -1);
 }
 
+/* 메인  */
 .main {
     width: 90vw;
     margin: 3rem auto;
     text-align: center;
     color: black;
+
+}
+
+.scroll-text {
+    font-size: 25px;
+    margin: 0;
 }
 
 .one_text, .two_text {
     position: relative;
-    font-size: 60px;
+    font-size: 73px;
     font-weight: 600;
 }
 
 .two_text{
-    color: #2aff29;
+    color: #ec8201;
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -131,4 +130,94 @@ html {
     100% {
         left: 0;
     }
+}
+
+.carousel {
+    text-align: center;
+}
+
+.carousel-view {
+    width: 100vw;
+    max-width: 1500px;            
+    height: 400px;
+    margin: 0;      
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {      
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 버튼 */
+.carousel-control {
+    margin-top: 20px;
+}
+
+.control-btn {
+    font-size: 2rem;
+    padding: 8px 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.blue {
+    --clr: #4285f4;
+}
+
+.red {
+    --clr: #DB4437;
+}
+
+.yellow {
+    --clr: #F4B400;
+}
+
+.green{
+    --clr: #0F9D58;
+}
+
+.section.bg-fixed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;
+
+    min-height: 150vh;
+    padding-top: 100px;
+}
+
+.box{
+    background-color: var(--clr);
+    color:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    margin: 40px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(400%);
+    transition: transform 1s ease;
+}
+
+.box:nth-of-type(even){
+    transform: translateX(-400%);
+}
+
+.box.show{
+    transform: translateX(0);
 }
