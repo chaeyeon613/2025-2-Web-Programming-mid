@@ -24,3 +24,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const id = getParam("id");
+    if (!id) return;
+
+    const course = allCourses[id];
+    const lectureBtn = document.querySelector(".lecture-button");
+
+    if (lectureBtn) {
+        lectureBtn.onclick = () => {
+            const result = confirm(`"${course.title}" 강의를 결제하시겠습니까?`);
+
+            if (!result) {
+                alert("결제가 취소되었습니다.");
+                return;
+            }
+
+            let purchased = JSON.parse(localStorage.getItem("purchased") || "[]");
+
+            if (!purchased.includes(id)) {
+                purchased.push(id);
+            }
+
+            localStorage.setItem("purchased", JSON.stringify(purchased));
+
+            alert("결제가 완료되었습니다! 즐거운 학습 되세요 🌿");
+        };
+    }
+});
