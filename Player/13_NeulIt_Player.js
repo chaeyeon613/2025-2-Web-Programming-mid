@@ -92,6 +92,28 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCompleteButton();
     }
 
+    // 🔥🔥🔥 최근 학습 저장 기능 추가
+    function saveRecentLecture() {
+        if (!currentLecture) return;
+
+        const record = {
+            courseId: selectedCourseId,
+            lectureId: currentLecture.lectureId,
+            lectureTitle: currentLecture.title,
+            lastPlayed: new Date().toISOString()
+        };
+
+        let recent = JSON.parse(localStorage.getItem("recentLectures") || "[]");
+
+        // 같은 courseId는 삭제 → 하나만 유지
+        recent = recent.filter(r => r.courseId !== selectedCourseId);
+
+        // 새 기록 추가
+        recent.push(record);
+
+        localStorage.setItem("recentLectures", JSON.stringify(recent));
+    }
+
     // 완료 처리
     function toggleComplete() {
         if (!currentLecture) return;
@@ -106,6 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
         completed[id] = !completed[id];
         completedStore[selectedCourseId] = completed;
         localStorage.setItem("completedLectures", JSON.stringify(completedStore));
+
+        saveRecentLecture();
  
         renderCurriculum();
     
