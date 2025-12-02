@@ -65,14 +65,24 @@
         <button class="tab-btn">클립</button>
       </div>
     
-      <!-- 상태 버튼 -->
-      <div class="profile-status">
-        <button class="status-btn active">학습중</button>
-        <button class="status-btn">완강</button>
-      </div>
+      <div class="lecture-top">
+        <!-- 상태 버튼 -->
+        <div class="profile-status">
+          <button class="status-btn active">학습중</button>
+          <button class="status-btn">완강</button>
+        </div>
 
-      <section class="lecture-list">
-      </section>
+        <!-- 정렬 -->
+        <div class="lecture-dropdown">
+          <select id="sortSelect">
+            <option value="latest">최신순</option>
+            <option value="rate">학습률순</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- 강의 목록 -->
+      <section class="lecture-list"></section>
 
     </main>
   </div>

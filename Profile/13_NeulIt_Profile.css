@@ -227,6 +227,10 @@ html, body {
     font-size: 15px;
     font-weight: 600;
 }
+.course-title:hover {
+    color: #555;
+  }
+
 .course-progress {
     font-size: 14px;
     color: #777;
@@ -396,7 +400,7 @@ html, body {
 .profile-status {
     display: flex;
     gap: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .status-btn {
     border: 1px solid #ddd;
@@ -418,6 +422,30 @@ html, body {
     font-weight: 600;
 }
 
+/* lec: 정렬 */
+.lecture-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.lecture-dropdown {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 0;
+    transform: translateY(-8px)
+}
+.lecture-dropdown select {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    box-sizing: border-box; 
+}
 
 /* lec: 수강 강의 목록 */
 .lecture-list {
@@ -475,6 +503,7 @@ html, body {
     font-size: 13px;
     color: #666;
 }
+
 
 /* mentor: 목록 */
 .mentoring-list {
