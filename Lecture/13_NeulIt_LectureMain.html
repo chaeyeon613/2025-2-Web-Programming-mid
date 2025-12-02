@@ -5,42 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>강의 메인</title>
     <link rel="stylesheet" href="13_NeulIt_LectureStyle.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../13_NeulIt_style.css">
 </head>
 <body>
-    <!-- 네비게이션 -->
-    <header>
         <nav class="nav-container">
-            <img src="/images/main_logoicon.png" alt="로고" class="logo">
+            <a href="../Lecture/13_NeulIt_LectureMain.html"><img src="../Images/main_logoicon.png" alt="로고" class="logo"></a>
             <div class="menu">
                 <input type="radio" id="lecture" name="nav" value="lecture" checked>
-                <label for="lecture"><a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureMain.html">강의</a></label>
+                <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
 
                 <input type="radio" id="mentoring" name="nav" value="mentoring">
-                <label for="mentoring"><a href="13_NeulIt_중간과제/Memtoring/13_NeulIt_MentoringMain.html">멘토링</a></label>
+                <label for="mentoring"><a href="../Mentoring/13_NeulIt_MentoringMain.html">멘토링</a></label>
 
                 <input type="radio" id="community" name="nav" value="community">
-                <label for="community"><a href="13_NeulIt_중간과제/Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+                <label for="community"><a href="../Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
 
                 <input type="radio" id="clip" name="nav" value="clip">
-                <label for="clip"><a href="13_NeulIt_중간과제/Clip/13_NeulIt_ClipMain.html">클립</a></label>
+                <label for="clip"><a href="../Clip/13_NeulIt_ClipMain.html">클립</a></label>
             </div>
             <div>
-                <a href="13_NeulIt_중간과제/Basket/basket.html"><img src="/images/cart.svg" alt="장바구니" class="icon"></a>
-                <a href="13_NeulIt_중간과제/Profile/dash_profile.html"><img src="/images/profile.svg" alt="마이페이지" class="icon"></a>            
+                <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
+                <a href="../Profile/13_NeulIt_ProfileDash.html"><img src="../Images/profile.svg" alt="마이페이지" class="icon"></a>            
             </div>
         </nav>
-    </header>
 
     <!-- 검색창 -->
     <div class="lecture-search">
         <input type="text" name="text" placeholder="📣 도전하는 것을 망설이지 마세요!">
-        <input type="image" src="/images/search.svg" alt="검색 로고">
+        <input type="image" src="../Images/search.svg" alt="검색 로고">
     </div>
 
     <!-- 카테고리 바 -->
     <div class="category-bar">
-        <input type="radio" id="cat-free" name="category" checked />
+        <input type="radio" id="cat-free" name="category"/>
         <label for="cat-free">무료</label>
 
         <input type="radio" id="cat-sale" name="category" />
@@ -76,9 +73,9 @@
             <div class="lecture-list">
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/python.png" alt="파이썬 강의 썸네일">
+                            <img src="../Images/python.png" alt="파이썬 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -87,16 +84,16 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">무료</span>
-                                <span class="person">⭐4.8 <img src="/images/person.svg" alt="사람 로고">32,800+</span>
+                                <span class="person">⭐4.8 <img src="../Images/person.svg" alt="사람 로고">32,800+</span>
                             </div>
                         </div>
                     </a>
                 </section>
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/react.png" alt="react 강의 썸네일">
+                            <img src="../Images/react.png" alt="react 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -105,16 +102,16 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩44,000</span>
-                                <span class="person">⭐5.0 <img src="/images/person.svg" alt="사람 로고">5,500+</span>
+                                <span class="person">⭐5.0 <img src="../Images/person.svg" alt="사람 로고">5,500+</span>
                             </div>
                         </div>
                     </a>
                 </section>
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/spring.png" alt="spring 강의 썸네일">
+                            <img src="../Images/spring.png" alt="spring 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -123,16 +120,16 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩88,000</span>
-                                <span class="person">⭐5.0 <img src="/images/person.svg" alt="사람 로고">48,400+</span>
+                                <span class="person">⭐5.0 <img src="../Images/person.svg" alt="사람 로고">48,400+</span>
                             </div>
                         </div>
                     </a>
                 </section>
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/c.png" alt="c 강의 썸네일">
+                            <img src="../Images/c.png" alt="c 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -141,16 +138,16 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩99,000</span>
-                                <span class="person">⭐4.9 <img src="/images/person.svg" alt="사람 로고">2,600+</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg" alt="사람 로고">2,600+</span>
                             </div>
                         </div>
                     </a>
                 </section>
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/html+css.png" alt="html 강의 썸네일">
+                            <img src="../Images/html+css.png" alt="html 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -159,16 +156,16 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩44,000</span>
-                                <span class="person">⭐5.0 <img src="/images/person.svg" alt="사람 로고">2,900+</span>
+                                <span class="person">⭐5.0 <img src="../Images/person.svg" alt="사람 로고">2,900+</span>
                             </div>
                         </div>
                     </a>
                 </section>
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/kotlin.png" alt="kotlin 강의 썸네일">
+                            <img src="../Images/kotlin.png" alt="kotlin 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -177,16 +174,16 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩55,000</span>
-                                <span class="person">⭐5.0 <img src="/images/person.svg" alt="사람 로고">3,500+</span>
+                                <span class="person">⭐5.0 <img src="../Images/person.svg" alt="사람 로고">3,500+</span>
                             </div>
                         </div>
                     </a>
                 </section>
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/C++.png" alt="c++ 강의 썸네일">
+                            <img src="../Images/C++.png" alt="c++ 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -195,16 +192,16 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩99,000</span>
-                                <span class="person">⭐4.7 <img src="/images/person.svg" alt="사람 로고">22,100+</span>
+                                <span class="person">⭐4.7 <img src="../Images/person.svg" alt="사람 로고">22,100+</span>
                             </div>
                         </div>
                     </a>
                 </section>
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/docker.png" alt="docker 강의 썸네일">
+                            <img src="../Images/docker.png" alt="docker 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -213,16 +210,16 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩77,000</span>
-                                <span class="person">⭐5.0 <img src="/images/person.svg" alt="사람 로고">13,900+</span>
+                                <span class="person">⭐5.0 <img src="../Images/person.svg" alt="사람 로고">13,900+</span>
                             </div>
                         </div>
                     </a>
                 </section>
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/database.png" alt="database 강의 썸네일">
+                            <img src="../Images/database.png" alt="database 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -231,16 +228,16 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩77,000</span>
-                                <span class="person">⭐4.9 <img src="/images/person.svg" alt="사람 로고">200+</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg" alt="사람 로고">200+</span>
                             </div>
                         </div>
                     </a>
                 </section>
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/commerce.png" alt="커머스 강의 썸네일">
+                            <img src="../Images/c.png" alt="커머스 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -249,15 +246,15 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩77,000</span>
-                                <span class="person">⭐4.9 <img src="/images/person.svg" alt="사람 로고">200+</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg" alt="사람 로고">200+</span>
                             </div>
                         </div>
                     </a>
                 </section>
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/ai.png" alt="ai 강의 썸네일">
+                            <img src="../Images/ai.png" alt="ai 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -266,16 +263,16 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩51,150</span>
-                                <span class="person">⭐4.9 <img src="/images/person.svg" alt="사람 로고">1,700+</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg" alt="사람 로고">1,700+</span>
                             </div>
                         </div>
                     </a>
                 </section>
 
                 <section class="lecture">
-                    <a href="13_NeulIt_중간과제/Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
                         <figure class="lecture-thumbnail">
-                            <img src="/images/web.png" alt="부트스트랩 강의 썸네일">
+                            <img src="../Images/python.png" alt="부트스트랩 강의 썸네일">
                         </figure>
                         <div class="lecture-body">
                             <div class="lecture-top">
@@ -284,7 +281,7 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩29,700</span>
-                                <span class="person">⭐4.9 <img src="/images/person.svg" alt="사람 로고">5</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg" alt="사람 로고">5</span>
                             </div>
                         </div>
                     </a>
@@ -295,8 +292,6 @@
 
     <!-- 페이지 이동 -->
     <div class="pagination">
-        <input type="radio" id="page1" name="page" checked>
-        <label for="page1">&lt;</label>
 
         <input type="radio" id="page1" name="page" checked>
         <label for="page1">1</label>
@@ -313,15 +308,13 @@
         <input type="radio" id="page5" name="page">
         <label for="page5">5</label>
 
-        <input type="radio" id="page1" name="page" checked>
-        <label for="page1">&gt;</label>
     </div>
 
     <!-- 푸터 -->
     <footer class="footer">
     <div class="footer-container">
         <div class="fooer-top">
-        <img src="/images/footer_logo.png" alt="Inflearn 로고" class="footer-logo">
+        <img src="../Images/footer_logo.png" alt="Inflearn 로고" class="footer-logo">
         </div>
         <div class="footer-info">
         <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
@@ -330,5 +323,9 @@
         </div>
     </div>
     </footer>
+
+    <script src="13_NeulIt_Courses.js"></script>
+    <script src="13_NeulIt_LectureMain.js"></script>
+
 </body>
 </html>
