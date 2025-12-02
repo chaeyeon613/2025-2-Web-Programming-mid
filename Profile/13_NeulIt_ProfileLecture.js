@@ -3,33 +3,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnStudying = document.querySelector(".status-btn:nth-child(1)");
     const btnCompleted = document.querySelector(".status-btn:nth-child(2)");
 
-    // *************임시****************
-    const purchased = ["react-basic", "c-basic", "spring-basic"];
+    const purchased = JSON.parse(localStorage.getItem("purchased") || "[]");
 
-    // 강의 렌더링 함수
+    // 강의 렌더링
     function renderLectures(status) {
         lectureList.innerHTML = "";
 
         const completedStore = JSON.parse(localStorage.getItem("completedLectures") || "{}");
 
         purchased.forEach(id => {
-            const c = allCourseData[id];
+            const c = allCourses[id];
             if (!c) return;
 
-            // 모든 강의
             const allLectures = [];
-            c.sections.forEach(sec => sec.lectures.forEach(lec => allLectures.push(lec)));
+            c.sections?.forEach(sec => sec.lectures.forEach(lec => allLectures.push(lec)));
 
             const total = allLectures.length;
-            const done = allLectures.filter(lec => (completedStore[id] || {})[lec.lectureId]).length;
-            const rate = total === 0 ? 0 : Math.round(done / total * 1000) / 10; // 첫째 자리
+            const done = allLectures.filter(
+                lec => (completedStore[id] || {})[lec.lectureId]
+            ).length;
 
-            // 필터 조건
-            if (status === "studying" && rate === 100) return;  
+            const rate = total === 0 ? 0 : Math.round((done / total) * 1000) / 10;
+
+            if (status === "studying" && rate === 100) return;
             if (status === "completed" && rate < 100) return;
 
             const card = document.createElement("a");
-            card.href = "../Player/13_NeulIt_Player.html?courseId=" + id;
+            card.href = `../Player/13_NeulIt_Player.html?courseId=${id}`;
             card.className = "card-link";
 
             card.innerHTML = `
@@ -50,16 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
             lectureList.appendChild(card);
         });
 
-        // 없을 때 메시지
-        if (lectureList.innerHTML.trim() === "") {
-            lectureList.innerHTML = `<p style="color:#777;">표시할 강의가 없습니다.</p>`;
-        }
     }
 
-    // 기본 - 학습중
     renderLectures("studying");
 
-    // 버튼 클릭 이벤트
+    // 버튼 이벤트
     btnStudying.addEventListener("click", () => {
         btnStudying.classList.add("active");
         btnCompleted.classList.remove("active");
