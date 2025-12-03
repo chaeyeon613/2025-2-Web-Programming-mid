@@ -59,7 +59,6 @@
       <!-- 상단 탭 -->
       <div class="profile-tabs">
         <button class="tab-btn active">강의</button>
-        <button class="tab-btn">폴더</button>
         <button class="tab-btn">수료증</button>
       </div>
     
@@ -79,8 +78,11 @@
         </div>
       </div>
       
-      <!-- 강의 목록 -->
+      <!-- 강의 탭 -->
       <section class="lecture-list"></section>
+
+      <!-- 수료증 탭 -->
+      <section class="certificate-list" id="certificateList" style="display:none;"></section>
 
     </main>
   </div>
@@ -101,6 +103,8 @@
 
   <script src="../Lecture/13_NeulIt_Courses.js"></script>
   <script src="13_NeulIt_ProfileLecture.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </body>
 </html>

@@ -113,4 +113,48 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target === tagAllModal) tagAllModal.style.display = "none";
     });
 
+    // == 수료증 == //
+    const certViewAll = document.getElementById("certViewAll");
+    const certBox = document.getElementById("certPreviewBox");
+
+    let completedStore2 = JSON.parse(localStorage.getItem("completedLectures") || "{}");
+
+    let completedCourses = purchased.filter(courseId => {
+        const course = allCourses[courseId];
+        if (!course) return false;
+
+        const completed = completedStore2[courseId] || {};
+        const totalLectures = course.sections.reduce((cnt, s) => cnt + s.lectures.length, 0);
+        const doneLectures = Object.values(completed).filter(v => v === true).length;
+
+        return doneLectures === totalLectures; // 100% 완료된 강의만
+    });
+
+    let previewList = completedCourses.slice(0, 2);
+
+    if (previewList.length === 0) {
+        certBox.innerHTML = `<p style="color:#888;">아직 수료한 강의가 없습니다.</p>`;
+    } else {
+        certBox.innerHTML = "";
+        previewList.forEach(id => {
+            const c = allCourses[id];
+
+            const item = document.createElement("div");
+            item.className = "cert-item";
+
+            item.innerHTML = `
+                <img src="${c.thumbnail}" class="cert-thumb">
+                <div class="cert-info">
+                    <p class="cert-title">${c.title}</p>
+                    <p class="cert-complete">수료 완료 ✔</p>
+                </div>
+            `;
+            certBox.appendChild(item);
+        });
+    }
+
+    certViewAll.addEventListener("click", () => {
+        location.href = "13_NeulIt_ProfileLecture.html?tab=certificate";
+    });
+
 });
