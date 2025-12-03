@@ -62,6 +62,41 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+    // == 멘토링 현황 == //
+    const card = document.querySelector(".mentor-info");
+    const statusTag = document.querySelector(".mentoring-status");
+
+    let list = JSON.parse(localStorage.getItem("mentoringReservations") || "[]");
+    if (list.length === 0) {
+        card.innerHTML = "<p>예약된 멘토링이 없습니다.</p>";
+        statusTag.style.display = "none";
+    } else {
+
+        const today = new Date();
+        const parseDate = dateStr => {
+            const [_, month, day] = dateStr.match(/(\d+)월\s+(\d+)일/);
+            return new Date(2025, month - 1, day);
+        };
+        
+        const upcoming = list.filter(m => parseDate(m.date) >= today);
+        
+        if (upcoming.length === 0) {
+            card.innerHTML = "<p>예약된 멘토링이 없습니다.</p>";
+            statusTag.style.display = "none";
+        } else {
+            upcoming.sort((a,b)=> parseDate(a.date) - parseDate(b.date));
+            const next = upcoming[0];
+
+            card.innerHTML = `
+                <p class="mentor-name">${next.mentor} <span class="mentor-field">· ${next.field}</span></p>
+                <p class="mentor-date">📅 ${next.date} ${next.time}</p>
+            `;
+            statusTag.classList.add("confirmed");
+            statusTag.textContent = "예약 확정";
+        }
+    }
+
+
     // == 나의 레벨 == //
     const levelThresholds = [0, 50, 150, 300, 500, 800, 1200, 1700, 2300, 3000];
     let totalXP = parseInt(localStorage.getItem("totalXP")) || 0;

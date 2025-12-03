@@ -108,58 +108,8 @@ html, body {
 
 
 /** main 영역 **/
-/* com: 목록 */
-.community-list {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 35px;
-}
-.community-item {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 14px;
-    transition: all 0.2s ease;
-}
-.community-item:hover {
-    background: #fafafa;
-    border-radius: 8px;
-}
-.community-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-}
-.community-date {
-    font-size: 12px;
-    color: #999;
-}
-.community-title {
-    font-size: 15px;
-    font-weight: 450;
-    margin-bottom: 3px;
-    line-height: 1.4;
-}
-.community-detail {
-    font-size: 13px;
-    font-weight: 400;
-    color:#555;
-    margin-bottom: 6px;
-}
-.community-footer {
-    display: flex;
-    gap: 10px;
-    font-size: 13px;
-    color: #777;
-}
-.community-category {
-    color: #ec8201;
-    font-weight: 500;
-}
 
-
-/** dash **/
-/* 공통 */
+/* dash - 공통 */
 .dashboard {
     display: flex;
     justify-content: space-between;
@@ -185,8 +135,8 @@ html, body {
     font-weight: 700;
 }
 
-/* 수강 중 강의 */
-.course-list {      /* 학습 목록 */
+/* dash: 수강 중 강의 */
+.course-list {
     font-size: 14px;
     color: #666;
     cursor: pointer;
@@ -194,13 +144,13 @@ html, body {
 .course-list:hover {
     color: #888;
 }
-.course-item {      /* 영역 */
+.course-item {
     display: flex;
     align-items: center; 
     gap: 16px;  
     padding-top: 14px;
 }
-.play-btn {     /* 재생 버튼 */
+.play-btn {
     background-color: #ec8201;
     color: #fff;
     font-size: 14px;
@@ -237,14 +187,14 @@ html, body {
     margin-bottom: 8px;
 }
 
-/* 멘토링 현황 */
-.mentoring-status {     /* 상태 */
+/* dash: 멘토링 현황 */
+.mentoring-status {
     padding: 5px 12px;
     border-radius: 12px;
     font-size: 13px;
     font-weight: 500;
 }
-.mentor-info {      /* 영역 */
+.mentor-info {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -263,14 +213,14 @@ html, body {
     color: #777;
 }
 
-/* 연간 학습 */
-.yearly-container {     /* 전체 영역 */
+/* dash: 연간 학습 */
+.yearly-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
 }
-.yearly-chart {     /* 그래프 영역 */
+.yearly-chart { 
     width: 100%;
     display: block; 
     margin-top: 18px;
@@ -291,7 +241,7 @@ html, body {
     font-weight: 600;
 }
 
-/* 스킬 태그 */
+/* dash: 스킬 태그 */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -315,7 +265,7 @@ html, body {
     background: #eef1f5;
 }
 
-/* 스킬 태그 전체보기 창 */
+/* dash: 스킬 태그 전체보기 창 */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -388,7 +338,7 @@ html, body {
     padding-top: 10px;
 }
 
-/* 나의 레벨 */
+/* dash: 나의 레벨 */
 .level-card {
     display: flex;
     flex-direction: column;
@@ -412,8 +362,7 @@ html, body {
     color: #8A8A8A;
 }
 
-
-/* 수료증 */
+/* dash: 수료증 */
 .cert-preview-box {
     margin-top: 16px;
     display: flex;
@@ -454,7 +403,6 @@ html, body {
     font-size: 12px;
     color: #5c8bff;
 }
-
 
 
 /** lec, mentor, com 공통 **/
@@ -533,7 +481,8 @@ html, body {
     font-weight: 600;
 }
 
-/* lec: 정렬 */
+
+/* lec - 정렬 */
 .lecture-top {
     display: flex;
     justify-content: space-between;
@@ -558,7 +507,7 @@ html, body {
     box-sizing: border-box; 
 }
 
-/* lec: 수강 강의 목록 */
+/* lec: 강의 */
 .lecture-list {
     display: flex;
     flex-direction: column;
@@ -677,6 +626,7 @@ html, body {
 }
 
 
+/* mentor */
 .mentoring-list {
     display: flex;
     flex-wrap: wrap;
@@ -694,7 +644,7 @@ html, body {
     padding: 24px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.03);
     transition: all 0.25s ease;
-    height: 310px; 
+    height: 270px; 
     text-align: center;
 }
 .mentoring-card:hover {
@@ -718,11 +668,6 @@ html, body {
     color: #666;
     margin-bottom: 8px;
 }
-.mentor-detail {
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 24px;
-}
 .mentoring-date {
     font-size: 14px;
     margin-bottom: 8px;
@@ -741,4 +686,54 @@ html, body {
 .mentoring-status.done {
     background: #e9f8ef;
     color: #33a36c;
+}
+
+
+/* com */
+.community-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 35px;
+}
+.community-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 14px;
+    transition: all 0.2s ease;
+}
+.community-item:hover {
+    background: #fafafa;
+    border-radius: 8px;
+}
+.community-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.community-date {
+    font-size: 12px;
+    color: #999;
+}
+.community-title {
+    font-size: 15px;
+    font-weight: 450;
+    margin-bottom: 3px;
+    line-height: 1.4;
+}
+.community-detail {
+    font-size: 13px;
+    font-weight: 400;
+    color:#555;
+    margin-bottom: 6px;
+}
+.community-footer {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: #777;
+}
+.community-category {
+    color: #ec8201;
+    font-weight: 500;
 }
