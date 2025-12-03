@@ -118,14 +118,25 @@
       <!-- 하단 -->
       <section class="dashboard-gap">
         <div class="dashboard">
+
           <!-- 스킬 태그 -->
           <div class="dash-card">
             <div class="card-header">
               <h2 class="card-title">스킬 태그</h2>
-              <p class="course-list">전체 보기 ></p>
+              <p class="course-list" id="tagViewAll">전체 보기 ></p>
             </div>
-            <div class="skills">
-              <span class="tag">#HTML</span>
+            <div class="skills"></div>
+          </div>
+          
+          <!-- 스킬 태그 전체 보기 창 -->
+          <div class="modal-overlay" id="tagAllModal">
+            <div class="modal-box">
+              <button class="tag-all-close">&times;</button>
+              <h2 class="tag-all-title">스킬 태그 전체 보기</h2>
+              <div class="modal-tag-container" id="tagAllList"></div>
+              <p class="modal-desc">
+                ※ 스킬 태그는 구매한 강의의 기술 태그를 기반으로 자동 생성됩니다.
+              </p>
             </div>
           </div>
 
@@ -143,12 +154,12 @@
           <div class="dash-card">
             <div class="card-header">
               <h2 class="card-title">수료증</h2>
-                <p class="course-list">전체 보기 ></p>
+              <p class="course-list" id="certViewAllButton">전체 보기 ></p>
             </div>
-            <div class="cert-card">
-              <p>아직 수료한 강의가 없습니다.</p>
-            </div>
+          
+            <div class="cert-card" id="certList"></div>
           </div>
+
         </div>
       </section>
     </main>
