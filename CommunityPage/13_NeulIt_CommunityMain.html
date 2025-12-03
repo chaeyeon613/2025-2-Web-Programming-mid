@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>커뮤니티 메인 페이지</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../13_NeulIt_style.css">
     <link rel="stylesheet" href="13_NeulIt_Community.css">
+    <link rel="stylesheet" href="13_NeulIt_Auth.css">
 </head>
 <body>
     <!--헤더-->
@@ -20,14 +21,14 @@
                 <label for="mentoring"><a href="../Mentoring/13_NeulIt_MentoringMain.html">멘토링</a></label>
 
                 <input type="radio" id="community" name="nav" value="community" checked>
-                <label for="community"><a href="13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+                <label for="community"><a href="../Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
 
                 <input type="radio" id="clip" name="nav" value="clip">
                 <label for="clip"><a href="../Clip/13_NeulIt_ClipMain.html">클립</a></label>
             </div>
             <div>
-                <a href="../Basket/13_NeulIt_Basket.html"><img src="../Image/cart.svg" alt="장바구니" class="icon"></a>
-                <a href="../Profile/13_NeulIt_ProfileDash.html"><img src="../Images/profile.svg" alt="마이페이지" class="icon"></a>            
+                <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
+                <a href="../Login/13_NeulIt_Login.html"><img src="../Images/profile.svg" alt="마이페이지" class="icon"></a>            
             </div>
         </nav>
     </header>
@@ -70,95 +71,10 @@
                     <input type="radio" id="comment" name="filter" value="comment">
                     <label for="comment">댓글많은순</label>
                 </div>
-                <button class="write-button">✏️글쓰기</button>
+                <a href="13_NeulIt_CommunityWrite.html" class="write-button-link"><button class="write-button">✏️글쓰기</button></a>
             </div>
         </div>
-
-        <div>
-            <a href="13_NeulIt_CommunityDetail.html" class="post-link"> 
-                <article class="post"> 
-                <div class="post-meta">
-                    <span class="status resolved">해결됨</span>
-                    <h4>리액트 설치에 대해 궁금한 점이 있습니다.</h4>
-                </div>
-                <p class="post-description">현재 리액트부분을 시작했는데 리액트를 설치할때 yarn add next@12.1.0 react@17.0.2 react-dom@17.0.2 --exact...</p>
-                <div class="post-tags">
-                    <span class="tag-item">react</span>
-                    <span class="tag-item">node.js</span>
-                    <span class="tag-item">seo</span>                  
-                </div>
-                <div class="post-info">
-                    <span class="author">김수빈</span>
-                    <span class="time">30분 전</span>
-                    <span class="likes">👍 2</span>
-                    <span class="views">👁️ 12</span>
-                    <span class="comments">💬 1</span>
-                </div>
-                </article>
-            </a>
-
-            <a href="13_NeulIt_CommunityDetail.html" class="post-link"> 
-                <article class="post"> 
-                <div class="post-meta">
-                    <span class="status unresolved">미해결</span>
-                    <h4>지라에 연결한 컨플루언스 페이지를 삭제하고 싶습니다.</h4>
-                </div>
-                <p class="post-description">지라에 연결한 컨플루언스 페이지를 삭제하는 방법을 알려주세요.</p>
-                <div class="post-info">
-                    <span class="author">김영채</span>
-                    <span class="time">45분 전</span>
-                    <span class="likes">👍 0</span>
-                    <span class="views">👁️ 10</span>
-                    <span class="comments">💬 0</span>
-                </div>
-                </article>
-            </a>
-            
-            <a href="13_NeulIt_CommunityDetail.html" class="post-link"> 
-                <article class="post"> 
-                <div class="post-meta">
-                    <span class="status unresolved">미해결</span>
-                    <h4>빅분기 11회도 10회차랑 동일하게 준비하면 될까요??</h4>
-                </div>
-                <p class="post-description">10회 때랑 강의목록은 달라지지 않은 것 같은데 똑같이 준비하면 될까요??</p>
-                <div class="post-tags">
-                    <span class="tag-item">python</span>
-                    <span class="tag-item">머신러닝</span>
-                    <span class="tag-item">빅데이터</span>
-                    <span class="tag-item">pandas</span>
-                    <span class="tag-item">빅데이터분석기사</span>                    
-                </div>
-                <div class="post-info">
-                    <span class="author">여수민</span>
-                    <span class="time">2시간 전</span>
-                    <span class="likes">👍 1</span>
-                    <span class="views">👁️ 42</span>
-                    <span class="comments">💬 0</span>
-                </div>
-                </article>
-            </a>
-            
-            <a href="13_NeulIt_CommunityDetail.html" class="post-link"> 
-                <article class="post"> 
-                <div class="post-meta">
-                    <span class="status resolved">해결됨</span>
-                    <h4>concurrency 동작 안됨</h4>
-                </div>
-                <p class="post-description">하나의 consumer 에서 concurrency 옵션을 통해 멀티 쓰레드로 동작이 되는지 테스트를 해봤는데 강좌화면에서처럼 consumer 가 멀티스레드로 동작하지 않는것 같습니다.</p>
-                <div class="post-tags">
-                    <span class="tag-item">java</span>
-                    <span class="tag-item">concurrency</span>                  
-                </div>
-                <div class="post-info">
-                    <span class="author">김하영</span>
-                    <span class="time">2시간 30분 전</span>
-                    <span class="likes">👍 2</span>
-                    <span class="views">👁️ 22</span>
-                    <span class="comments">💬 1</span>
-                </div>
-                </article>
-            </a>
-        </div>
+        <div id="post-list"></div>
     </section>
 
         <!--오른쪽 박스-->
@@ -218,5 +134,13 @@
             </div>
         </div>
     </footer>
+
+    <div id="authModal" class="modal-overlay">
+        <div id="modal-content-wrapper" class="modal-content">
+            <p style="text-align: center;">폼을 불러오는 중...</p>
+        </div>
+    </div>
+
+    <script src="./13_NeulIt_CommunityMain.js"></script>
 </body>
 </html>
