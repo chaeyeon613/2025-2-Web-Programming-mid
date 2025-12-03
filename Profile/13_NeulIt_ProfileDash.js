@@ -62,6 +62,79 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+    // == 나의 레벨 == //
+    const levelThresholds = [0, 50, 150, 300, 500, 800, 1200, 1700, 2300, 3000];
+    let totalXP = parseInt(localStorage.getItem("totalXP")) || 0;
+
+    function saveXP() {
+        localStorage.setItem("totalXP", totalXP);
+    }
+
+    function calculateXPFromLectures() {
+        const lectureCards = document.querySelectorAll(".lecture-card");
+
+        let newXP = 0;
+
+        lectureCards.forEach(card => {
+            const statusText = card.querySelector(".lecture-status")?.textContent;
+            if (!statusText) return;
+
+            const match = statusText.match(/(\d+)\s*\/\s*(\d+)강/);
+            if (!match) return;
+
+            const completed = parseInt(match[1]);
+            const total = parseInt(match[2]);
+
+            newXP += calculateLectureXP(total, completed);
+        });
+
+        totalXP = newXP;
+        saveXP();
+    }
+
+    function calculateLectureXP(total, completed) {
+        const progressXP = completed * 2;
+        const bonusXP = completed === total ? 20 : 0;
+        return progressXP + bonusXP;
+    }
+
+    function getLevel(xp) {
+        for (let i = levelThresholds.length - 1; i >= 0; i--) {
+            if (xp >= levelThresholds[i]) return i + 1;
+        }
+        return 1;
+    }
+
+    function getLevelEmoji(level) {
+        if (level <= 4) return "🌱";
+        if (level <= 7) return "🌿";
+        return "🌳";
+    }
+
+    function getXPToNextLevel(level, xp) {
+        if (level >= levelThresholds.length) return 0;
+        return levelThresholds[level] - xp;
+    }
+
+    function updateLevelUI() {
+        const emoji = document.getElementById("levelEmoji");
+        const text = document.getElementById("levelText");
+        const desc = document.getElementById("levelDesc");
+
+        if (!emoji || !text || !desc) return;
+
+        const level = getLevel(totalXP);
+        const xpLeft = getXPToNextLevel(level, totalXP);
+
+        emoji.textContent = getLevelEmoji(level);
+        text.textContent = `Lv. ${level}`;
+
+        desc.textContent = xpLeft > 0
+            ? `다음 레벨까지 ${xpLeft} XP`
+            : "최고 레벨입니다";
+    }
+
+
     // == 스킬 태그 == //
     // 스킬 태그 생성
     const skillsBox = document.querySelector(".skills");
@@ -84,13 +157,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 모달 창
+    // 전체보기 창 모듈
     const tagViewAll = document.getElementById("tagViewAll");
     const tagAllModal = document.getElementById("tagAllModal");
     const tagAllList = document.getElementById("tagAllList");
 
 
-    // 전체보기 클릭 → 전체 태그 창
+    // 전체보기 창
     tagViewAll.addEventListener("click", () => {
 
         tagAllList.innerHTML = "";
@@ -112,6 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tagAllModal.addEventListener("click", (e) => {
         if (e.target === tagAllModal) tagAllModal.style.display = "none";
     });
+
 
     // == 수료증 == //
     const certViewAll = document.getElementById("certViewAll");
@@ -157,4 +231,5 @@ document.addEventListener("DOMContentLoaded", () => {
         location.href = "13_NeulIt_ProfileLecture.html?tab=certificate";
     });
 
+    updateLevelUI();
 });

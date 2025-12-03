@@ -389,29 +389,29 @@ html, body {
 }
 
 /* 나의 레벨 */
-.level-img {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 20px;
-    object-fit: contain;
-}
-.level-card {       /* 글씨 영역 */
+.level-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    margin-top: 24px;
+    text-align: center;
+    gap: 8px;
+    padding: 20px 0;
+}
+.level-emoji {
+    font-size: 40px;
+    margin-bottom: 6px;
 }
 .level-title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 6px;
+    color: #333;
 }
 .level-desc {
     font-size: 14px;
-    font-weight: 400;
     color: #8A8A8A;
 }
+
 
 /* 수료증 */
 .cert-preview-box {
