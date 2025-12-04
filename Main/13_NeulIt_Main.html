@@ -49,8 +49,8 @@
             <span class="one_text">NeulIT은<br></span>
             <span class="two_text">IT 학습의 모든 여정을 담고 있습니다</span>
         </div>
-        <div class="scroll-text-wrap">
-            <p class="scroll-text">수많은 여성 개발자들의 선택</p>
+        <div class="main-sub">
+            <p class="main-sub__text">수많은 여성 개발자들의 선택</p>
         </div>
     </section>
 
@@ -85,21 +85,6 @@
 
     <!-- 스크립트 -->
     <script>
-        // 1. 스크롤 텍스트 애니메이션
-        const scrollTexts = document.querySelectorAll(".scroll-text");
-
-        window.addEventListener("scroll", () => {
-            const triggerPoint = window.innerHeight * 0.85;
-
-            scrollTexts.forEach(text => {
-                const top = text.getBoundingClientRect().top;
-
-                if (top < triggerPoint) {
-                    text.classList.add("show");
-                }
-            });
-        });
-
         // 2. 페이드 인 요소 처리
         const fadeTargets = document.querySelectorAll(".fade-target");
 
@@ -124,14 +109,14 @@
             }, 0);
             setTimeout(() => {
                 two_text.textContent = "IT 분야의 모든 지식을 나누고 있어요";
-            }, 7000);
+            }, 9000);
             setTimeout(() => {
                 two_text.textContent = "IT 커리어의 모든 단계를 돕고 있어요";
-            }, 14000);
+            }, 18000);
         }
 
         textmain();
-        setInterval(textmain,21000);
+        setInterval(textmain,27000);
 
 
         // 3. 스크롤 애니메이션(box)
