@@ -6,14 +6,13 @@
     <title>NeulIT Main</title>
 
     <!-- CSS 연결 -->
-    <link rel="stylesheet" href="13_NeulIt_MainStyle.css">
     <link rel="stylesheet" href="13_NeulIt_Main.css">
 </head>
 
-<body class="main-page">
+<body>
 
     <!-- 네비게이션 -->
-    <header>
+    <!-- <header>
         <nav class="nav-container">
             <a href="../Lecture/13_NeulIt_Main.html">
                 <img src="../Images/main_logoicon.png" alt="로고" class="logo">
@@ -42,13 +41,13 @@
                 </a>
             </div>
         </nav>
-    </header>
+    </header> -->
 
     <!-- 1-1 메인 문구 -->
     <section class="main">
         <div>
             <span class="one_text">NeulIT은<br></span>
-            <span class="two_text">늘 있습니다</span>
+            <span class="two_text">IT 학습의 모든 여정을 담고 있습니다</span>
         </div>
         <div class="scroll-text-wrap">
             <p class="scroll-text">수많은 여성 개발자들의 선택</p>
@@ -82,8 +81,78 @@
         <div class="box blue"><h2>Content</h2></div>
     </section>
 
+
+
     <!-- 스크립트 -->
-    <script src="13_NeulIt_Main.js"></script>
+    <script>
+        // 1. 스크롤 텍스트 애니메이션
+        const scrollTexts = document.querySelectorAll(".scroll-text");
+
+        window.addEventListener("scroll", () => {
+            const triggerPoint = window.innerHeight * 0.85;
+
+            scrollTexts.forEach(text => {
+                const top = text.getBoundingClientRect().top;
+
+                if (top < triggerPoint) {
+                    text.classList.add("show");
+                }
+            });
+        });
+
+        // 2. 페이드 인 요소 처리
+        const fadeTargets = document.querySelectorAll(".fade-target");
+
+        window.addEventListener("scroll", () => {
+            const triggerPoint = window.innerHeight * 0.8;
+
+            fadeTargets.forEach(target => {
+                const top = target.getBoundingClientRect().top;
+
+                if (top < triggerPoint) {
+                    target.classList.add("show");
+                }
+            });
+        });
+
+        // 메인 타이틀 내용
+        const two_text = document.querySelector(".two_text");
+
+        const textmain = () => {
+            setTimeout(() => {
+                two_text.textContent = "IT 학습의 모든 여정을 담고 있습니다";
+            }, 0);
+            setTimeout(() => {
+                two_text.textContent = "IT 분야의 모든 지식을 나누고 있어요";
+            }, 7000);
+            setTimeout(() => {
+                two_text.textContent = "IT 커리어의 모든 단계를 돕고 있어요";
+            }, 14000);
+        }
+
+        textmain();
+        setInterval(textmain,21000);
+
+
+        // 3. 스크롤 애니메이션(box)
+        const boxes = document.querySelectorAll('.box');
+
+        function checkBoxes() {
+            const trigger = window.innerHeight * 0.9;
+
+            boxes.forEach(box => {
+                const top = box.getBoundingClientRect().top;
+                if (top < trigger) {
+                    box.classList.add("show");
+                } else {
+                    box.classList.remove("show");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", checkBoxes);
+        checkBoxes();
+    </script>
 
     <!-- 푸터 -->
     <footer class="footer">
