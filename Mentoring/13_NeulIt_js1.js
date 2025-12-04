@@ -81,3 +81,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+
+// =========== 수빈: 멘토 카드에 id 자동 부여 ========== //
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (typeof allMentors === "undefined") return;
+
+    const mentorCards = document.querySelectorAll(".card2");
+
+    mentorCards.forEach(card => {
+        const nameEl = card.querySelector(".name2");
+        if (!nameEl) return;
+
+        const mentorName = nameEl.textContent.trim();
+
+        let mentorId = null;
+        for (const key in allMentors) {
+            if (allMentors[key].name === mentorName) {
+                mentorId = allMentors[key].id;
+                break;
+            }
+        }
+
+        if (!mentorId) return;
+
+        const originalHref = card.getAttribute("href") || "";
+
+        if (!originalHref.includes("?id=")) {
+            card.setAttribute("href", `${originalHref}?id=${mentorId}`);
+        }
+    });
+
+});
+// ==================== //

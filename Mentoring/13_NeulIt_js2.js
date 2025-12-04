@@ -31,6 +31,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const cancelButton = document.getElementById('modal-cancel');
     const priceHeading = document.querySelector('.buy-price h1');
 
+
+    // ========== 수빈: URL에서 mentorId 가져오기 ========== //
+    const urlParams = new URLSearchParams(location.search);
+    const mentorId = urlParams.get("id");
+
+    let currentMentor = null;
+    if (typeof allMentors !== "undefined" && mentorId) {
+        currentMentor = allMentors[mentorId];
+    }
+    // ===================================================== //
+
+
     function getAvailableDates() {
         const result = [];
 
@@ -80,6 +92,13 @@ document.addEventListener('DOMContentLoaded', function () {
             timeSelect.value = '';
         }
 
+        // ========== 수빈: 모달 멘토 이름 업데이트 ========== //
+        const mentorInput = document.getElementById("modal-mentor-name"); 
+        if (mentorInput && currentMentor) {
+            mentorInput.value = currentMentor.name + " 멘토";
+        }
+        // =====================================================
+
         modalOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -109,8 +128,8 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const mentorName = '이가은 멘토';
-        const field = document.querySelector(".field").textContent.trim();
+        const mentorName = currentMentor ? currentMentor.name : "멘토 정보 없음";
+        const field = currentMentor ? currentMentor.job : "";
 
         const selectedOption = dateSelect.options[dateSelect.selectedIndex];
         const dateLabel = selectedOption ? selectedOption.textContent : dateSelect.value;
@@ -119,22 +138,28 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceText = modalPriceBox ? modalPriceBox.textContent.trim() : '';
 
         alert(
-            `결제가 완료되었습니다!\n\n` + `멘토: ${mentorName}\n` + `일시: ${dateLabel} ${timeVal}\n` + `비용: ${priceText}`
+            `결제가 완료되었습니다!\n\n` +
+            `멘토: ${mentorName}\n` +
+            `일시: ${dateLabel} ${timeVal}\n` +
+            `비용: ${priceText}`
         );
 
-        // ========== 수빈: 저장 기능 ========== //
+        // ========== 수빈: 예약 정보 저장 ========== //
         const savedList = JSON.parse(localStorage.getItem("mentoringReservations") || "[]");
 
         savedList.push({
+            id: mentorId,
             mentor: mentorName,
             field: field,
+            img: currentMentor ? currentMentor.img : "",
             date: dateLabel,
             time: timeVal,
             price: priceText
         });
 
         localStorage.setItem("mentoringReservations", JSON.stringify(savedList));
-        // ========== 수빈: 저장 기능 ========== //
+        // =====================================================
+
 
         if (calendar && dateSelect.value) {
             const dayStr = String(parseInt(dateSelect.value, 10));
@@ -149,4 +174,43 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         closeModal();
     });
+
+
+    // ==========수빈: 전체 UI 자동 업데이트 ==========//
+    if (currentMentor) {
+
+        const photoEl = document.querySelector(".photo img");
+        if (photoEl) photoEl.src = currentMentor.img;
+
+        const nameEl = document.querySelector(".profile-body .name");
+        if (nameEl) nameEl.textContent = currentMentor.name + " 멘토";
+
+        const fieldEl = document.querySelector(".profile-body .field");
+        if (fieldEl) fieldEl.textContent = currentMentor.job;
+
+        const priceEl = document.querySelector(".buy-price h1");
+        if (priceEl) {
+            priceEl.innerHTML =
+                `₩${currentMentor.price.toLocaleString()}<span class="pertime">(시간 당)</span>`;
+        }
+
+        const infoTable = document.querySelector(".buy-informain table");
+        if (infoTable) {
+            const rows = infoTable.querySelectorAll("tr");
+
+            rows[0].children[1].textContent = currentMentor.name;
+            rows[1].children[1].textContent = currentMentor.job;
+            rows[2].children[1].textContent = currentMentor.career;
+            rows[3].children[1].textContent = currentMentor.company;
+            rows[4].children[1].textContent = `⭐ ${currentMentor.rating}`;
+        }
+
+        const modalPrice = document.getElementById("modal-price");
+        if (modalPrice) {
+            modalPrice.textContent =
+                `₩${currentMentor.price.toLocaleString()} / 시간`;
+        }
+    }
+    // ============================================================ //
+
 });
