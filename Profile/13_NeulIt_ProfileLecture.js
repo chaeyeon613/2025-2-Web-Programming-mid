@@ -2,7 +2,7 @@ let userData = {};
 let currentUser = "";
 
 
-// 임시 - User.json 로드
+// User.json 로드
 async function loadUser() {
     try {
         const res = await fetch("/User.json");
@@ -14,12 +14,31 @@ async function loadUser() {
 }
 
 
-// 임시 - 프로필 상단 이름 적용
+// 프로필 상단 이름 적용
 function applyProfileHeader() {
     const idEl = document.querySelector(".profile-id");
     if (idEl) idEl.textContent = userData.userId || "사용자";
     const nameEl = document.querySelector(".profile-name");
     if (nameEl) nameEl.textContent = userData.name || "사용자";
+}
+
+
+// 최근 학습 기록 저장
+function saveRecentLecture() {
+    if (!currentLecture) return;
+
+    let recent = JSON.parse(localStorage.getItem("recentLectures") || "[]");
+
+    recent = recent.filter(r => r.courseId !== courseId);
+
+    recent.unshift({
+        courseId,
+        lectureId: currentLecture.lectureId,
+        lectureTitle: currentLecture.title,
+        lastPlayed: new Date().toISOString()
+    });
+
+    localStorage.setItem("recentLectures", JSON.stringify(recent));
 }
 
 
@@ -45,10 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         ...(completed_local || {})
     };
 
-    const recent = [
-        ...(userData.recentLectures || []),
-        ...(recent_local || [])
-    ];
+    const recent = [...recent_local];
 
 
     // UI 요소
@@ -68,14 +84,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // URL 파라미터 기반 탭 유지
     const urlParams = new URLSearchParams(window.location.search);
-    const defaultTab = urlParams.get("tab");   // certificate
+    const defaultTab = urlParams.get("tab");
 
     const isReload = performance.navigation.type === 1;
 
-   if (defaultTab === "certificate" && !isReload) {
+    if (defaultTab === "certificate") {
         tabBtns[1].classList.add("active");
         tabBtns[0].classList.remove("active");
-        renderCertificates();
+        renderCertificates(); 
     } else {
         tabBtns[0].classList.add("active");
         tabBtns[1].classList.remove("active");
@@ -103,25 +119,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
 
-    // 정렬 함수
+    // 최신순 정렬
     function sortCourses(list, type) {
         if (type === "latest") {
+
             return list.sort((a, b) => {
-                const A = recent.find(r => r.courseId === a)?.lastPlayed;
-                const B = recent.find(r => r.courseId === b)?.lastPlayed;
+                const indexA = recent.findIndex(r => r.courseId === a);
+                const indexB = recent.findIndex(r => r.courseId === b);
 
-                if (!A && !B) return 0;
-                if (!A) return 1;
-                if (!B) return -1;
+                if (indexA === -1 && indexB === -1) return 0;
+                if (indexA === -1) return 1;
+                if (indexB === -1) return -1;
 
-                return new Date(B) - new Date(A);
+                return indexA - indexB;
             });
         }
+
         if (type === "rate") {
             return list.sort((a, b) => getRate(b) - getRate(a));
         }
+
         return list;
     }
+
 
     // 정렬 변경 이벤트
     if (sortSelect) {
@@ -174,6 +194,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.href = `../Player/13_NeulIt_Player.html?courseId=${id}`;
             card.className = "card-link";
 
+            card.addEventListener("click", () => {
+                const lec = c.sections[0].lectures[0];
+                saveRecentLecture(id, lec.lectureId, lec.title);
+            });
+
             card.innerHTML = `
                 <div class="lecture-card">
                     <img src="${c.thumbnail}" class="lecture-thumb">
@@ -198,6 +223,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </p>`;
         }
     }
+
 
 
     // 수료증 렌더링
@@ -244,6 +270,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
 
+
     // 학습중 / 완강 버튼
     btnStudying.addEventListener("click", () => {
         btnStudying.classList.add("active");
@@ -270,14 +297,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         tabBtns[0].classList.remove("active");
         renderCertificates();
     });
-
-
-    // 기본 탭: 강의
-    if (defaultTab !== "certificate") {
-        tabBtns[0].classList.add("active");
-        tabBtns[1].classList.remove("active");
-        renderLectures("studying");
-    }
 
 
     // PDF 발급
