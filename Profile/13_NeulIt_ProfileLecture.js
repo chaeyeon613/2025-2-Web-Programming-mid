@@ -1,117 +1,163 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const btnStudying = document.querySelector(".status-btn:nth-child(1)");
-    const btnCompleted = document.querySelector(".status-btn:nth-child(2)");
-    const sortSelect = document.getElementById("sortSelect");
-    const sortContainer = document.querySelector(".lecture-dropdown");
+let userData = {};
+let currentUser = "";
 
-    const purchased = JSON.parse(localStorage.getItem("purchased") || "[]");
 
-    const tabBtns = document.querySelectorAll(".tab-btn");
+// 임시 - User.json 로드
+async function loadUser() {
+    try {
+        const res = await fetch("/User.json");
+        userData = await res.json();
+        currentUser = userData.userId;
+    } catch (e) {
+        console.error("User.json 로드 실패:", e);
+    }
+}
+
+
+// 임시 - 프로필 상단 이름 적용
+function applyProfileHeader() {
+    const idEl = document.querySelector(".profile-id");
+    if (idEl) idEl.textContent = userData.userId || "사용자";
+    const nameEl = document.querySelector(".profile-name");
+    if (nameEl) nameEl.textContent = userData.name || "사용자";
+}
+
+
+// 메인
+document.addEventListener("DOMContentLoaded", async () => {
+
+    await loadUser();
+    applyProfileHeader();
+
+    // localStorage
+    let purchased_local = JSON.parse(localStorage.getItem("purchased") || "[]");
+    let completed_local = JSON.parse(localStorage.getItem("completedLectures") || "{}");
+    let recent_local = JSON.parse(localStorage.getItem("recentLectures") || "[]");
+
+    // user.json + localStorage 병합
+    const purchased = Array.from(new Set([
+        ...(userData.purchased || []),
+        ...purchased_local
+    ]));
+
+    const completedStore = {
+        ...(userData.completedLectures || {}),
+        ...(completed_local || {})
+    };
+
+    const recent = [
+        ...(userData.recentLectures || []),
+        ...(recent_local || [])
+    ];
+
+
+    // UI 요소
     const lectureList = document.querySelector(".lecture-list");
     const certificateList = document.querySelector(".certificate-list");
 
-    tabBtns.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-            tabBtns.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-    
-            const statusArea = document.querySelector(".profile-status");
-            const sortArea = document.querySelector(".lecture-dropdown");
+    const statusContainer = document.querySelector(".profile-status");
+    const sortContainer = document.querySelector(".lecture-dropdown");
 
-            if (index === 0) {
-                // 강의 탭
-                lectureList.style.display = "block";
-                certificateList.style.display = "none";
+    const btnStudying = document.querySelector(".status-btn:nth-child(1)");
+    const btnCompleted = document.querySelector(".status-btn:nth-child(2)");
 
-                statusArea.style.display = "flex";
-                sortArea.style.display = "block";
+    const sortSelect = document.getElementById("sortSelect");
 
-                btnStudying.classList.add("active");
-                btnCompleted.classList.remove("active");
-                renderLectures("studying");
+    const tabBtns = document.querySelectorAll(".profile-tabs .tab-btn");
 
-                const url = new URL(location.href);
-                url.searchParams.delete("tab");
-                history.replaceState(null, "", url.toString());
 
-            } else {
-                // 수료증 탭
-                lectureList.style.display = "none";
-                certificateList.style.display = "block";
+    // URL 파라미터 기반 탭 유지
+    const urlParams = new URLSearchParams(window.location.search);
+    const defaultTab = urlParams.get("tab");   // certificate
 
-                statusArea.style.display = "none";
-                sortArea.style.display = "none";
+    const isReload = performance.navigation.type === 1;
 
-                renderCertificates();
-
-                const url = new URL(location.href);
-                url.searchParams.set("tab", "certificate");
-                history.replaceState(null, "", url.toString());
-            }
-        });
-    });
-    
-
-    const params = new URLSearchParams(location.search);
-    if (params.get("tab") === "certificate") {
-        tabBtns[1].click();
+   if (defaultTab === "certificate" && !isReload) {
+        tabBtns[1].classList.add("active");
+        tabBtns[0].classList.remove("active");
+        renderCertificates();
     } else {
-        tabBtns[0].click();
+        tabBtns[0].classList.add("active");
+        tabBtns[1].classList.remove("active");
         renderLectures("studying");
     }
 
-    // == 강의 == //
-    // 진행률 계산 함수
-    function getRate(id) {
-        const c = allCourses[id];
+
+
+    // 진행률 계산
+    function getRate(courseId) {
+        const c = allCourses[courseId];
         if (!c) return 0;
 
-        const completedStore = JSON.parse(localStorage.getItem("completedLectures") || "{}");
+        const doneMap = completedStore[courseId] || {};
 
-        const all = [];
-        c.sections?.forEach(sec => sec.lectures.forEach(lec => all.push(lec)));
+        let all = [];
+        c.sections.forEach(sec =>
+            sec.lectures.forEach(lec => all.push(lec))
+        );
 
         const total = all.length;
-        const done = all.filter(lec => (completedStore[id] || {})[lec.lectureId]).length;
+        const done = all.filter(lec => doneMap[lec.lectureId] === true).length;
 
         return total === 0 ? 0 : Math.floor((done / total) * 100);
     }
 
+
     // 정렬 함수
-    function sortCourses(list, sortType, progress) {
-        if (sortType === "latest") {
+    function sortCourses(list, type) {
+        if (type === "latest") {
             return list.sort((a, b) => {
-                const A = progress.find(p => p.id === a)?.lastPlayed;
-                const B = progress.find(p => p.id === b)?.lastPlayed;
-    
+                const A = recent.find(r => r.courseId === a)?.lastPlayed;
+                const B = recent.find(r => r.courseId === b)?.lastPlayed;
+
+                if (!A && !B) return 0;
                 if (!A) return 1;
                 if (!B) return -1;
-    
+
                 return new Date(B) - new Date(A);
             });
         }
-    
-        if (sortType === "rate") {
+        if (type === "rate") {
             return list.sort((a, b) => getRate(b) - getRate(a));
         }
-    
         return list;
     }
-    
+
+    // 정렬 변경 이벤트
+    if (sortSelect) {
+        sortSelect.addEventListener("change", () => {
+            btnStudying.classList.add("active");
+            btnCompleted.classList.remove("active");
+            renderLectures("studying");
+        });
+    }
+
+
+
     // 강의 렌더링
     function renderLectures(status) {
+        lectureList.style.display = "block";
+        certificateList.style.display = "none";
+
+        statusContainer.style.display = "flex";
+
+        if (status === "completed") sortContainer.style.display = "none";
+        else sortContainer.style.display = "block";
+
         lectureList.innerHTML = "";
 
-        let list = purchased.slice();
+        if (purchased.length === 0) {
+            lectureList.innerHTML = `<p style="color:#777;">구매한 강의가 없습니다.</p>`;
+            return;
+        }
 
-        let progress = JSON.parse(localStorage.getItem("lectureProgress") || "[]");
+        let list = [...purchased];
 
         if (status === "studying") {
-            sortContainer.style.display = "block";
-            list = sortCourses(list, sortSelect.value, progress);
-        } else {
-            sortContainer.style.display = "none";
+            list = sortCourses(list, sortSelect.value);
         }
+
+        let rendered = 0;
 
         list.forEach(id => {
             const c = allCourses[id];
@@ -121,6 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (status === "studying" && rate === 100) return;
             if (status === "completed" && rate < 100) return;
+
+            rendered++;
 
             const card = document.createElement("a");
             card.href = `../Player/13_NeulIt_Player.html?courseId=${id}`;
@@ -132,19 +180,71 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="lecture-info">
                         <h3 class="lecture-title">${c.title}</h3>
                         <p class="lecture-author">${c.instructor} | 무제한 수강</p>
-
                         <div class="lecture-progress">
-                            <div class="progress-bar" style="width: ${rate}%;"></div>
+                            <div class="progress-bar" style="width:${rate}%;"></div>
                         </div>
                         <p class="lecture-status">${rate}% 완료</p>
                     </div>
                 </div>
             `;
+
             lectureList.appendChild(card);
+        });
+
+        if (rendered === 0) {
+            lectureList.innerHTML = `
+                <p style="color:#777;">
+                    ${status === "studying" ? "학습 중인 강의가 없습니다." : "수료한 강의가 없습니다."}
+                </p>`;
+        }
+    }
+
+
+    // 수료증 렌더링
+    function renderCertificates() {
+        lectureList.style.display = "none";
+        certificateList.style.display = "block";
+
+        statusContainer.style.display = "none";
+        sortContainer.style.display = "none";
+
+        const listEl = document.querySelector(".certificate-list");
+
+        const completedCourses = purchased.filter(id => {
+            const c = allCourses[id];
+            if (!c) return false;
+
+            const doneMap = completedStore[id] || {};
+            const total = c.sections.reduce((s, sec) => s + sec.lectures.length, 0);
+            const done = Object.values(doneMap).filter(v => v === true).length;
+
+            return total === done;
+        });
+
+        if (completedCourses.length === 0) {
+            listEl.innerHTML = `<p style="color:#777;">아직 수료한 강의가 없습니다.</p>`;
+            return;
+        }
+
+        listEl.innerHTML = "";
+
+        completedCourses.forEach(id => {
+            const c = allCourses[id];
+            listEl.innerHTML += `
+                <div class="cert-card">
+                    <img src="${c.thumbnail}">
+                    <div class="cert-info">
+                        <p class="cert-title">${c.title}</p>
+                        <p class="cert-instructor">${c.instructor}</p>
+                    </div>
+                    <button class="cert-btn" data-id="${id}">수료증 발급</button>
+                </div>
+            `;
         });
     }
 
-    // 탭 전환 이벤트
+
+    // 학습중 / 완강 버튼
     btnStudying.addEventListener("click", () => {
         btnStudying.classList.add("active");
         btnCompleted.classList.remove("active");
@@ -157,59 +257,36 @@ document.addEventListener("DOMContentLoaded", () => {
         renderLectures("completed");
     });
 
-    // 정렬 선택 이벤트
-    sortSelect.addEventListener("change", () => {
+
+    // 강의 / 수료증 탭
+    tabBtns[0].addEventListener("click", () => {
+        tabBtns[0].classList.add("active");
+        tabBtns[1].classList.remove("active");
         renderLectures("studying");
     });
 
+    tabBtns[1].addEventListener("click", () => {
+        tabBtns[1].classList.add("active");
+        tabBtns[0].classList.remove("active");
+        renderCertificates();
+    });
 
-    // == 수료증 == //
-    function renderCertificates() {
-        const certListEl = document.getElementById("certificateList");
-    
-        let purchased = JSON.parse(localStorage.getItem("purchased") || "[]");
-        let completed = JSON.parse(localStorage.getItem("completedLectures") || "{}");
-    
-        let completedCourses = purchased.filter(courseId => {
-            const c = allCourses[courseId];
-            if (!c) return false;
-    
-            const doneList = completed[courseId] || {};
-            const total = c.sections.reduce((sum, s) => sum + s.lectures.length, 0);
-            const done = Object.values(doneList).filter(v => v === true).length;
-    
-            return done === total;
-        });
-    
-        if (completedCourses.length === 0) {
-            certListEl.innerHTML = `<p style="color:#777;">아직 수료한 강의가 없습니다.</p>`;
-            return;
-        }
-    
-        certListEl.innerHTML = "";
-    
-        completedCourses.forEach(courseId => {
-            const c = allCourses[courseId];
-    
-            certListEl.innerHTML += `
-                <div class="cert-card">
-                    <img src="${c.thumbnail}">
-                    <div class="cert-info">
-                        <p class="cert-title">${c.title}</p>
-                        <p class="cert-instructor">${c.instructor}</p>
-                    </div>
-                    <button class="cert-btn" data-id="${courseId}">수료증 발급</button>
-                </div>
-            `;
-        });
+
+    // 기본 탭: 강의
+    if (defaultTab !== "certificate") {
+        tabBtns[0].classList.add("active");
+        tabBtns[1].classList.remove("active");
+        renderLectures("studying");
     }
 
-    document.addEventListener("click", async (e) => {
+
+    // PDF 발급
+    document.addEventListener("click", (e) => {
         if (!e.target.classList.contains("cert-btn")) return;
-    
+
         const courseId = e.target.dataset.id;
         const c = allCourses[courseId];
-        
+
         const html = `
             <div id="certificatePDF" style="
                 width: 794px;
@@ -240,10 +317,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
 
                 <div style="height: 40px; justify-content: center;"></div>
-    
                 <br><br><br><br><br>
 
-                <h1 style="text-align:center; font-size:40px; font-weight:800; margin: 0 0 20px 0;; ">
+                <h1 style="text-align:center; font-size:40px; font-weight:800; margin: 0 0 20px 0;">
                     수료증
                 </h1>
 
@@ -274,25 +350,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 </p>
             </div>
         `;
-    
+
         const temp = document.createElement("div");
         temp.innerHTML = html;
         document.body.appendChild(temp);
-    
+
         const element = temp.querySelector("#certificatePDF");
-    
+
         html2canvas(element, { scale: 2 }).then(canvas => {
             const img = canvas.toDataURL("image/png");
             const pdf = new jspdf.jsPDF("p", "mm", "a4");
-    
+
             const width = 210;
             const height = canvas.height * (210 / canvas.width);
-    
+
             pdf.addImage(img, "PNG", 0, 0, width, height);
             pdf.save(`${c.title}_수료증.pdf`);
-    
+
             temp.remove();
         });
-    });    
-    
+    });
+
 });

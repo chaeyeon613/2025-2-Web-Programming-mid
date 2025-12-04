@@ -55,8 +55,9 @@ html, body {
 .profile-id {
     font-size: 17px;
     font-weight: 700;
+    margin-bottom: 4px;
 }
-.profile-email {
+.profile-name {
     font-size: 14px;
     color: #777;
     margin-bottom: 15px;
@@ -133,6 +134,13 @@ html, body {
 .card-title {
     font-size: 17px;
     font-weight: 700;
+}
+.empty-text {
+    color: #777;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px 0;
+    text-align: left;
 }
 
 /* dash: 수강 중 강의 */
@@ -277,6 +285,9 @@ html, body {
     justify-content: center;
     align-items: center;
     z-index: 5000;
+}
+.modal-overlay.active {
+    display: flex;
 }
 .modal-box {
     background: #fff;

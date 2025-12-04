@@ -40,8 +40,8 @@
     <aside class="profile-aside">
       <div class="profile-info">
         <img src="../Images/me.png" alt="프로필 이미지" class="profile-img">        
-        <h2 class="profile-id">neulit</h2>
-        <p class="profile-email">neulit@gmail.com</p>
+        <h2 class="profile-id"></h2>
+        <p class="profile-name"></p>
         <button class="edit-btn">프로필 수정</button>
       </div>
 
@@ -64,21 +64,20 @@
         <button class="status-btn">이용 완료</button>
       </div>
 
-      <!-- 멘토링 목록-->
-      <section class="mentoring-list">
-
         <!-- 이용 완료 카드 (고정) -->
-        <a href="../Mentoring/13_NeulIt_MentoringDetail.html" class="card-link done-fixed">
+        <a href="../Mentoring/13_NeulIt_MentoringDetail.html?id=lee-ji-hyun" class="card-link done-fixed">
           <div class="mentoring-card">
             <img src="../Images/woman2.jpg" alt="멘토링 썸네일" class="mentor-img">
-            <h3 class="mentor-name">김하영 멘토</h3>
-            <p class="mentor-category">[커리어 / 자기계발]</p>
+            <h3 class="mentor-name">이지현 멘토</h3>
+            <p class="mentor-category">풀스택 개발자</p>
             <p class="mentoring-date">2025.09.18 (수) 13:00~14:00</p>
             <span class="mentoring-status done">이용 완료</span>
           </div>
         </a>
 
-      </section>
+        <!-- 멘토링 목록-->
+        <section class="mentoring-list"></section>
+
     </main>
   </div>
 
@@ -96,6 +95,7 @@
     </div>
   </footer>
 
+  <script src="../Mentoring/13_NeulIt_Mentors.js"></script>
   <script src="13_NeulIt_ProfileMentoring.js"></script>
 
 </body>

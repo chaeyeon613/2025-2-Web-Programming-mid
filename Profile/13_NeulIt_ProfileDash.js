@@ -1,6 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
+let userData = {};
+let currentUser = "";
 
-    // == 최근 학습 강의 == //
+// User.json 로드
+async function loadUser() {
+    try {
+        const res = await fetch("/User.json");
+        userData = await res.json();
+
+        currentUser =
+            localStorage.getItem("loginUser") ||
+            userData.userId || "neulit";
+
+    } catch (e) {
+        console.error("User.json 로드 실패:", e);
+    }
+}
+
+// 프로필 상단 정보 반영
+function applyProfileHeader() {
+    const idEl = document.querySelector(".profile-id");
+    const nameEl = document.querySelector(".profile-name");
+
+    if (idEl) idEl.textContent = userData.userId || "사용자";
+    if (nameEl) nameEl.textContent = userData.name || "사용자";
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+    await loadUser();
+    applyProfileHeader();
+
+    // 최근 학습 강의
     const titleEl = document.querySelector(".course-title");
     const progressEl = document.querySelector(".course-progress");
     const playBtn = document.querySelector(".play-btn");
@@ -8,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const listBtn = document.querySelector(".course-list");
 
     let recent = JSON.parse(localStorage.getItem("recentLectures") || "[]");
-    let purchased = JSON.parse(localStorage.getItem("purchased") || "[]");   // ✔ 여기만 사용
+    let purchased = JSON.parse(localStorage.getItem("purchased") || "[]");
 
     let targetCourseId = null;
     let targetLectureTitle = null;
@@ -24,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         titleEl.textContent = "";
         progressEl.textContent = "";
         playBtn.style.display = "none";
+        titleEl.innerHTML = `<p class="empty-text">강의가 없습니다.</p>`;
         return;
     }
 
@@ -62,75 +93,128 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    // == 멘토링 현황 == //
+    // 멘토링 현황
     const card = document.querySelector(".mentor-info");
     const statusTag = document.querySelector(".mentoring-status");
 
     let list = JSON.parse(localStorage.getItem("mentoringReservations") || "[]");
+
     if (list.length === 0) {
-        card.innerHTML = "<p>예약된 멘토링이 없습니다.</p>";
+        card.innerHTML = `<p class="empty-text">예약된 멘토링이 없습니다.</p>`;
         statusTag.style.display = "none";
     } else {
-
         const today = new Date();
-        const parseDate = dateStr => {
+        const parseDate = (dateStr) => {
             const [_, month, day] = dateStr.match(/(\d+)월\s+(\d+)일/);
             return new Date(2025, month - 1, day);
         };
-        
+
         const upcoming = list.filter(m => parseDate(m.date) >= today);
-        
+
         if (upcoming.length === 0) {
-            card.innerHTML = "<p>예약된 멘토링이 없습니다.</p>";
+            card.innerHTML = `<p class="empty-text">예약된 멘토링이 없습니다.</p>`;
             statusTag.style.display = "none";
         } else {
-            upcoming.sort((a,b)=> parseDate(a.date) - parseDate(b.date));
+            upcoming.sort((a, b) => parseDate(a.date) - parseDate(b.date));
             const next = upcoming[0];
 
             card.innerHTML = `
                 <p class="mentor-name">${next.mentor} <span class="mentor-field">· ${next.field}</span></p>
                 <p class="mentor-date">📅 ${next.date} ${next.time}</p>
             `;
+
             statusTag.classList.add("confirmed");
             statusTag.textContent = "예약 확정";
         }
     }
 
 
-    // == 나의 레벨 == //
-    const levelThresholds = [0, 50, 150, 300, 500, 800, 1200, 1700, 2300, 3000];
-    let totalXP = parseInt(localStorage.getItem("totalXP")) || 0;
+    // 스킬 태그
+    const skillsBox = document.querySelector(".skills");
+    let tagSet = new Set();
 
-    function saveXP() {
-        localStorage.setItem("totalXP", totalXP);
+    purchased.forEach(id => {
+        const c = allCourses[id];
+        if (c?.tags) c.tags.forEach(t => tagSet.add(t));
+    });
+
+    if (tagSet.size === 0) {
+        skillsBox.innerHTML = `<p class="empty-text">학습 스킬이 없습니다.</p>`;
+    } else {
+        skillsBox.innerHTML = "";
+        [...tagSet].forEach(tag => {
+            const span = document.createElement("span");
+            span.className = "tag";
+            span.textContent = `#${tag}`;
+            skillsBox.appendChild(span);
+        });
     }
 
-    function calculateXPFromLectures() {
-        const lectureCards = document.querySelectorAll(".lecture-card");
 
-        let newXP = 0;
+    // 스킬 태그 전체보기 
+    const tagViewAll = document.getElementById("tagViewAll");
+    const tagAllModal = document.getElementById("tagAllModal");
+    const tagAllList = document.getElementById("tagAllList");
+    const tagClose = document.querySelector(".tag-all-close");
 
-        lectureCards.forEach(card => {
-            const statusText = card.querySelector(".lecture-status")?.textContent;
-            if (!statusText) return;
+    tagViewAll.addEventListener("click", () => {
 
-            const match = statusText.match(/(\d+)\s*\/\s*(\d+)강/);
-            if (!match) return;
+        let modalTagSet = new Set();
 
-            const completed = parseInt(match[1]);
-            const total = parseInt(match[2]);
-
-            newXP += calculateLectureXP(total, completed);
+        purchased.forEach(id => {
+            const c = allCourses[id];
+            if (c?.tags) c.tags.forEach(t => modalTagSet.add(t));
         });
 
-        totalXP = newXP;
-        saveXP();
-    }
+        tagAllList.innerHTML = "";
 
-    function calculateLectureXP(total, completed) {
-        const progressXP = completed * 2;
-        const bonusXP = completed === total ? 20 : 0;
-        return progressXP + bonusXP;
+        [...modalTagSet].forEach(tag => {
+            const span = document.createElement("span");
+            span.className = "tag";
+            span.textContent = `#${tag}`;
+            tagAllList.appendChild(span);
+        });
+
+        tagAllModal.style.display = "flex";
+    });
+
+    tagClose.addEventListener("click", () => {
+        tagAllModal.style.display = "none";
+    });
+
+    tagAllModal.addEventListener("click", (e) => {
+        if (e.target === tagAllModal) tagAllModal.style.display = "none";
+    });
+
+
+
+    // 나의 레벨
+    const levelThresholds = [0, 50, 150, 300, 500, 800, 1200, 1700, 2300, 3000];
+
+    function computeTotalXP() {
+        const purchased = JSON.parse(localStorage.getItem("purchased") || "[]");
+        const completed = JSON.parse(localStorage.getItem("completedLectures") || "{}");
+
+        let xp = 0;
+
+        purchased.forEach(courseId => {
+            const course = allCourses[courseId];
+            if (!course) return;
+
+            const comp = completed[courseId] || {};
+            const flatLectures = course.sections.flatMap(s => s.lectures);
+
+            const total = flatLectures.length;
+            const done = flatLectures.filter(lec => comp[lec.lectureId]).length;
+
+            xp += done * 2;
+
+            if (done === total) {
+                xp += 20;
+            }
+        });
+
+        return xp;
     }
 
     function getLevel(xp) {
@@ -146,11 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return "🌳";
     }
 
-    function getXPToNextLevel(level, xp) {
-        if (level >= levelThresholds.length) return 0;
-        return levelThresholds[level] - xp;
-    }
-
     function updateLevelUI() {
         const emoji = document.getElementById("levelEmoji");
         const text = document.getElementById("levelText");
@@ -158,71 +237,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!emoji || !text || !desc) return;
 
-        const level = getLevel(totalXP);
-        const xpLeft = getXPToNextLevel(level, totalXP);
+        const xp = computeTotalXP();
+        const level = getLevel(xp);
+        const nextXP = levelThresholds[level] ?? levelThresholds[levelThresholds.length - 1];
+        const xpLeft = nextXP - xp;
 
         emoji.textContent = getLevelEmoji(level);
         text.textContent = `Lv. ${level}`;
-
-        desc.textContent = xpLeft > 0
-            ? `다음 레벨까지 ${xpLeft} XP`
-            : "최고 레벨입니다";
+        desc.textContent = xpLeft > 0 ? `다음 레벨까지 ${xpLeft} XP` : "최고 레벨입니다";
     }
 
 
-    // == 스킬 태그 == //
-    // 스킬 태그 생성
-    const skillsBox = document.querySelector(".skills");
-    const tagSet = new Set();
+    updateLevelUI();
 
-    purchased.forEach(id => {
-        const c = allCourses[id];
-        if (c?.tags) c.tags.forEach(t => tagSet.add(t));
-    });
+    
+    
 
-    if (tagSet.size === 0) {
-        skillsBox.innerHTML = `<p style="color:#888;">아직 학습 스킬이 없습니다.</p>`;
-    } else {
-        skillsBox.innerHTML = "";
-        [...tagSet].forEach(tag => {
-            const span = document.createElement("span");
-            span.className = "tag";
-            span.textContent = `#${tag}`;
-            skillsBox.appendChild(span);
-        });
-    }
-
-    // 전체보기 창 모듈
-    const tagViewAll = document.getElementById("tagViewAll");
-    const tagAllModal = document.getElementById("tagAllModal");
-    const tagAllList = document.getElementById("tagAllList");
-
-
-    // 전체보기 창
-    tagViewAll.addEventListener("click", () => {
-
-        tagAllList.innerHTML = "";
-
-        [...tagSet].forEach(tag => {
-            const span = document.createElement("span");
-            span.className = "tag";
-            span.textContent = `#${tag}`;
-            tagAllList.appendChild(span);
-        });
-
-        tagAllModal.style.display = "flex";
-    });
-
-    document.querySelector(".tag-all-close").addEventListener("click", () => {
-        tagAllModal.style.display = "none";
-    });
-
-    tagAllModal.addEventListener("click", (e) => {
-        if (e.target === tagAllModal) tagAllModal.style.display = "none";
-    });
-
-
-    // == 수료증 == //
+    // 수료증
     const certViewAll = document.getElementById("certViewAll");
     const certBox = document.getElementById("certPreviewBox");
 
@@ -236,13 +267,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalLectures = course.sections.reduce((cnt, s) => cnt + s.lectures.length, 0);
         const doneLectures = Object.values(completed).filter(v => v === true).length;
 
-        return doneLectures === totalLectures; // 100% 완료된 강의만
+        return doneLectures === totalLectures;
     });
 
     let previewList = completedCourses.slice(0, 2);
 
     if (previewList.length === 0) {
-        certBox.innerHTML = `<p style="color:#888;">아직 수료한 강의가 없습니다.</p>`;
+        certBox.innerHTML = `<p class="empty-text">수료한 강의가 없습니다.</p>`;
     } else {
         certBox.innerHTML = "";
         previewList.forEach(id => {
@@ -262,9 +293,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    certViewAll.addEventListener("click", () => {
+    certViewAll.addEventListener("click", (e) => {
+        e.preventDefault();
         location.href = "13_NeulIt_ProfileLecture.html?tab=certificate";
     });
 
-    updateLevelUI();
 });
