@@ -1,50 +1,79 @@
-document.addEventListener("DOMContentLoaded", () => {
+let userData = {};
+let currentUser = "";
 
-    // 강의 ID 가져오기
-    const urlParams = new URLSearchParams(location.search);
-    const selectedCourseId = urlParams.get("courseId");
-    const courseData = allCourses[selectedCourseId];
+// User.json + localStorage 로드
+async function loadUser() {
+    try {
+        const res = await fetch("/User.json");
+        userData = await res.json();
+        currentUser = userData.userId || "devUser";
+    } catch (err) {
+        console.error("User.json 로드 실패:", err);
+    }
+}
 
-    if (!courseData) {
-        alert("강의 정보를 불러올 수 없습니다.");
+function mergeCompletedLectures() {
+    const jsonData = userData.completedLectures || {};
+    const localData = JSON.parse(localStorage.getItem("completedLectures") || "{}");
+
+    const merged = {};
+
+    // JSON 먼저
+    for (let courseId in jsonData) {
+        merged[courseId] = { ...jsonData[courseId] };
+    }
+
+    // local 덮어쓰기
+    for (let courseId in localData) {
+        if (!merged[courseId]) merged[courseId] = {};
+        merged[courseId] = { ...merged[courseId], ...localData[courseId] };
+    }
+
+    return merged;
+}
+
+// DOM 로드, 메인 흐름
+document.addEventListener("DOMContentLoaded", async () => {
+
+    await loadUser();
+
+    const url = new URLSearchParams(location.search);
+    const courseId = url.get("courseId");
+
+    const course = allCourses[courseId];
+    if (!course) {
+        alert("강의 정보를 찾을 수 없습니다.");
         return;
     }
 
-    // 필요한 요소들
-    const curriculumContainer = document.getElementById("curriculum-container");
     const video = document.getElementById("video-player");
     const videoSource = document.getElementById("video-source");
     const titleCourse = document.getElementById("course-title");
     const titleLecture = document.getElementById("current-title");
     const btnComplete = document.getElementById("complete-btn");
 
-    // completed DB 로드
-    let completedStore = JSON.parse(localStorage.getItem("completedLectures") || "{}");
+    let completedStore = mergeCompletedLectures();
 
-    if (!completedStore[selectedCourseId]) {
-        completedStore[selectedCourseId] = {};
-    }
+    if (!completedStore[courseId]) completedStore[courseId] = {};
+    let completed = completedStore[courseId];
 
-    let completed = completedStore[selectedCourseId];
     let currentLecture = null;
 
     // 커리큘럼 렌더링
     function renderCurriculum() {
-        curriculumContainer.innerHTML = "";
+        const container = document.getElementById("curriculum-container");
+        container.innerHTML = "";
 
-        const progressEl = document.createElement("div");
-        progressEl.id = "progress-text";
-        progressEl.classList.add("progress-text");
-        progressEl.innerText = "학습률: 0%";
-        curriculumContainer.appendChild(progressEl);
+        titleCourse.innerText = course.title;
 
-        titleCourse.innerText = courseData.title;
+        const progressText = document.createElement("div");
+        progressText.id = "progress-text";
+        progressText.className = "progress-text";
+        container.appendChild(progressText);
 
-        courseData.sections?.forEach(section => {
+        course.sections.forEach(section => {
             const header = document.createElement("div");
-            header.classList.add("section-header");
-            header.onclick = () => toggleSection(header);
-
+            header.className = "section-header";
             header.innerHTML = `
                 <div class="section-left">
                     <span class="section-title">${section.title}</span>
@@ -52,18 +81,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <span class="arrow">▼</span>
             `;
-            curriculumContainer.appendChild(header);
+            container.appendChild(header);
 
             const content = document.createElement("div");
-            content.classList.add("section-content");
-            content.id = `section-${section.sectionId}`;
+            content.className = "section-content";
             content.style.display = "none";
-            curriculumContainer.appendChild(content);
+            container.appendChild(content);
 
-            section.lectures.forEach((lec) => {
+            header.onclick = () => {
+                const open = content.style.display === "block";
+                content.style.display = open ? "none" : "block";
+                header.querySelector(".arrow").style.transform = open ? "rotate(0deg)" : "rotate(180deg)";
+            };
+
+            section.lectures.forEach(lec => {
                 const item = document.createElement("div");
-                item.classList.add("curri-item");
-
+                item.className = "curri-item";
                 if (completed[lec.lectureId]) item.classList.add("done");
 
                 item.innerHTML = `
@@ -79,80 +112,57 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        updateProgressRate();
+        updateProgress();
     }
 
     // 강의 선택
-    function selectLecture(lecture) {
-        currentLecture = lecture;
-        titleLecture.innerText = lecture.title;
-        videoSource.src = lecture.video;
+    function selectLecture(lec) {
+        currentLecture = lec;
+        titleLecture.innerText = lec.title;
+        videoSource.src = lec.video;
         video.load();
         video.play();
-        updateCompleteButton();
+        updateCompleteBtn();
+        saveRecentLecture();
     }
 
-    // 🔥🔥🔥 최근 학습 저장 기능 추가
+    // 최근 학습 저장
     function saveRecentLecture() {
         if (!currentLecture) return;
 
-        const record = {
-            courseId: selectedCourseId,
+        let recent = JSON.parse(localStorage.getItem("recentLectures") || "[]");
+
+        recent = recent.filter(r => r.courseId !== courseId);
+
+        recent.push({
+            courseId,
             lectureId: currentLecture.lectureId,
             lectureTitle: currentLecture.title,
             lastPlayed: new Date().toISOString()
-        };
-
-        let recent = JSON.parse(localStorage.getItem("recentLectures") || "[]");
-
-        // 같은 courseId는 삭제 → 하나만 유지
-        recent = recent.filter(r => r.courseId !== selectedCourseId);
-
-        // 새 기록 추가
-        recent.push(record);
+        });
 
         localStorage.setItem("recentLectures", JSON.stringify(recent));
     }
 
-    // 완료 처리
+    // 이해했어요 버튼
     function toggleComplete() {
         if (!currentLecture) return;
-    
+
         const id = currentLecture.lectureId;
-    
-        const openSections = [];
-        document.querySelectorAll(".section-content").forEach(sec => {
-            if (sec.style.display === "block") openSections.push(sec.id);
-        });
-    
+
         completed[id] = !completed[id];
-        completedStore[selectedCourseId] = completed;
+        completedStore[courseId] = completed;
+
         localStorage.setItem("completedLectures", JSON.stringify(completedStore));
+        userData.completedLectures = completedStore;
 
-        saveRecentLecture();
- 
         renderCurriculum();
-    
-        openSections.forEach(secId => {
-            const sec = document.getElementById(secId);
-            if (sec) {
-                sec.style.display = "block";
-                sec.previousElementSibling.querySelector(".arrow").style.transform = "rotate(180deg)";
-            }
-        });
-    
-        updateCompleteButton();
-        updateProgressRate();
+        updateCompleteBtn();
+        updateProgress();
     }
-    
 
-    // 완료 버튼 표시
-    function updateCompleteButton() {
-        if (!currentLecture) {
-            btnComplete.innerText = "이해했어요";
-            btnComplete.classList.remove("done");
-            return;
-        }
+    function updateCompleteBtn() {
+        if (!currentLecture) return;
 
         if (completed[currentLecture.lectureId]) {
             btnComplete.innerText = "완료됨";
@@ -163,57 +173,46 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 섹션 토글
-    function toggleSection(header) {
-        const content = header.nextElementSibling;
-        const arrow = header.querySelector(".arrow");
-
-        if (content.style.display === "block") {
-            content.style.display = "none";
-            arrow.style.transform = "rotate(0deg)";
-        } else {
-            content.style.display = "block";
-            arrow.style.transform = "rotate(180deg)";
-        }
-    }
-
     // 학습률 계산
-    function updateProgressRate() {
-        const all = [];
-        courseData.sections?.forEach(sec => sec.lectures.forEach(lec => all.push(lec)));
+    function updateProgress() {
+        let all = [];
 
-        const completedCount = all.filter(lec => completed[lec.lectureId]).length;
-        const totalCount = all.length;
+        course.sections.forEach(sec =>
+            sec.lectures.forEach(lec => all.push(lec))
+        );
 
-        const rate = Math.round((completedCount / totalCount * 100) * 10) / 10;
+        const total = all.length;
+        const done = all.filter(lec => completed[lec.lectureId]).length;
 
-        const progressEl = document.getElementById("progress-text");
-        if (progressEl) progressEl.innerText = `학습률: ${rate}%`;
+        const rate = Math.round((done / total) * 100);
+
+        const el = document.getElementById("progress-text");
+        if (el) el.innerText = `학습률: ${rate}%`;
     }
 
-    // 자동 재생
-    function autoPlayFirstLecture() {
-        const all = [];
-        courseData.sections?.forEach(sec => sec.lectures.forEach(lec => all.push(lec)));
+    // 자동 재생 — 가장 처음 미완료 강의
+    function autoPlay() {
+        let all = [];
 
-        const next = all.find(lec => !completed[lec.lectureId]);
-        selectLecture(next || all[0]);
+        course.sections.forEach(sec =>
+            sec.lectures.forEach(lec => all.push(lec))
+        );
+
+        const next = all.find(l => !completed[l.lectureId]) || all[0];
+        selectLecture(next);
     }
 
     // 뒤로 가기
-    const backBtn = document.getElementById("back-btn");
-    if (backBtn) {
-        backBtn.onclick = () => {
-            if (document.referrer && document.referrer !== "") {
-                history.back();
-            } else {
-                location.href = "../Profile/13_NeulIt_ProfileLecture.html";
-            }
+    const back = document.getElementById("back-btn");
+    if (back) {
+        back.onclick = () => {
+            if (document.referrer) history.back();
+            else location.href = "../Profile/13_NeulIt_ProfileLecture.html";
         };
     }
 
-    btnComplete.addEventListener("click", toggleComplete);
+    btnComplete.onclick = toggleComplete;
 
     renderCurriculum();
-    autoPlayFirstLecture();
+    autoPlay();
 });
