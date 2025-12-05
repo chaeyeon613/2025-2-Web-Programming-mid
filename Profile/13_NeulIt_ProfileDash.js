@@ -1,5 +1,6 @@
 let userData = {};
-let currentUser = "";
+let currentUser = "neulit";
+
 
 // User.json 로드
 async function loadUser() {
@@ -15,14 +16,16 @@ async function loadUser() {
     }
 }
 
+
 // 프로필 상단
 function applyProfileHeader() {
     const idEl = document.querySelector(".profile-id");
     const nameEl = document.querySelector(".profile-name");
 
-    if (idEl) idEl.textContent = userData.userId || "사용자";
-    if (nameEl) nameEl.textContent = userData.name || "사용자";
+    if (idEl) idEl.textContent = userData.userId || "neulit";
+    if (nameEl) nameEl.textContent = userData.name || "늘잇";
 }
+
 
 // JSON + localStorage 병합 //
 function mergeArray(jsonArr = [], localArr = []) {
@@ -69,17 +72,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadUser();
     applyProfileHeader();
 
+
     // 병합 데이터 생성
-    const purchasedLocal = JSON.parse(localStorage.getItem("purchased") || "[]");
+    const purchasedLocal = JSON.parse(localStorage.getItem("purchased_neulit") || "[]");
     const purchasedMerged = mergeArray(userData.purchased, purchasedLocal);
 
-    const completedLocal = JSON.parse(localStorage.getItem("completedLectures") || "{}");
+    const completedLocal = JSON.parse(localStorage.getItem("completedLectures_neulit") || "{}");
     const completedMerged = mergeCompleted(userData.completedLectures, completedLocal);
 
     const recentMerged = getRecentMerged();
 
     const mentoringLocal = JSON.parse(localStorage.getItem("mentoringReservations") || "[]");
     const mentoringMerged = mergeMentoring(userData.mentoringReservations, mentoringLocal);
+
 
     // 최근 학습 강의
     const titleEl = document.querySelector(".course-title");
@@ -112,6 +117,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     playBtn.onclick = titleClickableArea.onclick = () =>
         location.href = `../Player/13_NeulIt_Player.html?courseId=${targetCourseId}`;
 
+
     // 멘토링
     const mentorBox = document.querySelector(".mentor-info");
     const statusTag = document.querySelector(".mentoring-status");
@@ -136,6 +142,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         statusTag.textContent = "예약 확정";
     }
 
+
     // 스킬 태그
     const skillsBox = document.querySelector(".skills");
     let tagSet = new Set();
@@ -149,6 +156,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         tagSet.size === 0
             ? `<p class="empty-text">학습 스킬이 없습니다.</p>`
             : [...tagSet].map(t => `<span class="tag">#${t}</span>`).join("");
+
 
     // 스킬 태그 전체보기
     const tagViewAll = document.getElementById("tagViewAll");
@@ -174,6 +182,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     tagAllModal.onclick = e => {
         if (e.target === tagAllModal) tagAllModal.style.display = "none";
     };
+
 
     // 레벨 계산
     const levelThresholds = [0, 50, 150, 300, 500, 800, 1200, 1700, 2300, 3000];
@@ -203,6 +212,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("levelText").textContent = `Lv. ${level}`;
     document.getElementById("levelDesc").textContent =
         nextXP ? `다음 레벨까지 ${nextXP - xp} XP` : "최고 레벨입니다";
+
 
     // 수료증
     const certBox = document.getElementById("certPreviewBox");
@@ -234,6 +244,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }).join("");
     }
 
+
     // 최근 학습 전체보기
     const recentViewAll = document.querySelector(".course-list");
     if (recentViewAll) {
@@ -241,6 +252,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             location.href = "13_NeulIt_ProfileLecture.html?tab=studying";
         });
     }
+
 
     // 수료증 전체보기
     const certViewAll = document.getElementById("certViewAll");

@@ -1,5 +1,6 @@
 let userData = {};
-let currentUser = "";
+let currentUser = "neulit";
+
 
 // User.json 로드
 async function loadUser() {
@@ -16,14 +17,16 @@ async function loadUser() {
     }
 }
 
+
 // 프로필 상단 정보 반영
 function applyProfileHeader() {
     const idEl = document.querySelector(".profile-id");
     const nameEl = document.querySelector(".profile-name");
 
-    if (idEl) idEl.textContent = userData.userId || "사용자";
-    if (nameEl) nameEl.textContent = userData.name || "사용자";
+    if (idEl) idEl.textContent = userData.userId || "neulit";
+    if (nameEl) nameEl.textContent = userData.name || "늘잇";
 }
+
 
 // JSON / LocalStorage 읽기
 async function loadJsonPosts() {
@@ -57,6 +60,7 @@ function loadDeletedJsonComments() {
     catch { return []; }
 }
 
+
 // JSON + Local 게시글 병합
 function mergePosts(jsonPosts, localPosts) {
     const map = new Map();
@@ -64,6 +68,7 @@ function mergePosts(jsonPosts, localPosts) {
     localPosts.forEach(p => map.set(String(p.id), p));
     return [...map.values()];
 }
+
 
 // JSON 댓글 → LocalStorage 구조로 변환
 function normalizeJsonComments(post) {
@@ -84,6 +89,7 @@ function normalizeJsonComments(post) {
         })
         .filter(c => !deletedKeys.includes(c.jsonKey));
 }
+
 
 // 게시글 카드 UI
 function createPostCard(post, commentCount) {
@@ -109,6 +115,7 @@ window.openDetail = function(id) {
     localStorage.setItem("selectedPostId", id);
     location.href = "../Community/13_NeulIt_CommunityDetail.html";
 };
+
 
 // 내가 쓴 글 목록
 async function renderMyPosts() {
@@ -145,6 +152,7 @@ async function renderMyPosts() {
     container.innerHTML = posts.map(p => createPostCard(p, p.totalComments)).join("");
 }
 
+
 // 내가 댓글 단 글 목록
 async function renderMyAnsweredPosts() {
     const container = document.querySelector(".community-list");
@@ -162,11 +170,8 @@ async function renderMyAnsweredPosts() {
         const jsonC = normalizeJsonComments(post);
         const localC = localComments.filter(c => Number(c.postId) === pid);
 
-        const commentedJson =
-            jsonC.some(c => c.userId === currentUser || c.author === userData.name);
-
-        const commentedLocal =
-            localC.some(c => c.userId === currentUser);
+        const commentedJson = jsonC.some(c => c.userId === "neulit");
+        const commentedLocal = localC.some(c => c.userId === "neulit");
 
         return commentedJson || commentedLocal;
     });
@@ -188,6 +193,7 @@ async function renderMyAnsweredPosts() {
     container.innerHTML = posts.map(p => createPostCard(p, p.totalComments)).join("");
 }
 
+
 // 탭 버튼
 function setupButtons() {
     const buttons = document.querySelectorAll(".status-btn");
@@ -204,6 +210,7 @@ function setupButtons() {
         renderMyAnsweredPosts();
     });
 }
+
 
 // 초기 실행
 window.addEventListener("load", async () => {

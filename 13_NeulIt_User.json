@@ -1,97 +1,97 @@
 {
-    "userId": "neulit",
-    "pw": 1234,
-    "name": "늘잇",
-  
-    "completedLectures": {
-      "react-basic": {
-        "react-1": true,
-        "react-2": true,
-        "react-3": true,
-        "react-4": true,
-        "react-5": true,
-        "react-6": true,
-        "react-7": true,
-        "react-8": true,
-        "react-9": true,
-        "react-10": false,
-        "react-11": false,
-        "react-12": false,
-        "react-13": false,
-        "react-14": false
-      },
-      "c-basic": {
-        "c-1": true,
-        "c-2": true,
-        "c-3": true,
-        "c-4": true,
-        "c-5": true,
-        "c-6": true,
-        "c-7": false,
-        "c-8": false,
-        "c-9": false,
-        "c-10": false,
-        "c-11": false,
-        "c-12": false,
-        "c-13": false,
-        "c-14": false
-      },
-      "spring-basic": {
-        "spring-1": true,
-        "spring-2": true,
-        "spring-3": true,
-        "spring-4": true,
-        "spring-5": true,
-        "spring-6": true,
-        "spring-7": true,
-        "spring-8": true,
-        "spring-9": true,
-        "spring-10": true,
-        "spring-11": true,
-        "spring-12": true,
-        "spring-13": true,
-        "spring-14": true
-      }
+  "userId": "neulit",
+  "pw": 1234,
+  "name": "늘잇",
+
+  "completedLectures": {
+    "c-basic": {
+      "c-1": true,
+      "c-2": true,
+      "c-3": true,
+      "c-4": true,
+      "c-5": true,
+      "c-6": true,
+      "c-7": false,
+      "c-8": false,
+      "c-9": false,
+      "c-10": false,
+      "c-11": false,
+      "c-12": false,
+      "c-13": false,
+      "c-14": false
     },
-  
-    "myPosts": [4],
-  
-    "myComments": [4, 2],
-  
-    "basket": ["ai-basic"],
-  
-    "recentLectures": [
-      {
-        "courseId": "spring-basic",
-        "lectureId": "spring-3",
-        "lectureTitle": "스프링 동작원리",
-        "lastPlayed": "2025-12-03T15:12:58.982Z"
-      },
-      {
-        "courseId": "c-basic",
-        "lectureId": "c-3",
-        "lectureTitle": "조건문",
-        "lastPlayed": "2025-12-05T18:00:00.000Z"
-      },
-      {
-        "courseId": "react-basic",
-        "lectureId": "react-1",
-        "lectureTitle": "React 소개",
-        "lastPlayed": "2025-12-04T05:07:09.527Z"
-      }
-    ],
-  
-    "purchased": ["react-basic", "c-basic", "spring-basic"],
-  
-    "mentoringReservations": [
-      {
-        "mentor": "최지민",
-        "field": "SRE/DevOps 엔지니어",
-        "date": "12월 30일 (목)",
-        "time": "19:00~20:00",
-        "price": "₩49,000(시간 당)"
-      }
-    ],
-  
-    "selectedPostId": 4
+    "react-basic": {
+      "react-1": true,
+      "react-2": true,
+      "react-3": true,
+      "react-4": true,
+      "react-5": true,
+      "react-6": true,
+      "react-7": true,
+      "react-8": true,
+      "react-9": true,
+      "react-10": false,
+      "react-11": false,
+      "react-12": false,
+      "react-13": false,
+      "react-14": false
+    },
+    "spring-basic": {
+      "spring-1": true,
+      "spring-2": true,
+      "spring-3": true,
+      "spring-4": true,
+      "spring-5": true,
+      "spring-6": true,
+      "spring-7": true,
+      "spring-8": true,
+      "spring-9": true,
+      "spring-10": true,
+      "spring-11": true,
+      "spring-12": true,
+      "spring-13": true,
+      "spring-14": true
+    }
+  },
+
+  "myPosts": [4],
+
+  "myComments": [4, 2],
+
+  "basket": ["ai-basic"],
+
+  "recentLectures": [
+    {
+      "courseId": "c-basic",
+      "lectureId": "c-3",
+      "lectureTitle": "조건문",
+      "lastPlayed": "2025-12-05T18:00:00.000Z"
+    },
+    {
+      "courseId": "spring-basic",
+      "lectureId": "spring-3",
+      "lectureTitle": "스프링 동작원리",
+      "lastPlayed": "2025-12-03T15:12:58.982Z"
+    },
+    {
+      "courseId": "react-basic",
+      "lectureId": "react-1",
+      "lectureTitle": "React 소개",
+      "lastPlayed": "2025-12-04T05:07:09.527Z"
+    }
+  ],
+
+  "purchased": ["c-basic", "react-basic", "spring-basic"],
+
+  "mentoringReservations": [
+    {
+      "mentor": "최지민",
+      "field": "SRE/DevOps 엔지니어",
+      "date": "12월 30일 (목)",
+      "time": "19:00~20:00",
+      "price": "₩49,000(시간 당)"
+    }
+  ],
+
+  "selectedPostId": 4
 }

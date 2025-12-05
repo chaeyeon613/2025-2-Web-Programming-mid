@@ -1,5 +1,6 @@
 let userData = {};
-let currentUser = "";
+let currentUser = "neulit";
+
 
 // User.json 로드
 async function loadUser() {
@@ -12,14 +13,16 @@ async function loadUser() {
     }
 }
 
-// 프로필 상단 아이디/이름 적용
+
+// 프로필 상단
 function applyProfileHeader() {
     const idEl = document.querySelector(".profile-id");
     const nameEl = document.querySelector(".profile-name");
 
-    if (idEl) idEl.textContent = userData.userId || "사용자";
-    if (nameEl) nameEl.textContent = userData.name || "사용자";
+    if (idEl) idEl.textContent = userData.userId || "neulit";
+    if (nameEl) nameEl.textContent = userData.name || "늘잇";
 }
+
 
 // JSON + localStorage 병합
 function mergeMentoring(jsonArr = [], localArr = []) {
@@ -33,12 +36,14 @@ function mergeMentoring(jsonArr = [], localArr = []) {
     return [...map.values()];
 }
 
+
 // 날짜 파싱
 function parseDateToObj(str) {
     const match = str.match(/(\d+)월\s*(\d+)일/);
     if (!match) return null;
     return new Date(2025, match[1] - 1, match[2]);
 }
+
 
 // 멘토 정보 매칭
 function attachMentorInfo(list) {
@@ -61,6 +66,7 @@ function attachMentorInfo(list) {
         return m;
     });
 }
+
 
 // 카드 렌더링
 function renderMentoringList(list, container) {
@@ -89,6 +95,7 @@ function renderMentoringList(list, container) {
         container.insertAdjacentHTML("beforeend", card);
     });
 }
+
 
 // 메인 실행
 document.addEventListener("DOMContentLoaded", async () => {
