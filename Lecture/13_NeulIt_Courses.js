@@ -10,52 +10,52 @@ const allCourses = {
     tags: ["Python"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "python-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "python-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "python-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "python-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "python-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "python-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "python-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "python-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "python-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "python-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "python-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "python-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "python-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "python-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "python-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
+        sectionId: "python-sec5",
         title: "섹션 5. React.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "python-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "python-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "python-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
@@ -132,52 +132,52 @@ const allCourses = {
     tags: ["Spring"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "spring-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "spring-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "spring-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "spring-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "spring-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "spring-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "spring-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "spring-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "spring-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "spring-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "spring-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "spring-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "spring-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "spring-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "spring-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
-        title: "섹션 5. React.js 개론",
+        sectionId: "spring-sec5",
+        title: "섹션 5. spring.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "spring-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "spring-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "spring-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
@@ -193,52 +193,52 @@ const allCourses = {
     tags: ["C"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "c-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "c-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "c-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "c-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "c-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "c-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "c-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "c-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "c-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "c-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "c-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "c-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "c-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "c-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "c-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
+        sectionId: "c-sec5",
         title: "섹션 5. React.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "c-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "c-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "c-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
@@ -254,52 +254,52 @@ const allCourses = {
     tags: ["HTML", "CSS", "JavaScript"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "html-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "html-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "html-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "html-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "html-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "html-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "html-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "html-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "html-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "html-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "html-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "html-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "html-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "html-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "html-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
+        sectionId: "html-sec5",
         title: "섹션 5. React.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "html-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "html-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "html-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
@@ -315,52 +315,52 @@ const allCourses = {
     tags: ["Kotlin"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "kotlin-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "kotlin-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "kotlin-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "kotlin-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "kotlin-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "kotlin-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "kotlin-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "kotlin-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "kotlin-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "kotlin-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "kotlin-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "kotlin-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "kotlin-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "kotlin-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "kotlin-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
+        sectionId: "kotlin-sec5",
         title: "섹션 5. React.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "kotlin-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "kotlin-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "kotlin-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
@@ -376,52 +376,52 @@ const allCourses = {
     tags: ["C++"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "cpp-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "cpp-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "cpp-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "cpp-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "cpp-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "cpp-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "cpp-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "cpp-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "cpp-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "cpp-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "cpp-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "cpp-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "cpp-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "cpp-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "cpp-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
-        title: "섹션 5. React.js 개론",
+        sectionId: "cpp-sec5",
+        title: "섹션 5. cpp.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "cpp-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "cpp-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "cpp-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
@@ -437,52 +437,52 @@ const allCourses = {
     tags: ["Docker"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "docker-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "docker-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "docker-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "docker-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "docker-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "docker-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "docker-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "docker-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "docker-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "docker-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "docker-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "docker-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "docker-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "docker-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "docker-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
+        sectionId: "docker-sec5",
         title: "섹션 5. React.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "docker-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "docker-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "docker-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
@@ -498,52 +498,52 @@ const allCourses = {
     tags: ["DB"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "db-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "db-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "db-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "db-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "db-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "db-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "db-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "db-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "db-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "db-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "db-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "db-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "db-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "db-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "db-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
+        sectionId: "db-sec5",
         title: "섹션 5. React.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "db-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "db-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "db-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
@@ -559,52 +559,52 @@ const allCourses = {
     tags: ["Backend"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "commerce-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "commerce-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "commerce-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "commerce-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "commerce-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "commerce-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "commerce-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "commerce-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "commerce-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "commerce-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "commerce-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "commerce-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "commerce-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "commerce-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "commerce-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
+        sectionId: "commerce-sec5",
         title: "섹션 5. React.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "commerce-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "commerce-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "commerce-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
@@ -620,52 +620,52 @@ const allCourses = {
     tags: ["AI"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "ai-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "ai-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "ai-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "ai-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "ai-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "ai-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "ai-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "ai-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "ai-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "ai-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "ai-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "ai-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "ai-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "ai-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "ai-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
+        sectionId: "ai-sec5",
         title: "섹션 5. React.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "ai-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "ai-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "ai-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
@@ -681,52 +681,52 @@ const allCourses = {
     tags: ["BootStrap"],
     sections: [
       {
-        sectionId: "react-sec1",
+        sectionId: "bootstrap-sec1",
         title: "섹션 1. 들어가며",
         info: "1강",
         lectures: [
-          { lectureId: "react-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
+          { lectureId: "bootstrap-1", title: "1. 강의 및 강사 소개", time: "08:09", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec2",
+        sectionId: "bootstrap-sec2",
         title: "섹션 2. JavaScript 기본",
         info: "3강",
         lectures: [
-          { lectureId: "react-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
-          { lectureId: "react-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
+          { lectureId: "bootstrap-2", title: "4. 1.1) 안녕 자바스크립트", time: "07:23", video: "../Images/sample.mp4" },
+          { lectureId: "bootstrap-3", title: "5. 1.2) VsCode 설치하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "bootstrap-4", title: "6. 1.3) 자바스크립트 실습 환경 설정하기", time: "07:16", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec3",
+        sectionId: "bootstrap-sec3",
         title: "섹션 3. JavaScript 심화",
         info: "4강",
         lectures: [
-          { lectureId: "react-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
-          { lectureId: "react-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
-          { lectureId: "react-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
+          { lectureId: "bootstrap-5", title: "7. 3.1) Truthy와 Falsy", time: "10:12", video: "../Images/sample.mp4" },
+          { lectureId: "bootstrap-6", title: "8. 3.2) 단락 평가", time: "12:30", video: "../Images/sample.mp4" },
+          { lectureId: "bootstrap-7", title: "9. 3.3) 구조분해할당", time: "07:40", video: "../Images/sample.mp4" },
+          { lectureId: "bootstrap-8", title: "10. 3.4) Spread 연산자와 Rest 매개변수", time: "07:57", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec4",
+        sectionId: "bootstrap-sec4",
         title: "섹션 4. Node.js 기초",
         info: "3강",
         lectures: [
-          { lectureId: "react-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
-          { lectureId: "react-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
+          { lectureId: "bootstrap-9", title: "10. 4.1) Node.js를 소개합니다", time: "05:09", video: "../Images/sample.mp4" },
+          { lectureId: "bootstrap-10", title: "11. 4.2) Node.js 설치하기", time: "07:26", video: "../Images/sample.mp4" },
+          { lectureId: "bootstrap-11", title: "12. 4.3) Node.js 모듈 시스템 이해하기", time: "14:42", video: "../Images/sample.mp4" }
         ]
       },
       {
-        sectionId: "react-sec5",
+        sectionId: "bootstrap-sec5",
         title: "섹션 5. React.js 개론",
         info: "3강",
         lectures: [
-          { lectureId: "react-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
-          { lectureId: "react-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
-          { lectureId: "react-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
+          { lectureId: "bootstrap-12", title: "13. 5.1) React.js를 소개합니다", time: "21:30", video: "../Images/sample.mp4" },
+          { lectureId: "bootstrap-13", title: "13. 5.2) 첫 React App 생성하기", time: "10:26", video: "../Images/sample.mp4" },
+          { lectureId: "bootstrap-14", title: "13. 5.3) React App 구동원리 살펴보기", time: "10:28", video: "../Images/sample.mp4" }
         ]
       }
     ]
