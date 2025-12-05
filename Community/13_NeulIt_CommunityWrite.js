@@ -1,15 +1,27 @@
 document.getElementById('writeForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    let loginUserId = localStorage.getItem("loginUser") || "neulit";
-    let userName = "사용자";
+    const loginUserId = "neulit";
+    const userName = "늘잇";
 
-    try {
-        const res = await fetch("/User.json");
-        const data = await res.json();
-        userName = data.name || "사용자";
-    } catch (e) {
-        console.error("User.json 로드 실패:", e);
+    const loginUserData = localStorage.getItem("loginUserData");
+    if (loginUserData) {
+        try {
+            const userObj = JSON.parse(loginUserData);
+            userName = userObj.name;
+            loginUserId = userObj.username;
+        } catch (e) {
+            console.error("loginUserData 파싱 실패:", e);
+        }
+    } 
+    else {
+        try {
+            const res = await fetch("/13_NeulIt_User.json");
+            const data = await res.json();
+            userName = data.name || "사용자";
+        } catch (e) {
+            console.error("User.json 로드 실패:", e);
+        }
     }
 
     const title = document.getElementById('title').value.trim();

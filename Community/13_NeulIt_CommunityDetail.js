@@ -1,13 +1,22 @@
 let userData = {};
-let currentUser = localStorage.getItem("loginUser") || "neulit";
+
+const FIXED_USER_ID = "neulit";
+const FIXED_USER_NAME = "늘잇";
+
+let currentUser = FIXED_USER_ID;
+
+function loadCurrentUser() {
+    return {
+        username: FIXED_USER_ID,
+        name: FIXED_USER_NAME
+    };
+}
 
 async function loadUser() {
-    try {
-        const res = await fetch("/User.json");
-        userData = await res.json();
-    } catch (e) {
-        console.error("User.json 로드 실패:", e);
-    }
+    userData = {
+        userId: FIXED_USER_ID,
+        name: FIXED_USER_NAME
+    };
 }
 
 async function loadJsonPosts() {
@@ -65,9 +74,8 @@ function mergePosts(json, local) {
 }
 
 function createCommentElement(c) {
-    const isMine =
-        c.userId === currentUser ||
-        c.author === userData.name;
+
+    const isMine = true;
 
     return `
         <div class="answer" id="comment-${c.id}">
@@ -95,6 +103,10 @@ function createCommentElement(c) {
 async function renderPostDetail() {
     await loadUser();
 
+    const loginUser = loadCurrentUser();
+    const loginId = loginUser?.username;
+    const loginName = loginUser?.name;
+
     const container = document.getElementById("detail-container");
     const postId = Number(localStorage.getItem("selectedPostId"));
 
@@ -113,11 +125,7 @@ async function renderPostDetail() {
         return;
     }
 
-    if (!Array.isArray(post.comments)) post.comments = [];
-
-    const isMyPost =
-        post.userId === currentUser ||
-        post.author === userData.name;
+    const isMyPost = true;
 
     const statusClass = post.status === "해결됨" ? "resolved" : "unresolved";
     const tagsHtml = post.tags.map(t => `<span class="tag-item">${t}</span>`).join("");
@@ -203,6 +211,11 @@ function renderComments(post) {
 
 function handleCommentSubmit(e, post) {
     e.preventDefault();
+
+    const loginUser = loadCurrentUser();
+    const loginId = loginUser?.username;
+    const loginName = loginUser?.name;
+
     const text = document.getElementById("comment-content").value.trim();
     if (!text) return;
 
@@ -212,8 +225,8 @@ function handleCommentSubmit(e, post) {
     arr.push({
         id: newId,
         postId: Number(post.id),
-        userId: currentUser,
-        author: userData.name,
+        userId: loginId || currentUser,
+        author: loginName || userData.name,
         time: new Date().toLocaleString("ko-KR"),
         content: text
     });

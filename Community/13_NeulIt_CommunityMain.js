@@ -1,3 +1,12 @@
+const FIXED_USER = {
+    username: "neulit",
+    name: "늘잇"
+};
+
+function loadCurrentUser() {
+    return FIXED_USER;
+}
+
 // JSON 파일 로드
 async function loadJsonPosts() {
     try {
@@ -80,6 +89,8 @@ function createPostElement(post) {
 async function renderPosts() {
     const container = document.getElementById("post-list");
 
+    const user = loadCurrentUser();  
+    
     const jsonPosts = await loadJsonPosts();
     const localPosts = loadLocalPosts();
     const deleted = loadDeletedPosts();
