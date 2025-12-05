@@ -16,12 +16,12 @@ html, body {
 section {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 70vh;
 }
 
 
 /* 1. 메인 */
-.main {
+.main-title {
     width: 100vw;
     margin: 5rem auto;
     text-align: center;
@@ -42,21 +42,36 @@ section {
     color: #6f7780;
 }
 
-.one_text, .two_text {
+.fade-slide {
+    position: relative;
+    font-size: 70px;
+    font-weight: 600;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    display: inline-block;
+}
+
+.title-fixed{
     position: relative;
     font-size: 70px;
     font-weight: 600;
 }
 
-.two_text{
-    color: #ec8201;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
+.fade-slide.show{
+    opacity: 1;
+    transform: translateY(0);
+    /* transition: opacity 1s ease, transform 1s ease; */
+
 }
 
-.two_text:before {
+.fade-slide.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* .two_text:before {
     content: "";
     position: absolute;
     top:0;
@@ -76,53 +91,70 @@ section {
     100% {
         left: 0;
     }
-}
+} */
 
 
 /* 2. 메인 리뷰 캐러셀 */
 .carousel {
     position: relative;
-    width: 1000px;
-    height: 500px;
-    padding-block: 3rem;
-    display: grid;
+    margin-top: 0;
+    width: 900px;
+    /* height: 500px; */
+    padding-block: 1rem;
+    display: flex;
     align-items: center;
-    row-gap: 0rem;
+    row-gap: 2rem;
     overflow: hidden;
+
+    
+    mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1) 20%,
+        rgba(0,0,0,1) 80%,
+        rgba(0,0,0,0)
+    );
 }
 
 .carousel__card {
     width: 100px;
-    background-color: hsl(220, 24%, 96%);
-    box-shadow: 0 12px 24px hsla(220, 100%, 20%, 1);
-    padding: 1rem 1rem 2rem;
+    background-color:  #ffffff;
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.05),
+        0 8px 16px rgba(0, 0, 0, 0.08);
+    padding: 1.2rem 1rem 1.8rem;
     margin-inline: 1rem;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     text-align: center;
+
+}
+
+.review {
+    font-size: 5px;
 }
 
 .carousel__image {
-    width: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 4px 12px hsla(220, 100%, 20%, .3);
     margin: 0 auto .5rem;
-
-    height: 100px;
 }
 
 .carousel__img {
-    transition: transform .4s;
+    /* transition: transform .4s; */
+    width: 50px;
+    height: 50px;
 }
 
 .carousel__name,
 .carousel__number{
-    font: 500;
+    font: 400;
     color: black;
 }
 
 .carousel__name{
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .carousel__rating{
@@ -130,33 +162,33 @@ section {
     justify-content: center;
     align-items: center;
     column-gap: .5rem;
-    margin-bottom: .5rem;
+    margin-bottom: .1rem;
 }
 
 .carousel__stars{
     display: flex;
-    column-gap: .25rem;
+    column-gap: .10rem;
 }
 
 .carousel__stars i{
-    font-size: 1rem;
-    color: hsl(216, 57%, 45%);
+    font-size: 0.9rem;
+    color: #ec8201;
     transition: transform .2s;
     cursor: pointer;
 }
 
-.carousel__card:hover .carousel__img{
-    transform: scale(1.2);
+.carousel__card:hover, .carousel__img{
+    transform: scale(1.1);
 }
 
 .carousel__stars i:hover{
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
 .carousel__content{
     width: max-content;
     display: flex;
-    animation: scroll 15s linear infinite;
+    animation: scroll 28s linear infinite;
 }
 
 .carousel__reverse{
@@ -178,17 +210,9 @@ section {
     }
 }
 
-@media screen and (min-width: 320px){
-    .carousel__card{
-        width: 250px;
-        padding-bottom: 2rem;
-    }
-}
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 300px) {
     .carousel{
         margin-inline: auto;
-        row-gap: 3rem;
     }
 
     .carousel::before,
@@ -197,25 +221,14 @@ section {
         position: absolute;
         top: 0;
         width: 15%;
-        height: 100%;
+        /* height: 500px; */
         z-index: 1;
     }
-    .carousel::before{
-        right: 0;
-        background-color:liner-gradient(90deg,
-                        hsla(220, 24%, 94%, 0) 0,
-                        hsla(220, 24%, 94%) 100%);
-    }
-    .carousel::after{
-        left: 0;
-        background: linear-gradient(90deg,
-                    hsla(220, 24%, 94%) 0%,
-                    hsla(220, 24%, 94%, 0) 100%);
-    }
     .carousel__card{
-        width: 300px;
-        padding: 3rem 2rem;
-        border-radius: 4rem;
+        width: 160px;
+        height: 160px;
+        padding: 1rem 1rem;
+        border-radius: 2rem;
     }
 }
 
@@ -235,7 +248,7 @@ section {
     margin-inline: auto;
     position: relative;
     height: 250px;
-    margin-top: 5rem;
+    margin-top: 1rem;
     overflow: hidden;
 }
 
