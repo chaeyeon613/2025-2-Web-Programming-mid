@@ -1,20 +1,44 @@
 let userData = {};
-let currentUser = "";
+let currentUser = "neulit";
 
-// User.json + localStorage 로드
+
+// User.json 로드
 async function loadUser() {
     try {
-        const res = await fetch("/User.json");
+        const res = await fetch("/13_NeulIt_User.json");
         userData = await res.json();
-        currentUser = userData.userId || "devUser";
-    } catch (err) {
-        console.error("User.json 로드 실패:", err);
+
+        userData.userId = "neulit";
+        userData.name = userData.name || "사용자";
+
+    } catch (e) {
+        console.error("User.json 로드 실패:", e);
     }
 }
 
+
+// neulit 전용 저장 함수
+function loadUserObject(key) {
+    return JSON.parse(localStorage.getItem(`${key}_neulit`) || "{}");
+}
+
+function saveUserObject(key, obj) {
+    localStorage.setItem(`${key}_neulit`, JSON.stringify(obj));
+}
+
+function loadUserArray(key) {
+    return JSON.parse(localStorage.getItem(`${key}_neulit`) || "[]");
+}
+
+function saveUserArray(key, arr) {
+    localStorage.setItem(`${key}_neulit`, JSON.stringify(arr));
+}
+
+
+// completedLectures 병합
 function mergeCompletedLectures() {
     const jsonData = userData.completedLectures || {};
-    const localData = JSON.parse(localStorage.getItem("completedLectures") || "{}");
+    const localData = loadUserObject("completedLectures");
 
     const merged = {};
 
@@ -30,7 +54,8 @@ function mergeCompletedLectures() {
     return merged;
 }
 
-// DOM 로드, 메인 흐름
+
+// DOM 로드
 document.addEventListener("DOMContentLoaded", async () => {
 
     await loadUser();
@@ -51,11 +76,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const btnComplete = document.getElementById("complete-btn");
 
     let completedStore = mergeCompletedLectures();
-
     if (!completedStore[courseId]) completedStore[courseId] = {};
-    let completed = completedStore[courseId];
 
+    let completed = completedStore[courseId];
     let currentLecture = null;
+
 
     // 커리큘럼 렌더링
     function renderCurriculum() {
@@ -113,22 +138,26 @@ document.addEventListener("DOMContentLoaded", async () => {
         updateProgress();
     }
 
+
     // 강의 선택
     function selectLecture(lec) {
         currentLecture = lec;
+
         titleLecture.innerText = lec.title;
         videoSource.src = lec.video;
         video.load();
         video.play();
+
         updateCompleteBtn();
         saveRecentLecture();
     }
+
 
     // 최근 학습 저장
     function saveRecentLecture() {
         if (!currentLecture) return;
 
-        let recent = JSON.parse(localStorage.getItem("recentLectures") || "[]");
+        let recent = loadUserArray("recentLectures");
 
         recent = recent.filter(r => r.courseId !== courseId);
 
@@ -139,10 +168,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             lastPlayed: new Date().toISOString()
         });
 
-        localStorage.setItem("recentLectures", JSON.stringify(recent));
+        saveUserArray("recentLectures", recent);
     }
 
-    // 이해했어요 버튼
+
+    // 완료 토글
     function toggleComplete() {
         if (!currentLecture) return;
 
@@ -151,7 +181,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         completed[id] = !completed[id];
         completedStore[courseId] = completed;
 
-        localStorage.setItem("completedLectures", JSON.stringify(completedStore));
+        saveUserObject("completedLectures", completedStore);
         userData.completedLectures = completedStore;
 
         renderCurriculum();
@@ -159,6 +189,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         updateProgress();
     }
 
+    btnComplete.onclick = toggleComplete;
+
+
+    // 완료 버튼 상태
     function updateCompleteBtn() {
         if (!currentLecture) return;
 
@@ -171,7 +205,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // 학습률 계산
+
+    // 학습률 업데이트
     function updateProgress() {
         let all = [];
 
@@ -188,10 +223,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (el) el.innerText = `학습률: ${rate}%`;
     }
 
-    // 자동 재생 — 가장 처음 미완료 강의
+
+    // 자동 재생
     function autoPlay() {
         let all = [];
-
         course.sections.forEach(sec =>
             sec.lectures.forEach(lec => all.push(lec))
         );
@@ -200,7 +235,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         selectLecture(next);
     }
 
-    // 뒤로 가기
+
+    // 뒤로가기
     const back = document.getElementById("back-btn");
     if (back) {
         back.onclick = () => {
@@ -209,8 +245,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         };
     }
 
-    btnComplete.onclick = toggleComplete;
 
+    // 초기 실행
     renderCurriculum();
     autoPlay();
 });
