@@ -46,6 +46,7 @@
         </nav>
     </header> -->
 
+    <div class="page-wrapper">
     <!-- 1. 메인 문구 -->
     <div class="main-title">
         <div>
@@ -282,6 +283,8 @@
         </div>
     </section>
 
+    </div>
+
 
 
     <!-- 스크립트 -->
@@ -332,7 +335,7 @@
         const boxes = document.querySelectorAll('.box');
 
         function checkBoxes() {
-            const trigger = window.innerHeight * 0.9;
+            const trigger = window.innerHeight * 0.7;
 
             boxes.forEach(box => {
                 const top = box.getBoundingClientRect().top;
@@ -346,9 +349,6 @@
 
         window.addEventListener("scroll", checkBoxes);
         checkBoxes();
-
-        document.querySelector(".right-scroll").addEventListener("scroll", checkBoxes);
-
     </script>
 
     <!-- 푸터 -->
