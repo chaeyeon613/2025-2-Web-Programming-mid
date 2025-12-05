@@ -4,20 +4,18 @@ function getParam(name) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const id = getParam("id");
-    if (!id) {
-        console.warn("URL에 id가 없습니다.");
-        return;
-    }
+    if (!id) return;
 
     const cartBtn = document.querySelector(".shopping-button");
 
     if (cartBtn) {
         cartBtn.addEventListener("click", () => {
-            let basket = JSON.parse(localStorage.getItem("basket") || "[]");
+
+            let basket = JSON.parse(localStorage.getItem("basket_neulit") || "[]");
 
             if (!basket.includes(id)) {
                 basket.push(id);
-                localStorage.setItem("basket", JSON.stringify(basket));
+                localStorage.setItem("basket_neulit", JSON.stringify(basket));
             }
 
             alert("장바구니에 담겼습니다!");
@@ -42,13 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            let purchased = JSON.parse(localStorage.getItem("purchased") || "[]");
+            let purchased = JSON.parse(localStorage.getItem("purchased_neulit") || "[]");
 
             if (!purchased.includes(id)) {
                 purchased.push(id);
             }
 
-            localStorage.setItem("purchased", JSON.stringify(purchased));
+            localStorage.setItem("purchased_neulit", JSON.stringify(purchased));
 
             alert("결제가 완료되었습니다! 즐거운 학습 되세요 🌿");
         };
