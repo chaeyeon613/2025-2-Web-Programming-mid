@@ -245,7 +245,7 @@
                 </div>
 
                 <p>
-                    정말 최고의 강의!
+                    어쩌고저쩌고
                 </p>
             </article>         
         </div>
@@ -270,34 +270,22 @@
     </section>
 
     <!-- 4. 스크롤 애니메이션 -->
-    <section class="section bg-fixed">
-        <div class="box blue"><h2>Content</h2></div>
-        <div class="box red"><h2>Content</h2></div>
-        <div class="box yellow"><h2>Content</h2></div>
-        <div class="box green"><h2>Content</h2></div>
-        <div class="box blue"><h2>Content</h2></div>
+    <section class="scroll-section">
+        <div class="left-fixed">
+            <h3 class="scroll-section__intro">시작부터 <br> 성장까지 쉬워집니다</h3>
+        </div>
+
+        <div class="right-scroll">
+            <div class="box"><h2>Content</h2></div>
+            <div class="box"><h2>Content</h2></div>
+            <div class="box"><h2>Content</h2></div>
+        </div>
     </section>
 
 
 
     <!-- 스크립트 -->
     <script>
-        // 페이드 인 요소 처리
-        // const fadeTargets = document.querySelectorAll(".fade-target");
-
-        // window.addEventListener("scroll", () => {
-        //     const triggerPoint = window.innerHeight * 0.8;
-
-        //     fadeTargets.forEach(target => {
-        //         const top = target.getBoundingClientRect().top;
-
-        //         if (top < triggerPoint) {
-        //             target.classList.add("show");
-        //         }
-        //     });
-        // });
-
-    
         // 1. 메인 타이틀 내용
         const slideText = document.querySelector(".title-slide");
         const messages = [
@@ -328,7 +316,7 @@
         },3000);
         
 
-        //1.1 메인 캐러셀 리뷰
+        //2. 메인 리뷰 캐러셀
         const tracks = document.querySelectorAll('.carousel__content')
 
         tracks.forEach(track => {
@@ -338,6 +326,7 @@
                 track.appendChild(card.cloneNode(true))
             }
         })
+
 
         // 3. 스크롤 애니메이션(box)
         const boxes = document.querySelectorAll('.box');
@@ -357,6 +346,9 @@
 
         window.addEventListener("scroll", checkBoxes);
         checkBoxes();
+
+        document.querySelector(".right-scroll").addEventListener("scroll", checkBoxes);
+
     </script>
 
     <!-- 푸터 -->

@@ -16,7 +16,6 @@ html, body {
 section {
     display: flex;
     flex-direction: column;
-    min-height: 70vh;
 }
 
 
@@ -70,28 +69,6 @@ section {
     opacity: 0;
     transform: translateY(20px);
 }
-
-/* .two_text:before {
-    content: "";
-    position: absolute;
-    top:0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color:white;
-    border-left: 2px solid #ab3a2c;
-    animation: animate 9s steps(21) infinite;
-}
-
-@keyframes animate {
-    40%, 60% {
-        left: calc(100% + 1px);
-    }
-
-    100% {
-        left: 0;
-    }
-} */
 
 
 /* 2. 메인 리뷰 캐러셀 */
@@ -234,7 +211,7 @@ section {
 
 
 /* 3. 무한 캐러셀*/
-.header-intro {
+.header-intro, .scroll-section__intro {
     font-size: 35px;
 }
 
@@ -257,7 +234,6 @@ section {
         left: -500px;
     }
 }
-
 
 .item {
     width: 450px;
@@ -298,65 +274,57 @@ section {
 }
 
 
-
-
-
 /* 3. 스크롤 애니메이션 구간 */
-.blue {
-    --clr: #4285f4;
+
+/* 스크롤 섹션을 1열 2열로 분리 */
+.scroll-section {
+    display: flex;
+    flex-direction: row !important;
+    min-height: auto !important;
+    height: auto !important;
+    column-gap: 40px;
+    padding: 0 5%;
+    margin-top: 150px;
 }
 
-.red {
-    --clr: #DB4437;
+/* 왼쪽은 스크롤해도 고정 */
+.left-fixed {
+    position: sticky;
+    top: 120px;
+
+    width: 300px;
+    height:300px;
+    background-color: white;
+    flex-shrink: 0;
 }
 
-.yellow {
-    --clr: #F4B400;
-}
-
-.green{
-    --clr: #0F9D58;
-}
-
-.section.bg-fixed {
+/* 오른쪽은 box 애니메이션이 진행되는 영역 */
+.right-scroll {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    overflow-x: hidden;
-
-    min-height: 150vh;
-    padding-top: 100px;
+    gap: 60px;
 }
 
-.box{
-    background-color: var(--clr);
-    color:black;
+/* 기존 .box 유지 */
+.box {
+    background-color: #ffffff;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
-    max-width: 900px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
 
-    margin: 60px auto;
     border-radius: 25px;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
     transform: translateX(400%);
     transition: transform 1s ease;
 }
 
-.box:nth-of-type(even){
-    transform: translateX(-400%);
-}
-
-.box.show{
+.box.show {
     transform: translateX(0);
 }
-
-
-
 
 
 /* 푸터 */
