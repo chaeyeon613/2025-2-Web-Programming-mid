@@ -52,3 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const favBtn = document.querySelector(".favorite-button img");
+
+    if (!favBtn) return;
+
+    favBtn.src = "../Images/favorite.svg";
+    favBtn.dataset.like = "false";
+
+    favBtn.addEventListener("click", () => {
+        const liked = favBtn.dataset.like === "true";
+
+        if (liked) {
+            favBtn.src = "../Images/favorite.svg";
+            favBtn.dataset.like = "false";
+        } else {
+            favBtn.src = "../Images/favorite-fill.svg";
+            favBtn.dataset.like = "true";
+        }
+    });
+});
