@@ -4,7 +4,7 @@ let currentUser = "";
 // User.json 로드
 async function loadUser() {
     try {
-        const res = await fetch("/User.json");
+        const res = await fetch("/13_Neult_User.json");
         userData = await res.json();
         currentUser = userData.userId || "neulit";
     } catch (e) {
