@@ -149,7 +149,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         video.play();
 
         updateCompleteBtn();
-        saveRecentLecture();
     }
 
 
@@ -183,6 +182,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         saveUserObject("completedLectures", completedStore);
         userData.completedLectures = completedStore;
+
+        if (completed[id]) {
+            saveRecentLecture();
+        }
 
         renderCurriculum();
         updateCompleteBtn();
