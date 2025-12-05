@@ -53,7 +53,7 @@ function mergeMentoring(jsonList = [], localList = []) {
 
 function getRecentMerged() {
     const json = userData.recentLectures || [];
-    const local = JSON.parse(localStorage.getItem("recentLectures") || "[]");
+    const local = JSON.parse(localStorage.getItem("recentLectures_neulit") || "[]");
 
     const merged = [...json, ...local];
 

@@ -173,22 +173,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             card.href = `../Player/13_NeulIt_Player.html?courseId=${id}`;
             card.className = "card-link";
 
-            card.addEventListener("click", () => {
-                const firstLec = c.sections[0].lectures[0];
-                let arr = loadArray("recentLectures");
-
-                arr = arr.filter(r => r.courseId !== id);
-
-                arr.unshift({
-                    courseId: id,
-                    lectureId: firstLec.lectureId,
-                    lectureTitle: firstLec.title,
-                    lastPlayed: new Date().toISOString()
-                });
-
-                saveArray("recentLectures", arr);
-            });
-
             lectureList.appendChild(card);
 
             card.innerHTML = `
