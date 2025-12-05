@@ -1,6 +1,6 @@
 async function loadUserDataForHeader() {
     try {
-        const response = await fetch("/User.json"); 
+        const response = await fetch("/13_NeulIt_User.json"); 
         return response.ok ? await response.json() : {};
     } catch (e) {
         console.warn("User.json 로드 실패:", e);
@@ -49,27 +49,12 @@ function handleLogout() {
 
 document.addEventListener('DOMContentLoaded', async () => {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    const loggedInUser = localStorage.getItem('loginUser'); 
-    
+
+    let userName = "늘잇";
+
     const logoutBtn = document.getElementById('logoutButton');
     if (logoutBtn) {
         logoutBtn.onclick = handleLogout;
-    }
-    
-    let userName = loggedInUser || 'guest';
-
-    if (isLoggedIn) {
-        const users = JSON.parse(localStorage.getItem('users') || '[]');
-        const foundUser = users.find(u => u.username === loggedInUser);
-        
-        if (!foundUser) {
-            const jsonUser = await loadUserDataForHeader();
-            if (jsonUser && jsonUser.userId === loggedInUser) {
-                userName = jsonUser.name;
-            }
-        } else {
-            userName = foundUser.name;
-        }
     }
     
     updateAuthUI(isLoggedIn, userName);

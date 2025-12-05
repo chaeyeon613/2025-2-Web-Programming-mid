@@ -1,4 +1,4 @@
-const JSON_FILE_PATH = '../User.json'; 
+const JSON_FILE_PATH = '../13_NeulIt_User.json'; 
 
 const loginForm = document.getElementById('loginForm');
 const loginBtn = document.querySelector('.login-button');
