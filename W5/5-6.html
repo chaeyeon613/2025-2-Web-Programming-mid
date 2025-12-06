@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색상 및 배경</title>
+    <style type="text/css">
+        h3 {
+            color: white;
+            background-color: royalblue;
+        }
+        table {
+            width: 2000px; height: 2000px;
+        }
+        /* x축으로 이미지를 반복해서 채움 */
+        /* url: ()안에 있는 이미지를 가져와서 배경으로 사용해라 */
+        #first {
+            background-image: url("/images/2411041_profile.jpg");
+            background-repeat: repeat-x;
+        }
+        /* repeat 속성이 없으면 기본값 repeat */
+        /* 가로와 세로 모두로 이미지를 반복해서 채움 */
+        #second {
+            background-image: url("/images/2411041_profile.jpg");
+            background-repeat: repeat;
+        }
+        /* no-repeat 이미지를 한 번만 표시함 */
+        /* center bottom 이미지를 가운데 아래쪽에 위치시킴 */
+        #third {
+            background-image: url("/images/2411041_profile.jpg");
+            background-repeat: no-repeat;
+            background-position: center bottom;
+        }
+    </style>
+</head>
+<body>
+    <h3>CSS 배경관련 속성</h3>
+    <table border="1">
+        <tr>
+            <td id="first">배경 이미지<br>&bull; url(파일경로)
+            <br>&bull; background-repeat: repeat-x</td>
+            <td id="second">배경 이미지<br>&bull; url(파일경로)
+            <br>&bull; background-repeat: repeat</td>
+            <td id="third">배경 이미지<br>&bull; background-repeat: no-repeat,(파일경로)
+            <br>&bull; background-position: center bottom</td>
+        </tr>
+    </table>
+</body>
+</html>

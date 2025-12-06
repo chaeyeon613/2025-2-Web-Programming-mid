@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션 메뉴 구성</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-container {
+            background-color: white;
+            width: 100%;
+            list-style: none;
+            display: flex;
+            position: fixed;
+            top: 0;
+            justify-content: center;
+        }
+
+        .nav-item {
+            padding: 15px;
+            cursor: pointer;
+        }
+        
+        .nav-item:hover{
+            background-color: purple;
+        }
+        .nav-item a {
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .article-container {
+            display: flex;
+            justify-content: center;
+            height: 120vh;
+            background: linear-gradient(
+                #f3e8ff 0%,   /* 라일락 연보라 */
+                #e0c3fc 25%,  /* 연보라 */
+                #c2e9fb 75%,  /* 하늘빛 */
+                #f9f9f9 100%  /* 거의 흰색 */
+            );
+        }
+
+        .item1 {
+            padding: 30vh;
+            text-align: center;
+            /* 세로 방향으로 배치 */
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav-container">
+            <li class="nav-item"><a href="#">Landings</a></li>
+            <li class="nav-item"><a href="#">Dashboard</a></li>
+            <li class="nav-item"><a href="#">Docs</a></li>
+            <li class="nav-item"><a href="#">Changelog</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="article-container">
+            <div class="item1">
+                <h1>Geeks UI, Premium <br> LMS/Education Template</h1>
+                <p>Geeks UI Premium LMS education template, perfect for online courses, colleges, schools, training hubs, <br>
+                and corporate programs. Enhance your educational platform with seamless design and advanced features <br>
+                for modern learning.</p>
+            </div>
+            <div class="item2"></div>
+        </div>
+    </section>
+</body>
+</html>

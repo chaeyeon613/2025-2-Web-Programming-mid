@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>장바구니</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .cart-container {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #4f4f4f;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .delete-btn {
+            padding: 5px 10px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="cart-container">
+    <h1>장바구니</h1>
+
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>상품명</th>
+                <th>가격</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+        </tbody>
+    </table>
+
+    <div class="total">
+        총액: <span id="total-price">0</span>
+    </div>
+</div>
+
+
+<script>
+    const products = [
+        { name: "망고", price: 10000 },
+        { name: "블루베리", price: 20000 },
+        { name: "수박", price: 15000 }
+    ];
+
+    const cartBody = document.querySelector("#cart-items");
+    const totalSpan = document.querySelector("#total-price");
+
+    function loadCart() {
+        products.forEach(item => {
+            const tr = document.createElement("tr");
+
+            const nameTd = document.createElement("td");
+            nameTd.textContent = item.name;
+
+            const priceTd = document.createElement("td");
+            priceTd.textContent = item.price;
+            priceTd.classList.add("price");
+
+            const btnTd = document.createElement("td");
+            const btn = document.createElement("button");
+            btn.textContent = "삭제";
+            btn.classList.add("delete-btn");
+
+            btn.addEventListener("click", function () {
+                removeItem(this);
+            });
+
+            btnTd.appendChild(btn);
+
+            tr.appendChild(nameTd);
+            tr.appendChild(priceTd);
+            tr.appendChild(btnTd);
+
+            cartBody.appendChild(tr);
+        });
+    }
+
+    function updateTotal() {
+        const priceCells = document.getElementsByClassName("price");
+        let sum = 0;
+
+        for (let i = 0; i < priceCells.length; i++) {
+            sum += Number(priceCells[i].textContent);
+        }
+
+        totalSpan.textContent = sum;
+    }
+
+    function removeItem(button) {
+        const tr = button.parentNode.parentNode;
+        tr.remove();
+        updateTotal(); 
+    }
+
+    loadCart();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Carousel</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #ffffff;
+        }
+
+        .carousel {
+            text-align: center;
+        }
+
+        /* 캐러셀 화면 */
+        .carousel-view {
+            width: 40vw;            
+            height: 30vw;             
+            overflow: hidden;      
+            border-radius: 12px;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex-shrink: 0;      
+            width: 40vw;
+            height: 30vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3vw;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* 버튼 */
+        .carousel-control {
+            margin-top: 20px;
+        }
+
+        .control-btn {
+            font-size: 2rem;
+            padding: 8px 20px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="carousel">
+    <div class="carousel-view">
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-slide" style="background-color: lightcoral;">1</div>
+            <div class="carousel-slide" style="background-color: lightblue;">2</div>
+            <div class="carousel-slide" style="background-color: lightgreen;">3</div>
+        </div>
+    </div>
+
+    <div class="carousel-control">
+        <button class="control-btn" id="prevBtn">&#8249;</button>
+        <button class="control-btn" id="nextBtn">&#8250;</button>
+    </div>
+</div>
+
+<script>
+    const container = document.getElementById("carouselContainer");
+    const slides = document.querySelectorAll(".carousel-slide");
+
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let currentIndex = 0;
+
+    function updateSlide() {
+        const slideWidth = slides[0].offsetWidth;
+        container.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+        currentIndex++;
+        if (currentIndex >= slides.length) {
+            currentIndex = 0;
+        }
+        updateSlide();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = slides.length - 1;
+        }
+        updateSlide();
+    });
+
+    window.addEventListener("resize", updateSlide);
+</script>
+
+</body>
+</html>

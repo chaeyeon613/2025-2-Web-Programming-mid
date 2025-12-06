@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../13_NeulIt_style.css">
 </head>
 <body>
+    <!--헤더-->
         <nav class="nav-container">
             <a href="../Lecture/13_NeulIt_LectureMain.html"><img src="../Images/main_logoicon.png" alt="로고" class="logo"></a>
             <div class="menu">
@@ -25,17 +26,35 @@
             </div>
             <div>
                 <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
-                <a href="../Profile/13_NeulIt_ProfileDash.html"><img src="../Images/profile.svg" alt="마이페이지" class="icon"></a>            
+
+                <div class="profile-dropdown-container">
+                    <img src="../Images/profile.svg" alt="마이페이지" class="icon" id="profileIcon">
+                
+                    <div class="profile-menu-box" id="profileMenu">
+                        <a href="../Profile/13_NeulIt_ProfileDash.html" class="menu-item-header">
+                            <img src="../Images/me.png" alt="프로필 이미지" class="dropdown-profile-img">
+                            <span id="dropdownUserName"></span>
+                            <span class="arrow">&gt;</span>
+                        </a>
+                        <hr>
+                        <a href="../Profile/13_NeulIt_ProfileLecture.html" class="menu-item">내 학습</a>
+                        <a href="../Profile/13_NeulIt_ProfileMentoring.html" class="menu-item">멘토링</a>
+                        <a href="../Profile/13_NeulIt_ProfileCommunity.html" class="menu-item">커뮤니티 게시글</a>
+                        <hr>
+                        <button class="logout-btn" id="logoutButton">로그아웃</button>
+                    </div>
+                </div>
             </div>
         </nav>
+
     <!--검색창-->
     <div class="lecture-search">
-    <input id="searchInput" type="text" name="text" placeholder="📣 도전하는 것을 망설이지 마세요!">
-    <input type="image" src="../Images/search.svg" alt="검색 로고">
-    
-    <!-- 자동완성 리스트 -->
-    <ul id="autocomplete-list" class="autocomplete"></ul>
-</div>
+        <input id="searchInput" type="text" name="text" placeholder="📣 도전하는 것을 망설이지 마세요!">
+        <input type="image" src="../Images/search.svg" alt="검색 로고">
+        
+        <!-- 자동완성 리스트 -->
+        <ul id="autocomplete-list" class="autocomplete"></ul>
+    </div>
 
 
 
@@ -643,56 +662,56 @@
 
 
 
-<!-- 부트스트랩 -->
-<section class="lecture">
-    <div class="lecture-card">
+        <!-- 부트스트랩 -->
+        <section class="lecture">
+            <div class="lecture-card">
 
-        <div class="card-front">
-            <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
-                <figure class="lecture-thumbnail">
-                    <img src="../Images/python.png" alt="부트스트랩 강의 썸네일">
-                </figure>
-                <div class="lecture-body">
-                    <div class="lecture-top">
-                        <h3 class="lecture-title">부트스트랩을 활용한 반응형 웹제작</h3>
-                        <p class="instructor">영코디 킴쌤</p>
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link">
+                        <figure class="lecture-thumbnail">
+                            <img src="../Images/python.png" alt="부트스트랩 강의 썸네일">
+                        </figure>
+                        <div class="lecture-body">
+                            <div class="lecture-top">
+                                <h3 class="lecture-title">부트스트랩을 활용한 반응형 웹제작</h3>
+                                <p class="instructor">영코디 킴쌤</p>
+                            </div>
+                            <div class="lecture-info">
+                                <span class="price">₩29,700</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg">5</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">Bootstrap 빠르게 배우기</h3>
+                        <p class="back-desc">반응형 그리드 시스템부터 컴포넌트 실전 활용.</p>
+
+                        <div class="back-info">
+                            <span class="level">입문</span>
+                            <span class="tags">Bootstrap • CSS • Responsive</span>
+                            <span class="duration">6시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>반응형 레이아웃 구성</li>
+                            <li>부트스트랩 컴포넌트 사용</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <span class="wishlist-heart">♡</span>
+                            <button class="cart"data-id="bootstrap-basic">바구니에 담기</button>
+                        </div>
                     </div>
-                    <div class="lecture-info">
-                        <span class="price">₩29,700</span>
-                        <span class="person">⭐4.9 <img src="../Images/person.svg">5</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="card-back">
-            <div class="back-content">
-                <h3 class="back-title">Bootstrap 빠르게 배우기</h3>
-                <p class="back-desc">반응형 그리드 시스템부터 컴포넌트 실전 활용.</p>
-
-                <div class="back-info">
-                    <span class="level">입문</span>
-                    <span class="tags">Bootstrap • CSS • Responsive</span>
-                    <span class="duration">6시간</span>
                 </div>
 
-                <p class="back-learn">이런 걸 배울 수 있어요</p>
-                <ul class="back-checklist">
-                    <li>반응형 레이아웃 구성</li>
-                    <li>부트스트랩 컴포넌트 사용</li>
-                    <li>여성개발자의 첫걸음</li>
-                    <li>초보자를 위한 강의</li>
-                </ul>
-
-                <div class="back-buttons">
-                    <span class="wishlist-heart">♡</span>
-                    <button class="cart"data-id="bootstrap-basic">바구니에 담기</button>
-                </div>
             </div>
-        </div>
-
-    </div>
-</section>
+        </section>
             </div>
         </article>
     </main>

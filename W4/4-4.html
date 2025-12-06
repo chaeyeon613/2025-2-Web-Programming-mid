@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input, 여러 종류의 버튼과 button</title>
+</head>
+<body>
+    <form action="#">
+    <label for="name">이름:</label>
+    <input type="text" name="nickname" value="닉네임 입력" id="name">
+    <label for="pwd">비밀번호:</label>
+    <input type="password" name="password" id="pwd">
+
+    <br>
+
+    <input type="submit" value="제출">
+    <!-- 초기화 버튼 -->
+    <input type="reset" value="초기화">
+    <!-- 일반 버튼 -->
+    <input type="button" value="검토" onclick="alert('검토')">
+    <!-- 파일 제출 버튼 -->
+    <input type="file">
+    <button type="submit" onclick="alert('abc')">
+    <!-- 묶어서 css 적용하고 싶을 때 span 사용 -->
+    <span style="color: blue;">버튼</span>
+    <span>태그</span>
+    </button>
+
+    </form>
+
+</body>
+</html>

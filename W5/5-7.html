@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 스타일 설정</title>
+    <style>
+        #books {table-layout: auto; width: 160px;
+        border-spacing: 8px; empty-cells: hide;}
+        #books caption { font-size: 18px; font-weight: bold;
+        margin: 0.5em; caption-side: bottom;}
+    </style>
+</head>
+<body>
+    <table border="1" id="books">
+        <caption>추천 SF 소설</caption>
+        <thead>
+            <tr>
+                <th>작가</th> <th>책제목</th> <th>출판사</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>아이작 아시모프</td> <td>파운데이션</td> <td></td>
+            </tr>
+            <tr>
+                <td>윌리엄깁슨</td> <td>뉴로맨서</td> <td>황금가지</td>
+            </tr>
+            <tr>
+                <td>올더스 헉슬리</td> <td>멋진 신세계</td> <td>소담출판사</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

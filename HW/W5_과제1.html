@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>W2_2411041_이채연_과제2.html</title>
+    <meta charset="utf-8">
+    <!-- 페이지 제목 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Keyboard&display=swap" rel="stylesheet">
+
+    <!-- 목차 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <style>
+    /*내부 스타일 시트*/
+    /* 요소 선택자 */
+    h1 {
+        font-family: 'Libertinus Keyboard', serif;
+        font-size: 80px;
+    }
+
+    h2 {
+        font-family: 'Lobster', serif;
+        font-size: 55px;
+    }
+
+    h3 {
+        font-style: italic; color: brown;
+        font-size: 25px;
+        text-shadow: 3px 3px 9px brown;
+    }
+
+    body {
+        background-color: beige;
+    }
+
+    #intro1 {
+        color:brown;
+        font-size: 25px; font-weight: bolder;
+        text-align: center;
+    }
+
+    #intro {
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    figcaption {
+        font-size: small;
+        font-weight: lighter;
+    }
+
+    a:link{color:palevioletred;}
+    a:visited{color: purple;}
+
+    .ulist {
+        line-height: 30px;
+        text-indent: 2em;
+        font-size: 15px;
+        list-style-type: circle;
+        list-style-position: outside;
+    }
+        
+    .olist {
+        line-height: 30px;
+        text-indent: 2em;
+        font-size: 15px;
+        list-style-type: upper-alpha;
+        list-style-position: outside;
+    }
+
+    #goal {
+        font-size: 20px;
+        font-style: normal; font-weight: bolder;
+    }
+
+    #ulist2{
+        line-height: 30px;
+        list-style-type: square;
+    }
+
+    #intro2 {
+        font-style: normal;
+        text-shadow: none;
+    }
+
+    #title {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .favorite {
+        line-height: 35px;
+        font-size: 18px;
+        font-style: italic;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    div{
+        width:500px;
+        height: 1200px;
+    }
+</style>
+</head>
+
+<body>
+    <h1>HELLO, CHAEWORLD!</h1>
+    <hr>
+
+    <h2 id="index00">Index</h2>
+    <!-- 동일 페이지 안에서 이동(#앵커아이디)-->
+    <ol>
+        <li><a href="#index01">About Me</a></li>
+        <li><a href="#index02">Career</a></li>
+        <li><a href="#index03">Fields supported</a></li>
+        <li><a href="#index04">What I Love</a></li>
+        <li><a href="#index05">Contact</a></li>
+    </ol>
+
+    <div></div>
+
+    <!-- 1. About Me -->
+    <h2 id="index01">1. About Me</h2>
+    <table border="0">
+        <tr>
+            <td>
+                <img src="2411041_profile.jpg" alt="프로필 이미지" width="450" height="500">
+            </td>
+            <td id="intro">
+                <p id="intro1">개발자를 꿈꾸는 이채연입니다.</p>
+                    <p>MBTI는 INFP이지만, 여러 사람들과 어울리는 것을 좋아합니다. 😍</p>
+                    <p>현재 서울에 거주하고 있고, 고향은 충청남도 아산입니다.</p>
+                    <p>작은 것에서 행복을 찾고, 주변에 긍정적인 에너지🍀를 나누는 사람입니다.</p>
+                    <p>숙명여자대학교 인공지능공학부에 재학 중이며, 다양한 프로젝트 경험을 쌓고 있습니다! 🚀</p>
+                    <p>많은 사람들에게 영향력 있는 개발자가 되는 것이 저의 목표입니다.</p>
+                    <p>포기할 줄 모르고 끈기 있는 모습 보여드리겠습니다!</p>
+            </td>
+        </tr>
+    </table><br>
+
+    <figure>
+        <!-- a 태그 안에 이미지를 넣어야 버튼 클릭 시 위로 이동 가능 -->
+        <a href="#index00">
+        <img src="2411041_jump.png" alt="목차 이동 버튼"></img></a>
+        <!-- 한 줄에 쓸 때는 'span' -->
+        <figcaption>버튼을 누르면 목차로 이동합니다</figcaption>
+    </figure>
+    
+    <div></div>
+
+    <!-- 2. Career -->
+    <table border="0">
+        <h2 id="index02">2. Career</h2>
+        <tr>
+            <th><h3>🏫 Education</h3></th> <th><h3>💻 Work Experience</h3></th>
+        </tr>
+        <tr>
+            <td>
+                <ul class="ulist">
+                <li>설화중학교 졸업</li>
+                <li>설화고등학교 졸업</li>
+                <li>숙명여자대학교 인공지능공학부 재학 2024.3~</li>
+                </ul>
+            </td>
+            <td>
+                <ul class="ulist">
+                    <li>SMWU 인공지능공학부 학회 WIN, 웹진 팀장 2024.3~</li>
+                    <li>SMWU 리더십그룹 비트윈, 홍보팀 부원 2025.3~</li>
+                    <li>경력개발처 재맞고 행정인턴 2025.9~</li>
+                
+                </ul>
+            </td>
+
+            <tr>
+                <th><h3>🔍 External activities</h3></th> <th><h3>✍️ Skills</h3></th>
+            </tr>
+            <tr>
+                <td>
+                <ul class="ulist">
+                    <li>코드클럽 찾아가는 SW 교육기부단, SWIT 활동 2024.6-7</li>
+                    <li>GDGoC Sookmyung 25-26 Member 2025.9~</li>
+                    <li>SMWU UMC 9th Web 2025.9~</li>
+                </ul>
+                </td>
+                <td>
+                <ol class="olist">
+                    <li>영어(초급) / 일본어(초급)</li>
+                    <li>Python, C, C++(초급)</li>
+                    <li>Java (중급)</li>
+                </ol>
+                </td>
+            </tr>
+        </tr>
+    </table>
+    
+    <figure>
+        <!-- a 태그 안에 이미지를 넣어야 버튼 클릭 시 위로 이동 가능 -->
+        <a href="#index00">
+        <img src="2411041_jump.png" alt="목차 이동 버튼"></img></a>
+        <!-- 한 줄에 쓸 때는 'span' -->
+        <figcaption>버튼을 누르면 목차로 이동합니다</figcaption>
+    </figure>
+
+    <div></div>
+
+    <!-- 3. Fields supported -->
+    <h2 id="index03">3. Fields supported</h2>
+    <p id="goal">🚀 Developer, ML를 목표로 하고 있습니다.</p>
+
+    <h3>📁 Project</h3>
+    <table border="0">
+        <tr>
+            <td>
+                <a href="https://github.com/chaeyeon613/OOP_Final_Neul" target="_blank"><img src="2411041_p1.png" alt="첫 번째 프로젝트" width="200" height="200"></a>
+            </td>
+            <td>
+                <h4>&nbsp;🌿늘 곁에 있는, 나만의 감정 수면 파트너</h4>
+                <ul id="ulist2">
+                    <li>사용자의 기상 시간 또는 취침 시간을 기준으로 수면 시간을 계산</li>
+                    <li>가장 효율적인 수면 또는 기상 시간을 추천해 주는 데스트탑 기반 프로그램</li>
+                    <li>기상 시간 추천 및 기능 알고리즘 구현</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/chaeyeon613/OSS_Final_project" target="_blank"><img src="2411041_p2.png" alt="두 번째 프로젝트" width="200" height="200"></a>
+            </td>
+            <td>
+                <h4>&nbsp;🔍 청각장애인 수화 학습 도구, SignQuiz</h4>
+                <ul id="ulist2">
+                    <li>손의 모양을 카메라로 촬영하고 이를 YOLO 기반 딥러닝 모델로 인식</li>
+                    <li>학습자가 표현한 수화를 실시간 분석하여 정답과 오답 확인 가능</li>
+                    <li>YOLO가 수화를 인식할 수 있도록 학습하는 역할 수행</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/chaeyeon613/Javengers_Project" target="_blank"><img src="2411041_p3.png" alt="세 번째 프로젝트" width="200" height="200"></a>
+            </td>
+            <td>
+                <h4>&nbsp;🧟 Java 기반 텍스트형 방탈출게임, Project Z-Lab</h4>
+                <ul id="ulist2">
+                    <li>단계별 미션을 통해 좀비바이러스가 퍼진 연구소에서 탈출하는 텍스트 기반 게임</li>
+                    <li>기능을 클래스별로 구분해 단계별 게임 스테이지를 조절</li>
+                    <li>4단계, 5단계 클래스 기능 구현</li>
+                </ul>
+
+            </td>
+        </tr>
+
+    </table>
+
+    <figure>
+        <!-- a 태그 안에 이미지를 넣어야 버튼 클릭 시 위로 이동 가능 -->
+        <a href="#index00">
+        <img src="2411041_jump.png" alt="목차 이동 버튼"></img></a>
+        <figcaption>버튼을 누르면 목차로 이동합니다</figcaption>
+    </figure>
+
+    <div></div>
+
+    <!-- 4. What I Love -->
+    <h2 id="index04">4. What I Love</h2>
+    <table border="0">
+        <tr>
+            <td>
+                <figure>
+                    <iframe width="500" height="300" src="https://www.youtube.com/embed/_p05r1AG7vg?si=YX-z7DfKHPvawTy-"
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                    gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <figcaption id="title">K-pop</figcaption>
+                    <p class="favorite">저는 보이넥스트도어의 리우를 좋아하며,<br>
+                    지난 여름방학에는 콘서트에 다녀와 소중한 추억을 쌓을 수 있었습니다.</p>
+                </figure>
+            </td>
+            <td>
+                <figure>
+                    <iframe width="500" height="300" src="https://www.youtube.com/embed/Ft0SsoG8GIw?si=EHRD39FyjpUyfNff"
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                    web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <figcaption id="title">Fashion</figcaption>
+                    <p class="favorite">패션에도 많은 관심을 가지고 있으며,<br>
+                    특히 비니와 같은 소품에 매력을 느낍니다. <br>
+                    평소 의류와 관련된 소비를 즐겨 하는 편입니다.</p>
+                </figure>
+            </td>
+            <td>
+                <figure>
+                    <iframe width="500" height="300" src="https://www.youtube.com/embed/zN8K_uE1LYg?si=IWQFxa8J6fvfYchS"
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+                    picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <figcaption id="title">Animation</figcaption>
+                    <p class="favorite">또한 애니메이션을 감상하는 것을 좋아합니다. <br>
+                    최근에 영화관에서 극장판 애니메이션을 관람하였는데 매우 인상 깊었습니다. <br>
+                    앞으로는 일본을 직접 여행하며 다양한 문화적 경험을 쌓고 싶습니다.</p>
+                </figure>
+            </td>
+        </tr>
+    </table>
+    
+    <figure>
+        <!-- a 태그 안에 이미지를 넣어야 버튼 클릭 시 위로 이동 가능 -->
+        <a href="#index00">
+        <img src="2411041_jump.png" alt="목차 이동 버튼"></img></a>
+        <!-- 한 줄에 쓸 때는 'span' -->
+        <figcaption>버튼을 누르면 목차로 이동합니다</figcaption>
+    </figure>
+
+    <div></div>
+
+    <hr>
+
+    <!-- 5. Contact  -->
+    <h2 id="index05">5. Contact</h2>
+    <p><img src="2411041_email.png" alt="이메일 기호"> lee24cy@sookmyung.ac.kr</p>
+    <p><img src="2411041_call.png" alt="전화 기호"> 010-9567-5150</p>
+    <!-- ✍️ 링크 첨부할 때 태그 안에 텍스트 써야 화면에 표시됨 -->
+    <img src="2411041_instagram.png" alt="인스타그램 기호"><a href="https://www.instagram.com/2eceon/" title="인스타그램" target="_blank"> instagram</a></p>
+    
+    <p><img src="2411041_contact.png" alt="추가 연락망 기호"><a href="https://github.com/chaeyeon613" title="깃허브" target="_blank"> Github</a>
+    <a href="https://www.notion.so/LEE-CHAE-YEON-1a7c1584bb028025a16ceb1427bbb1e4?source=copy_link" title="노션" target="_blank"> Notion</a>
+    <a href="https://c-yeon2.tistory.com/" title="기술블로그" target="_blank"> Tistory</a></p>
+</body>
+</html>

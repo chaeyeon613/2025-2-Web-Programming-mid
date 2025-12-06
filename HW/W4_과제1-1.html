@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+</head>
+<body>
+<form action="#" method="get">
+    <table idborder="0" id="index2">
+        <!-- 테이블칸 넉넉하게 잡기 -->
+        <colgroup>
+            <col style="width: 150px;">
+            <col style="width: 400px;">
+            <col style="width: 150px;">
+            <col style="width: 400px;">
+        </colgroup>
+            <tr>
+                <td><h3>*아이디</h3></td>
+                <td colspan="3">
+                    <input type="text" name="id" style="width: 300px;" required>
+                    <button type="button" onclick="alert('사용 가능한 아이디입니다.')">
+                    <!-- 묶어서 css 적용하고 싶을 때 span 사용 -->
+                    <span>ID 중복 체크</span></button>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>*이름</h3></td>
+                <td>
+                    <input type="text" name="name1" style="width: 300px;" required>
+                </td>
+                <td><h3>영문 이름</h3></td>
+                <td>
+                    <input type="text" name="name2" style="width: 300px;">
+                </td>
+            </tr>
+            <tr>
+                <td><h3>*비밀번호</h3></td>
+                <td>
+                    <input type="password" name="pwd" style="width: 300px;" required>
+                    <br>
+                </td>
+                
+                <td><h3>*비밀번호 확인</h3></td>
+                <td>
+                    <input type="password" name="password" style="width: 300px;" required>
+                    <button type="button" onclick="alert('비밀번호가 일치합니다.')">
+                    <span>확인</span></button>
+
+                </td>
+            </tr>
+            <tr>
+                <td><h3>*생년월일</h3></td>
+                <td>
+                    <input type="datetime-local" style="width: 300px;" required>
+                </td>
+                <td><h3>성별</h3></td>
+                <td>
+                    <label for="radio1">남성</label>    
+                    <input type="radio" name="gender" value="male" id="radio1">
+                    <label for="radio2">여성</label>    
+                    <input type="radio" name="gender" value="female" id="radio2">
+                </td>
+            </tr>
+            <tr>
+                <td><h3>*휴대폰 번호</h3></td>
+                <td>
+                    <input type="tel" name="phon" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" id="tel" placeholder="하이픈을 포함하여 입력해주세요." style="width:300px;" required>
+                </td>
+                <td><h3>이메일</h3></td>
+                <td>
+                    <input type="email" style="width: 300px;">
+                </td>
+            </tr>
+            <tr>
+                <td><h3>자기소개</h3></td>
+                <td colspan="3">
+                    <textarea name="introduce" cols="70px" rows="10px">자유롭게 자신을 소개해주세요.</textarea>
+                </td>
+            </tr>
+                        <tr>
+                <td><h3>소속정보</h3></td>
+                <td>
+                    <select name="job" size="1" id="job" style="width: 300px;">
+                        <option value="" disabled selected hidden>--직업--</option>
+                        <option value="student">학생</option>
+                        <option value="company">회사원</option>
+                        <option value="business">자영업</option>
+                        <option value="officer">공무원</option>
+                        <option value="others">기타</option>
+                    </select>
+                </td>
+                <td><h3>학력정보</h3></td>
+                <td>
+                    <select name="job" size="1" id="job" style="width: 300px;">
+                        <option value="" disabled selected hidden>--학력--</option>
+                        <option value="student">초졸</option>
+                        <option value="company">중졸</option>
+                        <option value="business">고졸</option>
+                        <option value="officer">대졸</option>
+                        <option value="others">대학원졸</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>주소 구분</h3></td>
+                <td>
+                    <label for="classification1">국내 주소</label>
+                    <input type="radio" id="classification1" name="adress" value="domestic">
+                    <label for="classification2">해외 주소</label>
+                    <input type="radio" id="classification2" name="adress" value="overseas">
+                </td>
+                <td><h3>국적</h3></td>
+                <td>
+                    <select name="nationality" id="nationality" size="1" style="width: 300px;">
+                        <option value="" disabled selected hidden>--국적--</option>
+                        <option value="KR">대한민국</option>
+                        <option value="US">미국</option>
+                        <option value="JP">일본</option>
+                        <option value="CN">중국</option>
+                        <option value="DE">독일</option>
+                        <option value="FR">프랑스</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>기본주소</h3></td>
+                <td colspan="3">
+                    <input type="text" name="basicadress" style="width: 850px;" placeholder="검색 버튼을 누르면 하단의 도로명 주소 검색 페이지로 넘어갑니다.">
+                    <a href="#index" title="주소 검색">
+                        <button type="button">주소 검색</button></a>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>상세주소</h3></td>
+                <td colspan="3">
+                    <input type="text" name="detailedaddress" style="width: 850px;">
+                </td>
+            </tr>
+            <tr>
+                <td><h3>뉴스레터</h3></td>
+                <td>
+                    <label for="news1">예</label>
+                    <input type="radio" name="news" id="news1" value="yes">
+                    <label for="news2">아니오</label>
+                    <input type="radio" name="news" id="news2" value="no">
+                </td>
+                <td><h3>정보수신</h3></td>
+                <td>
+                    <label for="message1">전자우편</label>
+                    <input type="checkbox" name="message" value="email" id="message1">
+                    <label for="message2">SMS</label>
+                    <input type="checkbox" name="message" value="sms" id="message2">
+                    <label for="message3">알림톡</label>
+                    <input type="checkbox" name="message" value="talk" id="message3">
+                </td>
+            </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="text-align: right;">
+                <button type="reset" onclick="alert('작성한 내용이 초기화됩니다.')">
+                <span>초기화</span></button>
+                <button type="submit" onclick="alert('회원가입이 완료되었습니다.')">
+                <span>제출</span></button>
+            </td>
+        </tr>
+    </table>
+
+    <div style="width:500px; height: 1200px;"></div>
+
+    <p id="index"><strong>검색방법</strong></p>
+    <p>지역 선택 후 도로명 또는 건물번호를 입력하세요. <br>
+    예) 지역선택: 서울특별시 용산구/ 도로명: 청파로47길 100</p>
+    
+        <label for="region"><strong>지역검색</strong></label>
+        <select name="region" size="1" id="region" style="width: 300px;">
+            <option value="" disabled selected hidden>--지역--</option>
+            <option value="Seoul">서울</option>
+            <option value="Busan">부산</option>
+            <option value="Incheon">인천</option>
+            <option value="Daegu">대구</option>
+            <option value="Gwangju">광주</option>
+            <option value="Jeju">제주</option>
+        </select>
+        <br>
+        <label for="add2"><strong>도로명</strong></label>
+        <input type="text" name="input" value="예) 청파로47길 100" style="width: 300px;" id="add2">
+        <button type="button"><span>검색</span></button>
+        <br>
+        <!-- blank 안 해야지 입력했던 거 같은 페이지 내에서 이동해도 안 날아감 -->
+        <a href="#index2"><button type="button">이전 페이지</button></a>
+    
+</form>
+<div style="width:500px; height: 1200px;"></div>
+
+</body>
+</html>
