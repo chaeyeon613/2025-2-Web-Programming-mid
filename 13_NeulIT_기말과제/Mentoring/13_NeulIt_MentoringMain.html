@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/13_NeulIt_style.css" />
+    <link rel="stylesheet" href="13_NeulIt_style1.css" />
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav-container">
+            <img src="/Images/main_logoicon.png" alt="로고" class="logo">
+            <div class="menu">
+                <input type="radio" id="lecture" name="nav" value="lecture">
+                <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
+
+                <input type="radio" id="mentoring" name="nav" value="mentoring" checked>
+                <label for="mentoring"><a href="../Mentoring/13_NeulIt_MentoringMain.html">멘토링</a></label checked>
+
+                <input type="radio" id="community" name="nav" value="community">
+                <label for="community"><a href="../Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+
+                <input type="radio" id="clip" name="nav" value="clip">
+                <label for="clip"><a href="../Clip/13_NeulIt_ClipMain.html">클립</a></label>
+            </div>
+            <div>
+                <a href="13_NeulIt_basket.html"><img src="/Images/cart.svg" alt="장바구니" class="icon"></a>
+                <a href="../Profile/13_NeulIt_ProfileDash.html"><img src="/Images/profile.svg" alt="마이페이지"
+                        class="icon"></a>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="layout">
+
+        <main class="content">
+
+            <section class="mentor-list-section">
+                <div class="mentor-list-header">
+                    <h2>멘토 모아보기</h2>
+                </div>
+
+                <div class="mentor-filter">
+                    <button class="filter-btn active" data-filter="all">전체</button>
+                    <button class="filter-btn" data-filter="frontend">프론트엔드</button>
+                    <button class="filter-btn" data-filter="backend">백엔드</button>
+                    <button class="filter-btn" data-filter="mobile">모바일</button>
+                    <button class="filter-btn" data-filter="data">데이터</button>
+                    <button class="filter-btn" data-filter="devops">DevOps</button>
+                    <button class="filter-btn" data-filter="embedded">임베디드</button>
+                </div>
+
+                <div class="mentor-list-grid">
+
+                    <a href="13_NeulIt_MentoringDetail.html" class="card2" data-category="frontend, data">
+                        <figure class="outer2">
+                            <img src="/Images/woman1.jpg" alt="김은지 멘토">
+                        </figure>
+
+                        <div class="inner2">
+                            <div class="mentor-top2">
+                                <div class="name2">김은지</div>
+                                <div class="job2">프론트엔드 개발자 · 시니어 (7년차)</div>
+                                <div class="company2">커머스 스타트업 · 웹 프론트엔드</div>
+                            </div>
+
+                            <p class="explain2">
+                                “기술보다 중요한 건 ‘나’를 설명하는 언어입니다. 나만의 스토리를 논리적으로 풀어내는 연습을 하세요.”
+                            </p>
+
+                            <div class="mentor-bottom2">
+                                <div class="meta-row2">
+                                    <div class="meta-left2">
+                                        <div class="meta-rating2">
+                                            <span class="star2">★</span>
+                                            <span class="rating-score2">4.9</span>
+                                            <span class="rating-count2">(22)</span>
+                                            <span class="student-count2">· 126명 수강</span>
+                                        </div>
+
+                                        <div class="mentor-tags2">
+                                            <span>#프론트엔드</span>
+                                            <span>#데이터 시각화</span>
+                                            <span>#자기소개</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mentor-price2">
+                                        ₩54,000 <span class="duration2">(1시간)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="13_NeulIt_MentoringDetail.html" class="card2" data-category="frontend, mobile, backend">
+                        <figure class="outer2">
+                            <img src="/Images/woman2.jpg" alt="이지현 멘토">
+                        </figure>
+
+                        <div class="inner2">
+                            <div class="mentor-top2">
+                                <div class="name2">이지현</div>
+                                <div class="job2">풀스택 개발자 · 시니어 (8년차)</div>
+                                <div class="company2">핀테크 기업 · 웹·모바일</div>
+                            </div>
+
+                            <p class="explain2">
+                                “여성 개발자는 ‘실력으로 증명하는 사람’이 아니라, ‘문제를 해결하는 사람’으로 기억되길 바랍니다.”
+                            </p>
+
+                            <div class="mentor-bottom2">
+                                <div class="meta-row2">
+                                    <div class="meta-left2">
+                                        <div class="meta-rating2">
+                                            <span class="star2">★</span>
+                                            <span class="rating-score2">4.8</span>
+                                            <span class="rating-count2">(18)</span>
+                                            <span class="student-count2">· 97명 수강</span>
+                                        </div>
+
+                                        <div class="mentor-tags2">
+                                            <span>#풀스택</span>
+                                            <span>#커리어 전략</span>
+                                            <span>#조직문화</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mentor-price2">
+                                        ₩59,000 <span class="duration2">(1시간)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="13_NeulIt_MentoringDetail.html" class="card2" data-category="data, devops, embedded">
+                        <figure class="outer2">
+                            <img src="/Images/woman3.jpg" alt="류보람 멘토">
+                        </figure>
+
+                        <div class="inner2">
+                            <div class="mentor-top2">
+                                <div class="name2">류보람</div>
+                                <div class="job2">데이터 엔지니어 · 미들 (5년차)</div>
+                                <div class="company2">클라우드 플랫폼 · 데이터/인프라</div>
+                            </div>
+
+                            <p class="explain2">
+                                “면접은 ‘정답 시험’이 아니라 ‘협업 테스트’입니다. 함께 일하고 싶은 인상, 그게 진짜 경쟁력이에요.”
+                            </p>
+
+                            <div class="mentor-bottom2">
+                                <div class="meta-row2">
+                                    <div class="meta-left2">
+                                        <div class="meta-rating2">
+                                            <span class="star2">★</span>
+                                            <span class="rating-score2">4.7</span>
+                                            <span class="rating-count2">(15)</span>
+                                            <span class="student-count2">· 84명 수강</span>
+                                        </div>
+
+                                        <div class="mentor-tags2">
+                                            <span>#데이터엔지니어</span>
+                                            <span>#DevOps</span>
+                                            <span>#면접코칭</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mentor-price2">
+                                        ₩52,000 <span class="duration2">(1시간)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="13_NeulIt_MentoringDetail.html" class="card2" data-category="data, embedded, mobile">
+                        <figure class="outer2">
+                            <img src="/Images/woman4.jpg" alt="이가은 멘토">
+                        </figure>
+
+                        <div class="inner2">
+                            <div class="mentor-top2">
+                                <div class="name2">이가은</div>
+                                <div class="job2">프론트엔드 엔지니어 · 미들 (4년차)</div>
+                                <div class="company2">B2B SaaS · 웹 프론트엔드</div>
+                            </div>
+
+                            <p class="explain2">
+                                “프론트엔드 면접은 코드보다 ‘이유’를 묻습니다. 선택의 근거를 자신 있게 설명할 준비를 하세요.”
+                            </p>
+
+                            <div class="mentor-bottom2">
+                                <div class="meta-row2">
+                                    <div class="meta-left2">
+                                        <div class="meta-rating2">
+                                            <span class="star2">★</span>
+                                            <span class="rating-score2">4.9</span>
+                                            <span class="rating-count2">(20)</span>
+                                            <span class="student-count2">· 110명 수강</span>
+                                        </div>
+
+                                        <div class="mentor-tags2">
+                                            <span>#프론트엔드</span>
+                                            <span>#시스템설계</span>
+                                            <span>#기술면접</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mentor-price2">
+                                        ₩54,000 <span class="duration2">(1시간)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="13_NeulIt_MentoringDetail.html" class="card2" data-category="frontend, devops, backend">
+                        <figure class="outer2">
+                            <img src="/Images/woman5.jpg" alt="한서윤 멘토">
+                        </figure>
+
+                        <div class="inner2">
+                            <div class="mentor-top2">
+                                <div class="name2">한서윤</div>
+                                <div class="job2">백엔드 개발자 · 미들 (6년차)</div>
+                                <div class="company2">게임 서버 · 백엔드/인프라</div>
+                            </div>
+
+                            <p class="explain2">
+                                “꾸준함은 재능을 이깁니다. 하루 한 줄이라도 코드를 읽고 기록하는 습관이 커리어를 만듭니다.”
+                            </p>
+
+                            <div class="mentor-bottom2">
+                                <div class="meta-row2">
+                                    <div class="meta-left2">
+                                        <div class="meta-rating2">
+                                            <span class="star2">★</span>
+                                            <span class="rating-score2">4.8</span>
+                                            <span class="rating-count2">(19)</span>
+                                            <span class="student-count2">· 102명 수강</span>
+                                        </div>
+
+                                        <div class="mentor-tags2">
+                                            <span>#백엔드</span>
+                                            <span>#학습루틴</span>
+                                            <span>#커리어관리</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mentor-price2">
+                                        ₩50,000 <span class="duration2">(1시간)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="13_NeulIt_MentoringDetail.html" class="card2" data-category="mobile">
+                        <figure class="outer2">
+                            <img src="/Images/woman6.jpg" alt="장유진 멘토">
+                        </figure>
+
+                        <div class="inner2">
+                            <div class="mentor-top2">
+                                <div class="name2">장유진</div>
+                                <div class="job2">모바일 앱 개발자 · 주니어 (3년차)</div>
+                                <div class="company2">헬스케어 앱 스타트업</div>
+                            </div>
+
+                            <p class="explain2">
+                                “‘혼자라서’ 힘든 경우가 많아요. 커뮤니티를 두려워하지 마세요.”
+                            </p>
+
+                            <div class="mentor-bottom2">
+                                <div class="meta-row2">
+                                    <div class="meta-left2">
+                                        <div class="meta-rating2">
+                                            <span class="star2">★</span>
+                                            <span class="rating-score2">4.6</span>
+                                            <span class="rating-count2">(12)</span>
+                                            <span class="student-count2">· 61명 수강</span>
+                                        </div>
+
+                                        <div class="mentor-tags2">
+                                            <span>#모바일</span>
+                                            <span>#iOS/Android</span>
+                                            <span>#커뮤니티</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mentor-price2">
+                                        ₩42,000 <span class="duration2">(1시간)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="13_NeulIt_MentoringDetail.html" class="card2" data-category="embedded">
+                        <figure class="outer2">
+                            <img src="/Images/woman7.jpg" alt="박지현 멘토">
+                        </figure>
+
+                        <div class="inner2">
+                            <div class="mentor-top2">
+                                <div class="name2">박지현</div>
+                                <div class="job2">임베디드 개발자 · 미들 (5년차)</div>
+                                <div class="company2">자동차 전장 · 펌웨어/임베디드</div>
+                            </div>
+
+                            <p class="explain2">
+                                “이력서는 나를 증명하는 서류가 아니라, ‘대화의 시작점’이에요. 완벽보다 진정성을 담으세요.”
+                            </p>
+
+                            <div class="mentor-bottom2">
+                                <div class="meta-row2">
+                                    <div class="meta-left2">
+                                        <div class="meta-rating2">
+                                            <span class="star2">★</span>
+                                            <span class="rating-score2">4.7</span>
+                                            <span class="rating-count2">(16)</span>
+                                            <span class="student-count2">· 73명 수강</span>
+                                        </div>
+
+                                        <div class="mentor-tags2">
+                                            <span>#임베디드</span>
+                                            <span>#이력서</span>
+                                            <span>#자기소개서</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mentor-price2">
+                                        ₩48,000 <span class="duration2">(1시간)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="13_NeulIt_MentoringDetail.html" class="card2" data-category="mobile, devops">
+                        <figure class="outer2">
+                            <img src="/Images/woman5.jpg" alt="오다현 멘토">
+                        </figure>
+
+                        <div class="inner2">
+                            <div class="mentor-top2">
+                                <div class="name2">오다현</div>
+                                <div class="job2">모바일/DevOps 엔지니어 · 미들 (4년차)</div>
+                                <div class="company2">에듀테크 · 모바일/인프라</div>
+                            </div>
+
+                            <p class="explain2">
+                                “포트폴리오는 작품집이 아니라 문제해결집입니다. ‘왜 이렇게 만들었는가’를 설명할 수 있어야 합니다.”
+                            </p>
+
+                            <div class="mentor-bottom2">
+                                <div class="meta-row2">
+                                    <div class="meta-left2">
+                                        <div class="meta-rating2">
+                                            <span class="star2">★</span>
+                                            <span class="rating-score2">4.8</span>
+                                            <span class="rating-count2">(14)</span>
+                                            <span class="student-count2">· 68명 수강</span>
+                                        </div>
+
+                                        <div class="mentor-tags2">
+                                            <span>#포트폴리오</span>
+                                            <span>#문제해결</span>
+                                            <span>#모바일</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mentor-price2">
+                                        ₩47,000 <span class="duration2">(1시간)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="13_NeulIt_MentoringDetail.html" class="card2" data-category="devops, mobile">
+                        <figure class="outer2">
+                            <img src="/Images/woman3.jpg" alt="최지민 멘토">
+                        </figure>
+
+                        <div class="inner2">
+                            <div class="mentor-top2">
+                                <div class="name2">최지민</div>
+                                <div class="job2">SRE/DevOps 엔지니어 · 미들 (5년차)</div>
+                                <div class="company2">글로벌 서비스 · 인프라/SRE</div>
+                            </div>
+
+                            <div class="mentor-bottom2">
+                                <p class="explain2">
+                                    “‘나답게 일할 수 있는 환경’을 고르는 것도 실력입니다. 채용은 회사의 선택이 아니라 ‘서로의 선택’이에요.”
+                                </p>
+
+                                <div class="meta-row2">
+                                    <div class="meta-left2">
+                                        <div class="meta-rating2">
+                                            <span class="star2">★</span>
+                                            <span class="rating-score2">4.9</span>
+                                            <span class="rating-count2">(21)</span>
+                                            <span class="student-count2">· 115명 수강</span>
+                                        </div>
+
+                                        <div class="mentor-tags2">
+                                            <span>#DevOps</span>
+                                            <span>#업무환경</span>
+                                            <span>#커리어상담</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mentor-price2">
+                                        ₩49,000 <span class="duration2">(1시간)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <img src="/Images/footer_logo.PNG" alt="Inflearn 로고" class="footer-logo">
+            </div>
+            <div class="footer-info">
+                <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
+                <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
+                <p class="footer-copy">© NEULIT. ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="13_NeulIt_Mentors.js"></script>
+    <script src="13_NeulIt_js1.js"></script>
+
+</body>
+
+</html>

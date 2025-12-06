@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프로필</title>
+  <link rel="stylesheet" href="13_NeulIt_profile.css">
+  <link rel="stylesheet" href="../13_NeulIt_style.css">
+</head>
+
+<body>
+  <!-- nav -->
+  <header>
+    <nav class="nav-container">
+        <a href="../Lecture/13_NeulIt_LectureMain.html"><img src="../Images/main_logoicon.png" alt="로고" class="logo"></a>
+        <div class="menu">
+            <input type="radio" id="lecture" name="nav" value="lecture">
+            <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
+            <input type="radio" id="mentoring" name="nav" value="mentoring">
+            <label for="mentoring"><a href="../Mentoring/13_NeulIt_MentoringMain.html">멘토링</a></label>
+            <input type="radio" id="community" name="nav" value="community">
+            <label for="community"><a href="../Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+            <input type="radio" id="clip" name="nav" value="clip">
+            <label for="clip"><a href="../Clip/13_NeulIt_ClipMain.html">클립</a></label>
+        </div>
+        <div>
+          <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
+            <div class="profile-dropdown-container">
+              <img src="../Images/profile.svg" alt="마이페이지" class="icon" id="profileIcon">
+            
+              <div class="profile-menu-box" id="profileMenu">
+                <a href="../Profile/13_NeulIt_ProfileDash.html" class="menu-item-header">
+                  <img src="../Images/me.png" alt="프로필 이미지" class="dropdown-profile-img">
+                  <span id="dropdownUserName"></span>
+                  <span class="arrow">&gt;</span>
+                </a>
+                <hr>
+                  <a href="../Profile/13_NeulIt_ProfileLecture.html" class="menu-item">내 학습</a>
+                  <a href="../Profile/13_NeulIt_ProfileMentoring.html" class="menu-item">멘토링</a>
+                  <a href="../Profile/13_NeulIt_ProfileCommunity.html" class="menu-item">커뮤니티 게시글</a>
+                <hr>
+                  <button class="logout-btn" id="logoutButton">로그아웃</button>
+              </div>
+              
+            </div>           
+        </div>
+    </nav>
+  </header>
+
+  <!-- 메인 -->
+  <div class="profile-container">
+    <!-- 메뉴 -->
+    <aside class="profile-aside">
+      <div class="profile-info">
+        <img src="../Images/me.png" alt="프로필 이미지" class="profile-img">        
+        <h2 class="profile-id"></h2>
+        <p class="profile-name"></p>
+        <button class="edit-btn">프로필 수정</button>
+      </div>
+
+      <div class="profile-menu">
+        <a href="13_NeulIt_ProfileDash.html" class="menu-item active">대시보드</a>
+        <a href="13_NeulIt_ProfileLecture.html" class="menu-item">내 학습</a>
+        <a href="13_NeulIt_ProfileMentoring.html" class="menu-item">멘토링</a>
+        <a href="13_NeulIt_ProfileCommunity.html" class="menu-item">커뮤니티 게시글</a>
+      </div>
+    </aside>
+
+
+    <!-- 대시보드 영역 -->
+    <main class="profile-main">
+      <h2 class="main-title">대시보드</h2>
+
+      <!-- 상단 -->
+      <section class="dashboard">
+        <!-- 최근 학습 강의 -->
+        <div class="dash-card">
+          <div class="card-header">
+            <h2 class="card-title">최근 학습 강의</h2>
+            <p class="course-list">학습 목록 ></p>
+          </div>
+          <div class="card-content">
+            <div class="course-item">
+              <button class="play-btn">▶</button>
+                <div class="course-info">
+                  <p class="course-title"></p>
+                  <p class="course-progress"></p>
+                </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- 멘토링 현황 -->
+        <div class="dash-card">
+          <div class="card-header">
+            <h2 class="card-title">멘토링 현황</h2>
+            <span class="mentoring-status confirmed"></span>
+          </div>
+          <div class="card-content">
+            <div class="mentor-info"></div>
+          </div>
+        </div>
+      </section>
+      
+
+      <!-- 중간: 연간 학습 내역 -->
+      <section class="dashboard-gap">
+        <div class="dash-card">
+          <h2 class="card-title">연간 학습</h2>
+          <div class="yearly-container">
+            <img src="../Images/study_chart.png" alt="연간 학습 표" class="yearly-chart">
+            <div class="yearly-stats">
+              <div class="stat-item">
+                <p class="stat-title">완료 수업</p>
+                <p class="stat-value">165</p>
+              </div>
+              <div class="stat-item">
+                <p class="stat-title">총 학습</p>
+                <p class="stat-value">1일 4시간 38분</p>
+              </div>
+              <div class="stat-item">
+                <p class="stat-title">완강</p>
+                <p class="stat-value">3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 하단 -->
+      <section class="dashboard-gap">
+        <div class="dashboard">
+
+          <!-- 스킬 태그 -->
+          <div class="dash-card">
+            <div class="card-header">
+              <h2 class="card-title">스킬 태그</h2>
+              <p class="course-list" id="tagViewAll">전체 보기 ></p>
+            </div>
+            <div class="skills"></div>
+          </div>
+          
+          <!-- 스킬 태그 전체 보기 창 -->
+          <div class="modal-overlay" id="tagAllModal">
+            <div class="modal-box">
+              <button class="tag-all-close">&times;</button>
+              <h2 class="tag-all-title">스킬 태그 전체 보기</h2>
+              <div class="modal-tag-container" id="tagAllList"></div>
+              <p class="modal-desc">
+                ※ 스킬 태그는 구매한 강의의 기술 태그를 기반으로 자동 생성됩니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- 나의 레벨 -->
+          <div class="dash-card">
+            <h2 class="card-title">나의 레벨</h2>
+            <div class="level-card">
+              <p class="level-emoji" id="levelEmoji"></p>
+              <p class="level-title" id="levelText"></p>
+              <p class="level-desc" id="levelDesc"></p>
+            </div>
+          </div>
+    
+          <!-- 수료증 -->
+          <div class="dash-card">
+            <div class="card-header">
+              <h2 class="card-title">수료증</h2>
+              <p class="course-list" id="certViewAll">전체 보기 ></p>
+            </div>
+            <div id="certPreviewBox" class="cert-preview-box"></div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="fooer-top">
+        <img src="../Images/footer_logo.PNG" alt="Inflearn 로고" class="footer-logo">
+      </div>
+      <div class="footer-info">
+        <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
+        <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
+        <p class="footer-copy">© NEULIT. ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="../Lecture/13_NeulIt_Courses.js"></script>
+  <script src="13_NeulIt_ProfileDash.js"></script>
+  <script src="../13_NeulIt_dropdown.js"></script>
+
+</body>
+</html>

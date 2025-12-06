@@ -1,0 +1,78 @@
+{
+    "posts": [
+      {
+        "id": 4,
+        "title": "리액트 설치에 대해 궁금한 점이 있습니다.",
+        "content": "현재 리액트부분을 시작했는데 리액트를 설치할때 <br>yarn add next@12.1.0 react@17.0.2 react-dom@17.0.2 --exact <br>이러한 명령어를 사용하는데 이렇게 설치하고 나니 제가 알고있는 폴더들이나 내용이 좀 다르더라구요. <br>제가 알고있는 건 npx create-react-app ./ 이러한 명령어로 리액트를 설치했는데 이거와 전혀 다른 명령어 인가요?",
+        "author": "늘잇",
+        "userId": "neulit",
+        "time": "25.12.1. 오후 7:46",
+        "views": 12,
+        "likes": 2,
+        "comments": [],
+        "status": "해결됨",
+        "tags": ["react", "node.js", "seo"],
+        "lecture": "한 입 크기로 잘라먹는 리액트(React.js)"
+      },
+  
+      {
+        "id": 3,
+        "title": "지라에 연결한 컨플루언스 페이지를 삭제하고 싶습니다.",
+        "content": "지라에 연결한 컨플루언스 페이지를 삭제하는 방법을 알려주세요.",
+        "author": "김영채",
+        "userId": "guestUser",
+        "time": "25.11.22. 오전 11:20",
+        "views": 10,
+        "likes": 0,
+        "comments": [
+          {
+            "userId": "neulit",
+            "author": "늘잇",
+            "text": "프로젝트 설정 > 연결된 페이지 관리에서 삭제할 수 있어요!",
+            "time": "25.11.22. 오후 1:05"
+          }
+        ],
+        "status": "미해결",
+        "tags": ["jira", "confluence"],
+        "lecture": ""
+      },
+  
+      {
+        "id": 2,
+        "title": "빅분기 11회도 10회차랑 동일하게 준비하면 될까요??",
+        "content": "10회 때랑 강의목록은 달라지지 않은 것 같은데 똑같이 준비하면 될까요??",
+        "author": "여수민",
+        "userId": "guestUser",
+        "time": "25.11.12. 오전 9:11",
+        "views": 42,
+        "likes": 1,
+        "comments": [
+            {
+                "userId": "neulit",
+                "author": "늘잇",
+                "text": "안녕",
+                "time": "25.11.12. 오후 1:05"
+              }
+        ],
+        "status": "미해결",
+        "tags": ["python", "머신러닝", "빅데이터"],
+        "lecture": ""
+      },
+  
+      {
+        "id": 1,
+        "title": "concurrency 동작 안됨",
+        "content": "하나의 consumer 에서 concurrency 옵션을 통해 멀티 쓰레드로 동작이 되는지 테스트를 해봤는데 강좌화면에서처럼 consumer 가 멀티스레드로 동작하지 않는것 같습니다.",
+        "author": "김하영",
+        "userId": "guestUser",
+        "time": "25.11.10. 오전 8:20",
+        "views": 22,
+        "likes": 2,
+        "comments": [],
+        "status": "해결됨",
+        "tags": ["java", "concurrency"],
+        "lecture": ""
+      }
+    ]
+  }
+  
