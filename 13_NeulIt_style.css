@@ -1,0 +1,78 @@
+/* 프로필 드롭다운 박스 */
+.profile-dropdown-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile-menu-box {
+    display: none;
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    width: 200px; 
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1001; 
+    padding: 10px 0;
+}
+
+.profile-menu-box.active {
+    display: block; 
+}
+
+.profile-menu-box a, 
+.profile-menu-box button {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.profile-menu-box a:hover, 
+.profile-menu-box button:hover {
+    background-color: #f5f5f5;
+}
+
+.menu-item-header {
+    font-weight: 700;
+    color: #ec8201;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.arrow {
+    font-size: 12px;
+    font-weight: 900;
+    margin-left: 80px;
+    color: #888;
+}
+
+.dropdown-profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.profile-menu-box hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 5px 0;
+}
+
+.logout-btn {
+    font-weight: 500;
+}
