@@ -8,40 +8,64 @@
     <link rel="stylesheet" href="../13_NeulIt_style.css">
 </head>
 <body>
-        <nav class="nav-container">
-            <a href="../Lecture/13_NeulIt_LectureMain.html"><img src="../Images/main_logoicon.png" alt="로고" class="logo"></a>
-            <div class="menu">
-                <input type="radio" id="lecture" name="nav" value="lecture" checked>
-                <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
 
-                <input type="radio" id="mentoring" name="nav" value="mentoring">
-                <label for="mentoring"><a href="../Mentoring/13_NeulIt_MentoringMain.html">멘토링</a></label>
+    <!--헤더-->
+    <nav class="nav-container">
+        <a href="../Lecture/13_NeulIt_LectureMain.html"><img src="../Images/main_logoicon.png" alt="로고" class="logo"></a>
+        <div class="menu">
+            <input type="radio" id="lecture" name="nav" value="lecture" checked>
+            <label for="lecture"><a href="../Lecture/13_NeulIt_LectureMain.html">강의</a></label>
 
-                <input type="radio" id="community" name="nav" value="community">
-                <label for="community"><a href="../Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+            <input type="radio" id="mentoring" name="nav" value="mentoring">
+            <label for="mentoring"><a href="../Mentoring/13_NeulIt_MentoringMain.html">멘토링</a></label>
 
-                <input type="radio" id="clip" name="nav" value="clip">
-                <label for="clip"><a href="../Clip/13_NeulIt_ClipMain.html">클립</a></label>
+            <input type="radio" id="community" name="nav" value="community">
+            <label for="community"><a href="../Community/13_NeulIt_CommunityMain.html">커뮤니티</a></label>
+
+            <input type="radio" id="clip" name="nav" value="clip">
+            <label for="clip"><a href="../Clip/13_NeulIt_ClipMain.html">클립</a></label>
+        </div>
+        <div>
+            <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
+
+            <div class="profile-dropdown-container">
+                <img src="../Images/profile.svg" alt="마이페이지" class="icon" id="profileIcon">
+            
+                <div class="profile-menu-box" id="profileMenu">
+                    <a href="../Profile/13_NeulIt_ProfileDash.html" class="menu-item-header">
+                        <img src="../Images/me.png" alt="프로필 이미지" class="dropdown-profile-img">
+                        <span id="dropdownUserName"></span>
+                        <span class="arrow">&gt;</span>
+                    </a>
+                    <hr>
+                    <a href="../Profile/13_NeulIt_ProfileLecture.html" class="menu-item">내 학습</a>
+                    <a href="../Profile/13_NeulIt_ProfileMentoring.html" class="menu-item">멘토링</a>
+                    <a href="../Profile/13_NeulIt_ProfileCommunity.html" class="menu-item">커뮤니티 게시글</a>
+                    <hr>
+                    <button class="logout-btn" id="logoutButton">로그아웃</button>
+                </div>
             </div>
-            <div>
-                <a href="../Basket/13_NeulIt_Basket.html"><img src="../Images/cart.svg" alt="장바구니" class="icon"></a>
-                <a href="../Profile/13_NeulIt_ProfileDash.html"><img src="../Images/profile.svg" alt="마이페이지" class="icon"></a>            
-            </div>
-        </nav>
+        </div>
+    </nav>
 
-    <!-- 검색창 -->
+
+    <!--검색창-->
     <div class="lecture-search">
-        <input type="text" name="text" placeholder="📣 도전하는 것을 망설이지 마세요!">
+        <input id="searchInput" type="text" name="text" placeholder="📣 도전하는 것을 망설이지 마세요!">
         <input type="image" src="../Images/search.svg" alt="검색 로고">
+        
+        <!-- 자동완성 리스트 -->
+        <ul id="autocomplete-list" class="autocomplete"></ul>
     </div>
+
 
     <!-- 카테고리 바 -->
     <div class="category-bar">
         <input type="radio" id="cat-free" name="category"/>
-        <label for="cat-free">무료</label>
+        <label for="cat-free">이론</label>
 
         <input type="radio" id="cat-sale" name="category" />
-        <label for="cat-sale">할인</label>
+        <label for="cat-sale">실습</label>
 
         <input type="radio" id="cat-beginner" name="category" />
         <label for="cat-beginner">입문</label>
@@ -55,6 +79,7 @@
         <input type="radio" id="cat-advanced" name="category" />
         <label for="cat-advanced">고급</label>
     </div>
+
 
     <!-- 강의 목록 -->
     <main class="content">
@@ -72,26 +97,61 @@
 
             <div class="lecture-list">
 
-                <section class="lecture" data-id="python-basic">
-                    <a href="#" class="lecture-link">
-                        <figure class="lecture-thumbnail">
-                            <img src="../Images/python.png" alt="파이썬 강의 썸네일">
-                        </figure>
-                        <div class="lecture-body">
-                            <div class="lecture-top">
-                                <h3 class="lecture-title">프로그래밍 시작하기: 파이썬 입문</h3>
-                                <p class="instructor">NeulIT</p>
-                            </div>
-                            <div class="lecture-info">
-                                <span class="price">무료</span>
-                                <span class="person">⭐4.8 <img src="../Images/person.svg" alt="사람 로고">32,800+</span>
-                            </div>
-                        </div>
-                    </a>
-                </section>
+            <section class="lecture" data-id="python-basic">
+                <div class="lecture-card">
 
-                <section class="lecture" data-id="react-basic">
-                    <a href="#" class="lecture-link">
+                    <div class="card-front">
+                    <figure class="lecture-thumbnail">
+                        <img src="/images/python.png" alt="파이썬 강의 썸네일">
+                    </figure>
+                    <div class="lecture-body">
+                        <div class="lecture-top">
+                            <h3 class="lecture-title">프로그래밍 시작하기: 파이썬 입문</h3>
+                            <p class="instructor">NeulIT</p>
+                        </div>
+                        <div class="lecture-info">
+                            <span class="price">무료</span>
+                            <span class="person">⭐4.8 <img src="/images/person.svg">32,800+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">파이썬 주식 매매 봇으로 주식시장 자동사냥하기</h3>
+                        <p class="back-desc">돈이 무한히 벌리는 알고리즘 트레이딩 봇을 만들고, 자동으로 돌려놓고 싶은데?</p>
+
+                        <div class="back-info">
+                            <span class="level">초급</span>
+                            <span class="tags">Python • Pandas • 퀀트</span>
+                            <span class="duration">15시간 45분</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>트레이딩을 위한 Python 기초</li>
+                            <li>알고리즘 트레이딩 이해</li>
+                            <li>여성개발자의 첫걸음</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="python-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="python-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- React 강의 -->
+        <section class="lecture" data-id="react-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" data-id="react-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/react.png" alt="react 강의 썸네일">
                         </figure>
@@ -102,14 +162,49 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩44,000</span>
-                                <span class="person">⭐5.0 <img src="../Images/person.svg" alt="사람 로고">5,500+</span>
+                                <span class="person">⭐5.0 <img src="../Images/person.svg">5,500+</span>
                             </div>
                         </div>
                     </a>
-                </section>
+                </div>
 
-                <section class="lecture" data-id="spring-basic">
-                    <a href="#" class="lecture-link">
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">리액트 핵심 개념 빠르게 배우기</h3>
+                        <p class="back-desc">컴포넌트, 훅, 상태관리까지 한 번에 배우는 실전 React 입문.</p>
+
+                        <div class="back-info">
+                            <span class="level">초급</span>
+                            <span class="tags">React • JavaScript • Frontend</span>
+                            <span class="duration">12시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>React 기초 문법</li>
+                            <li>컴포넌트 설계</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="react-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="react-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Spring 강의 -->
+        <section class="lecture" data-id="spring-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" data-id="spting-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/spring.png" alt="spring 강의 썸네일">
                         </figure>
@@ -120,14 +215,49 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩88,000</span>
-                                <span class="person">⭐5.0 <img src="../Images/person.svg" alt="사람 로고">48,400+</span>
+                                <span class="person">⭐5.0 <img src="../Images/person.svg">48,400+</span>
                             </div>
                         </div>
                     </a>
-                </section>
+                </div>
 
-                <section class="lecture" data-id="c-basic">
-                    <a href="#" class="lecture-link">
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">스프링 DI/AOP 기반 이해</h3>
+                        <p class="back-desc">스프링 프레임워크의 핵심 개념을 실무 관점에서 정리.</p>
+
+                        <div class="back-info">
+                            <span class="level">중급</span>
+                            <span class="tags">Spring • Java • Backend</span>
+                            <span class="duration">20시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>DI와 IoC 컨테이너 이해</li>
+                            <li>스프링 애플리케이션 구조</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="spring-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="spring-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- C언어 강의 -->
+        <section class="lecture" data-id="c-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" datai-id="c-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/c.png" alt="c 강의 썸네일">
                         </figure>
@@ -138,14 +268,49 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩99,000</span>
-                                <span class="person">⭐4.9 <img src="../Images/person.svg" alt="사람 로고">2,600+</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg">2,600+</span>
                             </div>
                         </div>
                     </a>
-                </section>
+                </div>
 
-                <section class="lecture" data-id="html-css-basic">
-                    <a href="#" class="lecture-link">
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">C언어 실전 입문</h3>
+                        <p class="back-desc">포인터부터 구조체까지 확실히 익히는 C언어 기초 완성.</p>
+
+                        <div class="back-info">
+                            <span class="level">초급</span>
+                            <span class="tags">C Language • Pointer • Memory</span>
+                            <span class="duration">17시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>기초 문법 완성</li>
+                            <li>포인터 이해</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="c-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="c-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+                        <!-- HTML/CSS 강의 -->
+        <section class="lecture" data-id="html-css-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" data-id="html-css-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/spring.png" alt="html 강의 썸네일">
                         </figure>
@@ -156,14 +321,50 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩44,000</span>
-                                <span class="person">⭐5.0 <img src="../Images/person.svg" alt="사람 로고">2,900+</span>
+                                <span class="person">⭐5.0 <img src="../Images/person.svg">2,900+</span>
                             </div>
                         </div>
                     </a>
-                </section>
+                </div>
 
-                <section class="lecture" data-id="kotlin-basic">
-                    <a href="#" class="lecture-link">
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">HTML/CSS 구조 제대로 배우기</h3>
+                        <p class="back-desc">시멘틱 태그부터 반응형 레이아웃까지 실무 기반으로 배우는 웹 기초.</p>
+
+                        <div class="back-info">
+                            <span class="level">초급</span>
+                            <span class="tags">HTML • CSS • Web</span>
+                            <span class="duration">10시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>시멘틱 마크업 이해</li>
+                            <li>반응형 웹 기본기</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="html-css-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="html-css-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Kotlin 강의 -->
+        <section class="lecture" data-id="kotlin-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" data-id="kotlin-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/ai.png" alt="kotlin 강의 썸네일">
                         </figure>
@@ -174,14 +375,50 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩55,000</span>
-                                <span class="person">⭐5.0 <img src="../Images/person.svg" alt="사람 로고">3,500+</span>
+                                <span class="person">⭐5.0 <img src="../Images/person.svg">3,500+</span>
                             </div>
                         </div>
                     </a>
-                </section>
+                </div>
 
-                <section class="lecture" data-id="cpp-basic">
-                    <a href="#" class="lecture-link">
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">Kotlin 핵심 문법 배우기</h3>
+                        <p class="back-desc">자바 개발자라면 빠르게 배우는 Kotlin 실전 문법.</p>
+
+                        <div class="back-info">
+                            <span class="level">초급</span>
+                            <span class="tags">Kotlin • JVM • Android</span>
+                            <span class="duration">11시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>Kotlin 기본 문법</li>
+                            <li>Java ↔ Kotlin 변환 패턴</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="kotlin-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="kotlin-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- C++ 강의 -->
+        <section class="lecture" data-id="cpp-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" data-id="cpp-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/C.png" alt="c++ 강의 썸네일">
                         </figure>
@@ -192,14 +429,50 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩99,000</span>
-                                <span class="person">⭐4.7 <img src="../Images/person.svg" alt="사람 로고">22,100+</span>
+                                <span class="person">⭐4.7 <img src="../Images/person.svg">22,100+</span>
                             </div>
                         </div>
                     </a>
-                </section>
+                </div>
 
-                <section class="lecture" data-id="docker-basic">
-                    <a href="#" class="lecture-link">
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">C++ 완전 기초 정복</h3>
+                        <p class="back-desc">객체지향과 메모리 구조를 이해하며 C++ 기본기 다지기.</p>
+
+                        <div class="back-info">
+                            <span class="level">초급</span>
+                            <span class="tags">C++ • OOP • Memory</span>
+                            <span class="duration">18시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>기초 문법과 객체지향 개념</li>
+                            <li>메모리/포인터 이해</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="cppp-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="cpp-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Docker 강의 -->
+        <section class="lecture" data-id="docker-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" data-id="docker-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/react.png" alt="docker 강의 썸네일">
                         </figure>
@@ -210,14 +483,49 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩77,000</span>
-                                <span class="person">⭐5.0 <img src="../Images/person.svg" alt="사람 로고">13,900+</span>
+                                <span class="person">⭐5.0 <img src="../Images/person.svg">13,900+</span>
                             </div>
                         </div>
                     </a>
-                </section>
+                </div>
 
-                <section class="lecture" data-id="db-basic">
-                    <a href="#" class="lecture-link">
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">Docker 완전 기초</h3>
+                        <p class="back-desc">도커 컨테이너 개념을 쉽게 설명하는 비전공자용 실전 강의.</p>
+
+                        <div class="back-info">
+                            <span class="level">초급</span>
+                            <span class="tags">Docker • DevOps • Container</span>
+                            <span class="duration">9시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>컨테이너 구조 이해</li>
+                            <li>도커 이미지/볼륨 실습</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="docker-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="docker-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DB 강의 -->
+        <section class="lecture" data-id="db-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" data-id="db-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/react.png" alt="database 강의 썸네일">
                         </figure>
@@ -228,14 +536,51 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩77,000</span>
-                                <span class="person">⭐4.9 <img src="../Images/person.svg" alt="사람 로고">200+</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg">200+</span>
                             </div>
                         </div>
                     </a>
-                </section>
+                </div>
 
-                <section class="lecture" data-id="commerce-basic">
-                    <a href="#" class="lecture-link">
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">DB 설계 핵심 개념 배우기</h3>
+                        <p class="back-desc">정규화, ERD, 관계 설정까지 실무에서 쓰는 설계 방법.</p>
+
+                        <div class="back-info">
+                            <span class="level">초급</span>
+                            <span class="tags">Database • SQL • Modeling</span>
+                            <span class="duration">12시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>DB 설계 기본</li>
+                            <li>정규화 + 관계설정</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="db-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="db-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- 커머스 백엔드 -->
+        <section class="lecture" data-id="commerce-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" data-id="commerce-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/c.png" alt="커머스 강의 썸네일">
                         </figure>
@@ -246,13 +591,50 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩77,000</span>
-                                <span class="person">⭐4.9 <img src="../Images/person.svg" alt="사람 로고">200+</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg">200+</span>
                             </div>
                         </div>
                     </a>
-                </section>
-                <section class="lecture" data-id="ai-basic">
-                    <a href="#" class="lecture-link">
+                </div>
+
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">커머스 실무 이해</h3>
+                        <p class="back-desc">상품/주문/장바구니 등 커머스 핵심 구조 설계 및 구현.</p>
+
+                        <div class="back-info">
+                            <span class="level">초급~중급</span>
+                            <span class="tags">Backend • Commerce • Spring</span>
+                            <span class="duration">14시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>커머스 요구사항 분석</li>
+                            <li>주문/결제 흐름 이해</li>
+                            <li>여성개발자의 첫걸음</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="commerce-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="commerce-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- AI 자동화 -->
+        <section class="lecture" data-id="ai-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" data-id="ai-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/ai.png" alt="ai 강의 썸네일">
                         </figure>
@@ -263,14 +645,51 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩51,150</span>
-                                <span class="person">⭐4.9 <img src="../Images/person.svg" alt="사람 로고">1,700+</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg">1,700+</span>
                             </div>
                         </div>
                     </a>
-                </section>
+                </div>
 
-                <section class="lecture" data-id="bootstrap-basic">
-                    <a href="#" class="lecture-link">
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">AI 자동화 실전</h3>
+                        <p class="back-desc">프롬프트/자동화/업무 최적화까지 완전 실무 기반.</p>
+
+                        <div class="back-info">
+                            <span class="level">입문</span>
+                            <span class="tags">AI • Automation • Prompt</span>
+                            <span class="duration">8시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>프롬프트 작성법</li>
+                            <li>업무 자동화 구축</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="ai-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="ai-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- 부트스트랩 -->
+        <section class="lecture" data-id="bootstrap-basic">
+            <div class="lecture-card">
+
+                <div class="card-front">
+                    <a href="../Lecture/13_NeulIt_LectureDetail.html" class="lecture-link" datai-id="bootstrap-basic">
                         <figure class="lecture-thumbnail">
                             <img src="../Images/python.png" alt="부트스트랩 강의 썸네일">
                         </figure>
@@ -281,14 +700,46 @@
                             </div>
                             <div class="lecture-info">
                                 <span class="price">₩29,700</span>
-                                <span class="person">⭐4.9 <img src="../Images/person.svg" alt="사람 로고">5</span>
+                                <span class="person">⭐4.9 <img src="../Images/person.svg">5</span>
                             </div>
                         </div>
                     </a>
-                </section>
+                </div>
+
+                <div class="card-back">
+                    <div class="back-content">
+                        <h3 class="back-title">Bootstrap 빠르게 배우기</h3>
+                        <p class="back-desc">반응형 그리드 시스템부터 컴포넌트 실전 활용.</p>
+
+                        <div class="back-info">
+                            <span class="level">입문</span>
+                            <span class="tags">Bootstrap • CSS • Responsive</span>
+                            <span class="duration">6시간</span>
+                        </div>
+
+                        <p class="back-learn">이런 걸 배울 수 있어요</p>
+                        <ul class="back-checklist">
+                            <li>반응형 레이아웃 구성</li>
+                            <li>부트스트랩 컴포넌트 사용</li>
+                            <li>여성개발자의 첫걸음</li>
+                            <li>초보자를 위한 강의</li>
+                        </ul>
+
+                        <div class="back-buttons">
+                            <button class="wishlist-heart" data-id="bootstrap-basic">
+                                <img src="../Images/favorite.svg" alt="찜하기" data-like="false">
+                            </button>
+                            <button class="cart" data-id="bootstrap-basic">바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
             </div>
         </article>
     </main>
+
 
     <!-- 페이지 이동 -->
     <div class="pagination">
@@ -310,14 +761,15 @@
 
     </div>
 
+
     <!-- 푸터 -->
     <footer class="footer">
     <div class="footer-container">
         <div class="fooer-top">
-        <img src="../Images/footer_logo.png" alt="Inflearn 로고" class="footer-logo">
+        <img src="../Images/footer_logo.png" alt="로고" class="footer-logo">
         </div>
         <div class="footer-info">
-        <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 중간과제</p>
+        <p>(주)늘잇 | 숙명여자대학교 2025학년도 2학기 웹프로그래밍 13팀 기말과제</p>
         <p>2415028 김수빈 | 2413954 김영채 | 2414801 김하영 | 2411041 이채연 | 2110359 여수민</p>
         <p class="footer-copy">© NEULIT. ALL RIGHTS RESERVED</p>
         </div>
@@ -325,8 +777,9 @@
     </footer>
 
     <script src="13_NeulIt_Courses.js"></script>
+    <script src="13_NeulIt_LectureScript.js"></script>
+    <script src="../13_NeulIt_dropdown.js"></script>
     <script src="13_NeulIt_LectureMain.js"></script>
-    <script src="13_NeulIt_LectureDetail.js"></script>
 
 </body>
 </html>
